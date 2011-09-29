@@ -1,0 +1,83 @@
+<script type="text/javascript">
+
+var _d = DialogManager.get('config_dialog');
+
+_d.setWidth(350);
+
+_d.setPosition('center');
+
+</script>
+
+<div class="field_item">
+
+    <label>Tên Module tab1:</label>
+
+    <p><input type="text" name="module_name" value="{$options.module_name}" /></p>
+
+</div>
+<div class="field_item">
+
+     <label>Loại khuyến nghị:</label>
+
+    <p><select name="cate_id">
+
+        <option value="0">Hãy chọn...</option>
+        <!-- {foreach from=$acategorys item=acategory} -->
+        <option value="{$acategory.cate_id}">{$acategory.cate_name|escape}</option>
+        <!-- {/foreach} -->
+    </select></p>
+</div>
+<!-- tab2 -->
+
+<div class="field_item">
+
+    <label>Tên Module tab2:</label>
+
+    <p><input type="text" name="module_name" value="{$options.module_name}" /></p>
+
+</div>
+<div class="field_item">
+
+     <label>Loại khuyến nghị</label>
+
+    <p><select name="cate_id">
+
+        <option value="0">Hãy chọn...</option>
+        <!-- {foreach from=$acategorys item=acategory} -->
+        <option value="{$acategory.cate_id}">{$acategory.cate_name|escape}</option>
+        <!-- {/foreach} -->
+    </select></p>
+</div>
+
+<!--end-->
+<!-- tab3 -->
+
+<div class="field_item">
+
+    <label>Tên Module tab3:</label>
+
+    <p><input type="text" name="module_name" value="{$options.module_name}" /></p>
+
+</div>
+<div class="field_item">
+
+     <label>Loại khuyến nghi</label>
+
+    <p><select name="cate_id">
+
+        <option value="0">Hãy chọn...</option>
+        <!-- {foreach from=$acategorys item=acategory} -->
+        <option value="{$acategory.cate_id}">{$acategory.cate_name|escape}</option>
+        <!-- {/foreach} -->
+    </select></p>
+</div>
+
+<!--end-->
+
+<div class="field_item">
+
+	<label>Số lượng bài viết hiển thị:</label>
+
+    <p><input type="text" size="10" name="num1" value="{$options.num1}" /></p>
+
+</div>	

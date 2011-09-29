@@ -1,0 +1,18 @@
+.sidebar .list_pic{width:252px;height:135px;border-bottom:1px solid #ddd;}
+.sidebar .list_pic li{width:70px;float:left;padding:0 7px;display:inline;overflow:hidden;}
+.sidebar .list_pic li p{width:70px;height:70px;margin-bottom:10px;overflow:hidden;background:#eee;}
+.sidebar .list_pic h3{height:50px;overflow:hidden;text-align:center;color:#fe5400;font-size:15px;}
+.sidebar .list_pic h3 a{display:block;width:70px;height:32px;line-height:16px;overflow:hidden;font-weight:normal;color:#666;text-decoration:none;font-size:12px;}
+.sidebar .list_pic h3 a:hover{color:#ff6000;text-decoration:underline;}
+
+.sidebar .list_text{width:252px;height:80px;padding-top:6px;overflow:hidden;}
+.sidebar .list_text li{width:252px;height:20px;line-height:20px;overflow:hidden;float:left;}
+.sidebar .list_text li a{display:block;width:145px;height:18px;overflow:hidden;padding-left:12px;float:left;color:#666;text-decoration:none;background:url(../images/ico.gif) no-repeat -20px 4px;font-weight:normal;}
+.sidebar .list_text li a:hover{color:#ff6000;text-decoration:underline;}
+.sidebar .list_text li span{color:#fe5400;font-size:14px;font-weight:bold;float:right;margin-right:10px;}
+
+.index_btn{width:208px;height:44px;margin-bottom:9px;}
+.index_btn .login{float:left;}
+.index_btn .join_in{float:right;}
+.index_btn .login a{display:block;width:102px;height:43px;text-indent:-10000px;background:url(../images/btn.gif) no-repeat -197px 0;}
+.index_btn .join_in a{display:block;width:102px;height:43px;text-indent:-10000px;background:url(../images/btn.gif) no-repeat -85px 0;}

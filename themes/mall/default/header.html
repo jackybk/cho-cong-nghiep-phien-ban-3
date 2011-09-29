@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="{$site_url}/" />
+<!-- Use IE7 mode -->
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset={$charset}" />
+<meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
+{$page_seo}
+<meta name="author" content="{$site_url}" />
+<meta name="generator" content="CCNVIETNAM {$ecmall_version}" />
+<meta name="copyright" content="Copyright 2010 Chocongnghiep.com.vn All rights reserved" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+<link href="{res file=css/style.css}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="{lib file=jquery.js}" charset="utf-8"></script><!--Thay jquery.js-->
+<script type="text/javascript" src="{lib file=jquery.colorbox.js}" charset="utf-8"></script><!--Su dung de xem anh-->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("a[rel='imgdetail']").colorbox();
+	});
+</script>
+<script type="text/javascript" src="{lib file=ecmall.js}" charset="utf-8"></script>
+<script type="text/javascript" src="{res file=js/nav.js}" charset="utf-8"></script>
+<script type="text/javascript">
+//<!CDATA[
+var SITE_URL = "{$site_url}";
+var PRICE_FORMAT = '{$price_format}';
+//]]>
+</script>
+{$_head_tags}
+<!--<editmode></editmode>-->
+</head>
+
+<body>
+<a name="top"></a>
+<div id="nav_top">
+	<div class="wrap_top">
+		<div class="category">
+			<ul id="navmenu">
+				<li>
+					<a href="{$site_url}/" title="{$lang.index}" class="root home"><img src="{res file=images/icon_home.png}" align="absmiddle"/></a>
+				</li>
+				<li>
+					<a href="{url app=category&act=store}" class="root">{$lang.store}<img src="{res file=images/icon_arrow_down.gif}" align="absmiddle"/></a>
+					<ul>
+						<?php
+							$sql="SELECT * FROM `ecm_scategory` WHERE `parent_id` =0 ORDER BY `sort_order`";
+							$result=mysql_query($sql);
+							if(mysql_num_rows($result)>0)
+							{
+								while($row=mysql_fetch_array($result))
+								{
+									echo "
+									<li><a href=\"".$row['cate_id']."\"><span>".$row['cate_name']."</span></a>";
+										$sqlsub="SELECT * FROM `ecm_scategory` WHERE `parent_id` =".$row['cate_id']." ORDER BY `sort_order`";
+										$resultsub=mysql_query($sqlsub);
+										if(mysql_num_rows($resultsub)>0)
+										{
+											echo "<ul>";
+											while($rowsub=mysql_fetch_array($resultsub))
+											{
+												echo "<li><a href=\"#\"><span>".$rowsub['cate_name']."</span></a></li>";
+											}
+											echo "</ul>";
+										}
+									echo "</li>";
+								}
+							}
+			
+						?>
+					</ul>
+				</li>
+				<li>
+					<a href="{url app=category}" class="root">{$lang.shopping}<img src="{res file=images/icon_arrow_down.gif}" align="absmiddle"/></a>
+					<ul style="background: #eee;">
+						<?php
+							$sql="SELECT * FROM `ecm_gcategory` WHERE `store_id` =0 AND `parent_id` =0 AND `if_show` =1 ORDER BY `sort_order`";
+							$result=mysql_query($sql);
+							if(mysql_num_rows($result)>0)
+							{
+								while($row=mysql_fetch_array($result))
+								{
+									echo "
+									<li><a href=\"".$row['cate_id']."\"><span>".$row['cate_name']."</span></a>";
+										$sqlsub="SELECT * FROM `ecm_gcategory` WHERE `store_id` =0 AND `parent_id` =".$row['cate_id']." AND `if_show` =1 ORDER BY `sort_order`";
+										$resultsub=mysql_query($sqlsub);
+										if(mysql_num_rows($resultsub)>0)
+										{
+											echo "<ul>";
+											while($rowsub=mysql_fetch_array($resultsub))
+											{
+												echo "<li><a href=\"#\"><span>".$rowsub['cate_name']."</span></a></li>";
+											}
+											echo "</ul>";
+										}
+									echo "</li>";
+								}
+							}
+			
+						?>
+					</ul>
+				</li>
+				<li><a href="{url app=blog}" class="root blog"><img src="{res file=images/icon_forum.png}" align="absmiddle"/>{$lang.forum}</a></li>
+				<li><a href="{url app=blog}" class="root forum"><img src="{res file=images/icon_blog.png}" align="absmiddle"/>{$lang.blog}</a></li>
+			</ul>
+		</div>
+		<div class="find">
+			<form method="GET" action="{url app=search}">
+				<div class="wrapfind">
+					<input type="text" name="keyword" class="text_find" style="border: none;" />
+					<input type="hidden" name="app" value="search" />
+					<input type="submit" name="Submit" value="{$lang.search}" class="btn_find" />
+				</div>
+			</form>
+		</div>
+		<div class="user">
+			<ul id="navmenu">
+				<li class="first"><a href="{url app=adsnews}" class="root">{$lang.adsnews}<img src="{res file=images/icon_arrow_down.gif}" align="absmiddle"/></a>
+					<ul>
+						<?php
+							$sql="SELECT * FROM `ecm_gcategory` WHERE `store_id` =0 AND `parent_id` =0 AND `if_show` =1 ORDER BY `sort_order`";
+							$result=mysql_query($sql);
+							if(mysql_num_rows($result)>0)
+							{
+								while($row=mysql_fetch_array($result))
+								{
+									echo "<li><a href=\"".$row['cate_id']."\"><span>".$row['cate_name']."</span></a></li>";
+								}
+							}
+			
+						?>
+					</ul>
+				</li>
+				<li><a href="{url app=adsnews}" class="root">{$lang.news}<img src="{res file=images/icon_arrow_down.gif}" align="absmiddle"/></a>
+					<ul>
+						<?php
+							$sql="SELECT * FROM `ecm_gcategory` WHERE `store_id` =0 AND `parent_id` =0 AND `if_show` =1 ORDER BY `sort_order`";
+							$result=mysql_query($sql);
+							if(mysql_num_rows($result)>0)
+							{
+								while($row=mysql_fetch_array($result))
+								{
+									echo "<li><a class=\"only\" href=\"".$row['cate_id']."\"><span>".$row['cate_name']."</span></a></li>";
+								}
+							}
+			
+						?>
+					</ul>
+				</li>
+				<!--{if !$visitor.user_id}-->
+				<li>
+					<a href="{url app=member}" class="root account"><img src="{res file=images/icon_member.png}" align="absmiddle"/>{$lang.login}</a>
+					<ul class="boxlogin">
+						<li>
+							<form method="post" class="ui-corner-bl ui-corner-br" id="login_form" action="index.php?app=member&act=login&ret_url=">
+								<div class="line first">
+									<label for="username">{$lang.user_name}:</label>
+									<input id="username" name="user_name" value="" class="txtlogin" title="{$lang.user_name}" tabindex="1" type="text">
+								</div>
+								<div class="line">
+									<label for="password">{$lang.password}:</label>
+									<input id="password" name="password" value="" class="txtlogin" title="{$lang.password}" tabindex="2" type="password">
+								</div>
+								<div class="line">
+									<input id="remember" name="remember_me" value="1" tabindex="3" type="checkbox">
+									<label for="remember" class="lable_remember">{$lang.remember}</label>
+								</div>
+								<div class="line">
+									<input id="btn_login" name="Submit" value="{$lang.login}" tabindex="4" type="submit" class="enter" />
+									<div class="clear"></div>
+								</div>
+								<div class="line">
+									<a href="{url app=find_password}" class="clew" tabindex="5">{$lang.find_password}</a>
+								</div>
+								<input type="hidden" name="ret_url" value="{$ret_url}" />
+							</form>
+						</li>
+					</ul>
+				</li>
+				<li><a href="{url app=member&act=register}" class="root account"><img src="{res file=images/icon_reg.png}" align="absmiddle"/>{$lang.register}</a></li>
+				 <!--{else}-->
+					<li><a href="" class="root">{$visitor.user_name|escape}<img src="{res file=images/icon_arrow_down.gif}" align="absmiddle"/></a>
+						<ul>
+						<?php
+							$sql="SELECT * FROM `ecm_gcategory` WHERE `store_id` =0 AND `parent_id` =0 AND `if_show` =1 ORDER BY `sort_order`";
+							$result=mysql_query($sql);
+							if(mysql_num_rows($result)>0)
+							{
+								while($row=mysql_fetch_array($result))
+								{
+									echo "<li><a class=\"only\" href=\"".$row['cate_id']."\"><span>".$row['cate_name']."</span></a></li>";
+								}
+							}
+			
+						?>
+					</ul>
+					</li>
+					<li><a class="root account" href="{url app=member&act=logout}"><img src="{res file=images/icon_logout.png}" align="absmiddle"/>{$lang.logout}</a></li>
+				<!--{/if}-->
+				<li class="last"><a href="" class="root shopping" title="{$lang.view_shopping_cart} 100 {$lang.kind_of_goods}"><img src="{res file=images/icon_cart.png}" align="absmiddle"/><sup>100</sup></a></li>
+				
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div id="head">
+    <h1 title="{$site_title}"><a href="index.php"><img alt="{$site_title}" src="{$site_logo}" /></a></h1>
+    <div class="menu">
+		<div class="ads_top">
+			<a href=""><img src="data/files/mall/template/advertise.jpg"></a>
+		</div>
+    </div>
+	<div class="clear"></div>
+</div>
+<div id="nav_middle">
+    <div class="nav">
+		<ul class="nav_left">
+			<li><a class="{if $index}link{else}hover{/if}" href="index.php"><span style="padding-left: 0px;"><img  class="icon_home" src="{res file=images/icon_home_gray.png}" align="absmiddle"/></span></a></li>
+			<!--{foreach from=$navs.middle item=nav}-->
+			<li><a class="{if !$index and $nav.link eq $current_url}link{else}hover{/if}" href="{$nav.link}"{if $nav.open_new} target="_blank"{/if}><span>{$nav.title|escape}</span><sup></sup></a></li>
+			<!--{/foreach}-->
+		</ul>
+		<ul class="nav_right">
+			<!--{foreach from=$navs.header item=nav}-->
+            <li class="line"><a href="{$nav.link}"{if $nav.open_new} target="_blank"{/if}><span>{$nav.title|escape}</span></a></li>
+            <!--{/foreach}-->
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+</div>

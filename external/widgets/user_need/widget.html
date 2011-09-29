@@ -1,0 +1,35 @@
+<div class="guide_user">
+  <div class="guide_article">
+    <div class="guide_title"><span>{$widget_data.module_name1}</span></div>
+	<!--{foreach from=$widget_data.articles1 item=article1}-->
+    <div class="guide_item"><a href="{url app=article&act=view&article_id=$article1.article_id}" title="{$article1.title|escape}">{$article1.title|escape}</a></div>
+	<!--{/foreach}-->
+  </div>
+  <div class="guide_article">
+    <div class="guide_title"><span>{$widget_data.module_name2}</span></div>
+	<!--{foreach from=$widget_data.articles2 item=article2}-->
+    <div class="guide_item"><a href="{url app=article&act=view&article_id=$article2.article_id}" title="{$article2.title|escape}">{$article2.title|escape}</a></div>
+	<!--{/foreach}-->
+  </div>
+  <div class="guide_article">
+    <div class="guide_title"><span>{$widget_data.module_name3}</span></div>
+	<!--{foreach from=$widget_data.articles3 item=article3}-->
+    <div class="guide_item"><a href="{url app=article&act=view&article_id=$article3.article_id}" title="{$article3.title|escape}">{$article3.title|escape}</a></div>
+	<!--{/foreach}-->
+  </div>
+  <div class="guide_article">
+   <div class="guide_title"><span>Đối tác</span></div>
+    <div class="guide_item"><a href="{url app=article&act=view&article_id=$article3.article_id}" title="{$article3.title|escape}">Công ty CCN Việt Nam</a></div>
+	<div class="guide_item"><a href="{url app=article&act=view&article_id=$article3.article_id}" title="{$article3.title|escape}">Công ty CCN Việt Nam</a></div>
+	<div class="guide_item"><a href="{url app=article&act=view&article_id=$article3.article_id}" title="{$article3.title|escape}">Công ty CCN Việt Nam</a></div>
+	<div class="guide_item"><a href="{url app=article&act=view&article_id=$article3.article_id}" title="{$article3.title|escape}">Công ty CCN Việt Nam</a></div>
+  </div>
+  <div class="guide_article_last">
+    <div class="guide_title"><span>Network Social</span></div>
+    <div class="share"><a class="blog" href="{url app=article&act=view&article_id=$article4.article_id}" title="{$article4.title|escape}">Blog Chocongnghiep</a></div>
+	<div class="share"><a class="facebook" href="{url app=article&act=view&article_id=$article4.article_id}" title="{$article4.title|escape}">Chocongnghiep on Facebook</a></div>
+	<div class="share"><a class="twitter" href="{url app=article&act=view&article_id=$article4.article_id}" title="{$article4.title|escape}">Chocongnghiep on Twitter</a></div>
+  </div>
+</div>
+
+

@@ -1,0 +1,50 @@
+{include file=member.header.html}
+<div class="content">
+    {include file=member.menu.html}
+    <div id="right"> {include file=member.submenu.html}
+        <div class="wrap">
+            <div class="public table">
+               <table style="font-size:12px">
+                
+                   <tr class="tatr1">
+			            <td align="center"><span ectype="order_by" fieldname="anh">{$lang.img}</span></td>
+			            <td align="center"><span ectype="order_by" fieldname="anh">{$lang.tieude_vip}</span>   </td>
+			            <td align="center"><span ectype="order_by" fieldname="luotxem">{$lang.noidang}</span></td>
+			            <td align="center"><span ectype="order_by" fieldname="luotup">{$lang.ngay}</span></td>
+			            <td align="center"><span ectype="order_by" fieldname="noidang">{$lang.xoatin}</span></td>    
+                      
+                  </tr>
+                <!--{if $quantam}-->
+                 <!--{foreach from=$quantam item=like}-->
+	                   <tr class="tatr2">
+	                       <td align="center"><img src="{$like.picture}" width="50px" height="50px"/></td>  
+	                  
+	                      <td align="center"  valign="top" width="40%"><a style="color: #0060CB;outline: medium none;text-decoration: none;"href="index.php?app=search&act=doctin&amp;id={$like.id}">{$like.title}</a></td>
+	                      
+	                      <td align="center">{$like.address}</td>
+	                          
+	                      <td align="center">{$like.thoigianup|date:d/m/Y H:i}</td>
+	                      
+	                      <td class="tinvip" align="center">
+	                     <a href="index.php?app=qldangtin&act=xoatinqt&amp;id={$like.id}" name="id">{$lang.drop}</a>
+	                      </td>
+
+	                   </tr>
+	               <!--{/foreach}-->
+	             <!--{/if}-->
+                </table>
+              </form>
+            </div> 
+             <!--{if $quantam}-->
+       
+    <div id="dataFuncs">
+         <div class="pageLinks">{include file=page.bottom.html}</div>
+      
+        <div class="pageLinks">
+            {if $dangtin}{include file=page.bottom.html}{/if}
+        </div>
+    </div>
+    <!--{/if}-->
+    <div class="clear"></div>
+</div>
+{include file=footer.html}

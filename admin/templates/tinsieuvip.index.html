@@ -1,0 +1,61 @@
+{include file="header.html"}
+<div class="wrap">
+            <div class="public table">
+              <table style="font-size:12px">
+          
+                      
+                     <!--{if $tinvip}-->
+                   <tr class="tatr1">
+                    <td align="center"><span ectype="order_by" fieldname="tt">{$lang.xoaid}</span></td>
+			            <td align="center"><span ectype="order_by" fieldname="anh">{$lang.img}</span></td>
+			            <td align="center"><span ectype="order_by" fieldname="anh">{$lang.tieude_vip}</span>   </td>
+			            <td align="center"><span ectype="order_by" fieldname="luotxem">{$lang.thoigian_tinsvip}</span></td>
+			            <td align="center"><span ectype="order_by" fieldname="luotup">{$lang.total_time}</span></td>
+			            <td align="center"><span ectype="order_by" fieldname="noidang">{$lang.dangtinsieuvip}</span></td>    
+                      
+                  </tr>
+                  <!--{/if}-->
+                   <!--{foreach from=$tinvip item=vip}-->
+                 <!--{if $tinvip}-->
+               
+	                   <tr class="tatr2">
+	                   <td><a href="index.php?app=qldangtin&act=xoatinsieuvip&amp;id={$vip.id}" class="delete">{$lang.drop}</a></td>                       <!--{if $vip.picture}-->
+	                       <td align="center"><img src="../{$vip.picture}" width="50px" height="50px"/></td>  
+	                      <!--{else}-->
+	                      <td align="center"><img src="../data/files/mall/noimage.gif" width="50px" height="50px"/></td> 
+	                        <!--{/if}-->
+	                      <td align="left"  style="color:#0060CB;font-size: 12px;font-weight:bold" width="30%"><a style="color: #0060CB;outline: medium none;text-decoration: none;">{$vip.title}</a></td>
+	                      
+	                      <td align="center"  style="font-size: 12px">{$vip.timevip|date:d/m/Y H:i}</td>
+	                          
+	                      <td align="center">
+	                        <!--{if $vip.timevip le $timevip}-->
+	                        <span style="font-size:12px; color:red">Tin đăng siêu VIP đã hết hạn</span>
+	                        <!--{else}-->
+	                        thoi gian dang tin
+	                       <!--{/if}-->
+                          </td>
+	                      
+	                      <td class="tinvip" align="center"><a href="index.php?app=plquanly&amp;act=tinsieuvip&amp;id={$vip.id}" class="delete"><img border="0" align="absmiddle" src="../data/files/mall/icon_plus.gif">&nbsp;{$lang.dangtinsvip}</a> </td>
+
+	                   </tr>
+               
+                 <!--{/if}-->
+                 <!--{/foreach}-->
+                 
+                        
+               </table>
+            </div>    
+             <!--{if $tinvip}-->
+       
+    <div id="dataFuncs">
+         <div class="pageLinks">{include file=page.bottom.html}</div>
+      
+        <div class="pageLinks">
+            {if $tinvip}{include file=page.bottom.html}{/if}
+        </div>
+    </div>
+    <!--{/if}-->
+    <div class="clear"></div>
+</div>
+{include file=footer.html}

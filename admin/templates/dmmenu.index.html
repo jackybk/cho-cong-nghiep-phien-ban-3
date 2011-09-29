@@ -1,0 +1,234 @@
+{include file="header.html"}
+
+<div class="wrap">
+          
+              <table style="font-size:12px">
+                <tr>
+                   <td width="802" valign="top" style="padding-left:10px">		
+				<table width="100%" cellspacing="3" cellpadding="3" align="left" style=" background-color:#EEEEEE;height:30px; border:#CCCCCC 1px solid;">	
+	                	<tbody><tr>
+	                      <td><a href="index.php?app=dmmenu">{$lang.danhmuc}</a></td>		
+                            <td>|</td>
+	                      <td><a href="index.php?app=dmchungloai">{$lang.danhmucchungloai}</a></td>		
+	                    </tr>
+                        </tbody></table>	
+	                 </td>
+                </tr>
+                <tr>
+                     <td style="padding-left:10px;" valign="top">
+                        <strong style=" height:40px">Thêm Danh Mục Menu</strong>
+                     </td>
+                </tr>
+                 <tr>
+                   <td width="830px" valign="top" style="padding-left:10px">
+                   <!--{if $edit_dm}-->
+                  <form action="index.php?app=dmmenu&amp;act=edit&amp;id={$edit_dm.id}" method="POST" enctype="multipart/form-data">
+                     <table width="100%" cellspacing="0" cellpadding="3" align="left" style=" background-color:#EEEEEE;height:30px; border:#CCCCCC 1px solid;">
+                           <tr>
+                              <td class="height_row" width="17%">
+                                  <div align="right">{$lang.tennhom}</div>
+                              </td>
+                              <td class="height_row" width="30%">
+                                <div align="left">
+                                    <input type="text" style="width:200px;" maxlength="100" name="name" value="{$edit_dm.category|escape}"/>
+                                </div>
+                              </td>
+                              <td class="height_row" width="15%">
+                                  <div align="left">{$lang.thuocnhom}</div>
+                              </td>
+                              <td class="height_row" width="38%">
+                                  <select  name="group" class="Contact_text" id="categories">
+					               <option value="0">{$lang.select_pls}</option>				     
+					                {html_options options=$scategories selected=$edit_dm.parent}
+					              </select>
+                              </td>
+                           </tr>
+                           <tr>
+                               <td class="height_row" width="17%">
+                                    <div align="right">{$lang.sott}</div>
+                               </td> 
+                               <td class="height_row" colspan="3">
+                                   <select class="input_text" name="order" style="width:100px">
+                                       <!--{if $edit_dm.stt}-->
+                                            <option selected="selected">{$edit_dm.stt}</option>
+                                             <?php
+	                                            for ($i=1;$i<50;$i++)
+	                                            {
+	                                            	echo '<option value="'.$i.'">'.$i.'</option>';
+	                                            }
+                                            ?>
+                                       <!--{else}-->
+                                       <?php
+                                            for ($i=1;$i<50;$i++)
+                                            {
+                                            	echo '<option value="'.$i.'">'.$i.'</option>';
+                                            }
+                                       ?>
+                                       <!--{/if}-->
+                                   </select>
+                               </td>
+                           </tr>
+                           <tr>
+                              <td class="height_row" width="17%">
+                                    <div align="right">&nbsp;</div>
+                               </td> 
+                               <td class="height_row" colspan="3">
+                                   <label>
+                                        <input type="submit" value="Sửa danh mục" name="EditCategory">
+                                   </label>
+                               </td>
+                           </tr>
+                     </table>
+               </form>
+                <!--{else}-->
+                  <form action="index.php?app=dmmenu&amp;act=add" method="POST" enctype="multipart/form-data">
+                     <table width="100%" cellspacing="0" cellpadding="3" align="left" style=" background-color:#EEEEEE;height:30px; border:#CCCCCC 1px solid;">
+                           <tr>
+                              <td class="height_row" width="17%">
+                                  <div align="right">{$lang.tennhom}</div>
+                              </td>
+                              <td class="height_row" width="30%">
+                                <div align="left">
+                                    <input type="text" style="width:200px;" maxlength="100" name="name" />
+                                </div>
+                              </td>
+                              <td class="height_row" width="38%">
+                                 <div align="left">
+                                    <select  name="group" class="Contact_text" id="categories">
+						               <option value="0">{$lang.select_pls}</option>				     
+						                {html_options options=$scategories}
+					              </select>
+                                </div>
+                              </td>
+                           </tr>
+                            
+                           
+                            <tr>
+                              <td class="height_row" width="17%">
+                                  <div align="right">{$lang.sott}</div>
+                              </td>
+                              <td class="height_row" width="30%">
+                                <div align="left">
+                                  <select class="input_text" name="order" style="width:100px">
+                                       <option value="0" >Hãy chọn.....</option>
+                                        <?php
+                                            for ($i=1;$i<=50;$i++)
+                                            {
+                                            	echo '<option value="'.$i.'">'.$i.'</option>';
+                                            }
+                                       ?>
+                                   </select>
+                                </div>
+                              </td>
+                              <td class="height_row" width="38%">
+                                 &nbsp;
+                              </td>
+                           </tr>
+                           <!-- =======================================-->
+                           <tr>
+                              <td class="height_row" width="17%">
+                                    <div align="right">&nbsp;</div>
+                               </td> 
+                               <td class="height_row" colspan="3">
+                                   <label>
+                                        <input type="submit" value="Thêm category" name="EditCategory">
+              
+                                   </label>
+                               </td>
+                           </tr>
+                     </table>
+               </form>
+                <!--{/if}-->
+               </td>
+             </tr>
+             <!-- phần nội dung trang web cá nhân -->
+              <!-- phan noi dung ket noi -->
+                   <div style="float:left; padding-top:50px	">
+                      <table width="810px" valign="top" style="padding-left:10px" bordercolor="#DDDDDD" border="1" bgcolor="#FFFFFF" align="left" bordercolorlight="#CCCCCC" id="my_category" server="{$site_url}/index.php?app=dmchungloai&act=ajax_col">
+                          <tbody>
+                              <tr>
+                                  <td align="center" colspan="6" height="40px"><b>&nbsp; </b></td>
+                              </tr>                 
+                            <tr>
+                                 <td width="" height="27" align="center">
+                                   <input type="checkbox" id="all" class="checkall"/>
+                                </td>
+                                 <td colspan="5">
+                                      &nbsp;<a href="javascript:void(0);" class="delete" ectype="batchbutton" uri="index.php?app=dmmenu&act=drop" name="id" presubmit="confirm('{$lang.drop_confirm}')">{$lang.xoanhom}</a>
+                                      &nbsp;
+                                       <a href="javascript:void(0);" class="delete" ectype="batchbutton" uri="index.php?app=dmmenu&act=annhom" name="id" presubmit="confirm('{$lang.an_nhom}')">{$lang.annhomlai}</a>
+                                       &nbsp;
+                                     <a href="javascript:void(0);" class="delete" ectype="batchbutton" uri="index.php?app=dmmenu&act=showgroup" name="id" presubmit="confirm('{$lang.show_grop}')">{$lang.hiennhom}</a>
+                                </td>
+                           </tr>
+                            <tr height="22px" style="background-color:#EEEEEE">
+                                <td width="" height="27" align="center">
+                                   ID
+                                </td>
+                                <td width="40%" align="center">{$lang.sukien}</td>
+                                <td width="" align="center">{$lang.thuocdm}</td>
+                                <td width="10%" align="center">{$lang.hienthi}</td>
+                                <td width="10%">
+                                    <div align="center">{$lang.trangthai}</div>
+                                </td>
+                                <td width="10%" align="center">{$lang.sua}</td>
+                            </tr>
+                             <!--{if $chungloai}-->
+                            <!--{foreach from=$chungloai item=type}-->
+                            <tr height="22px">
+                           
+                                <td width="33" height="15" bgcolor="#EEEEEE" align="center">
+                                     <input type="checkbox" class="checkitem" value="{$type.id}"/>
+                                </td>
+                                <td width="380px">{$type.category}</td>
+                                <td width="380px" >{$type.parent}</td>
+                                <td width="380px">{$type.stt}</td>
+                                <!--trang thai-->
+                                <td width="53px"><div align="center">
+                                <p class="padding2"><span <!--{if $type.status}-->class="right_ico" status="on"<!--{else}-->class="wrong_ico" status="off"<!--{/if}-->ectype="editobj"></span></p>
+                                </div></td>
+                                <td width="53px" align="center">
+                                    <a href="index.php?app=dmmenu&amp;act=edit&amp;id={$type.id}" class="edit_new">{$lang.sua}</a>
+                                </td>
+                              
+                            </tr>
+                              <!--{/foreach}-->
+                              <!--{else}-->
+                              <tr>
+                                 <td colspan="6" align="center" height="40px">
+                                    Chưa có dữ liệu hiển thị
+                                 </td>
+                              </tr>
+                              <!--{/if}-->
+                            
+                             <tr>
+                                 <td width="" height="27" align="center">
+                                   <input type="checkbox" id="all" class="checkall"/>
+                                </td>
+                                </td>
+                                <td colspan="5">
+                                      &nbsp;<a href="javascript:void(0);" class="delete" ectype="batchbutton" uri="index.php?app=dmmenu&act=drop" name="id" presubmit="confirm('{$lang.drop_confirm}')">{$lang.xoanhom}</a>
+                                      &nbsp;
+                                       <a href="javascript:void(0);" class="delete" ectype="batchbutton" uri="index.php?app=dmmenu&act=annhom" name="id" presubmit="confirm('{$lang.an_nhom}')">{$lang.annhomlai}</a>
+                                       &nbsp;
+                                     <a href="javascript:void(0);" class="delete" ectype="batchbutton" uri="index.php?app=dmmenu&act=showgroup" name="id" presubmit="confirm('{$lang.show_grop}')">{$lang.hiennhom}</a>
+                                </td>
+                           </tr>
+                          </tbody>
+                      </table>
+                   </div>
+             <!-- Kết thúc phần nội dung -->
+              </table>
+            
+  <!--{if $chungloai}-->
+            <div id="dataFuncs">
+		         <div class="pageLinks">{include file=page.bottom.html}</div>
+		      
+		        <div class="pageLinks">
+		            {if $dm_chungloai}{include file=page.bottom.html}{/if}
+		        </div>
+		    </div>
+        <!--{/if}-->
+    <div class="clear"></div>
+</div>
+{include file="footer.html"}

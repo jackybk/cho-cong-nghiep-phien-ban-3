@@ -1,0 +1,44 @@
+<div class="field_item">
+    <p style="display:inline;"> <label>Tên Module 1: (<span>Mô tả: Ba cột hiển thị ba loại các bài viết, thích hợp cho trên trang chủ.</span>)</label>
+    <input type="text" name="module_name1" value="{$options.module_name1}" />
+	 &nbsp;&nbsp;
+   <select name="cate_id1">
+        <option value="0">Hãy chọn...</option>
+        <!-- {foreach from=$acategorys item=acategory} -->
+        <option value="{$acategory.cate_id}" {if $options.cate_id1 eq $acategory.cate_id} selected="selected"{/if}>{$acategory.cate_name|escape}</option>
+        <!-- {/foreach} -->
+    </select></p>
+</div>
+
+<div class="field_item">
+    <p> <label>Tên Module 2:</label>
+    <input type="text" name="module_name2" value="{$options.module_name2}" />
+	 &nbsp;&nbsp;
+   <select name="cate_id2">
+        <option value="0">Hãy chọn...</option>
+        <!-- {foreach from=$acategorys item=acategory} -->
+        <option value="{$acategory.cate_id}" {if $options.cate_id2 eq $acategory.cate_id} selected="selected"{/if}>{$acategory.cate_name|escape}</option>
+        <!-- {/foreach} -->
+    </select></p>
+</div>
+<div class="field_item">
+    <p> <label>Tên Module 3:</label>
+    <input type="text" name="module_name3" value="{$options.module_name3}" />
+	 &nbsp;&nbsp;
+   <select name="cate_id3">
+        <option value="0">Hãy chọn...</option>
+        <!-- {foreach from=$acategorys item=acategory} -->
+        <option value="{$acategory.cate_id}" {if $options.cate_id3 eq $acategory.cate_id} selected="selected"{/if}>{$acategory.cate_name|escape}</option>
+        <!-- {/foreach} -->
+    </select></p>
+</div>
+
+<div class="field_item">
+<label>Số lượng bài viết hiển thị:</label>
+    <p><input type="text"  size="10" name="num1" value="{$options.num1}" /></p>
+</div>
+
+<div class="field_item">
+<label>Chiều dài của tiêu đề bài viết:</label>
+    <p><input type="text"  size="10" name="num2" value="{$options.num2}" /></p>
+</div>

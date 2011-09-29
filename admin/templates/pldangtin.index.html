@@ -1,0 +1,109 @@
+{include file="header.html"}
+<div class="wrap">
+            <div class="public table">
+         <table style="font-size:12px">
+          <tr class="line_bold">
+                        <th class="width1"><input type="checkbox" id="all" class="checkall"/></th>
+                        <th class="align1" colspan="6">
+                            <span class="all"><label for="all">{$lang.checkall}</label></span>
+                            <a href="javascript:void(0);" class="edit" ectype="batchbutton" uri="index.php?app=plquanly&act=edit" name="id">{$lang.edit}</a>
+                            <a href="javascript:void(0);" class="delete" ectype="batchbutton" uri="index.php?app=plquanly&act=drop&amp;picture={$dtin.picture}" name="id" presubmit="confirm('{$lang.drop_confirm}')">{$lang.drop}</a>
+                            <a href="javascript:void(0);" class="edit" ectype="batchbutton" uri="index.php?app=plquanly&amp;act=lammoitin" name="id" presubmit="confirm('{$lang.lammoitin}')">{$lang.lammoi}</a>
+                            <a href="javascript:void(0);" class="edit" ectype="batchbutton" uri="index.php?app=plquanly&amp;act=check_khuyenmai" name="id" presubmit="confirm('{$lang.check_khuyenmai_warning}')">{$lang.check_khuyenmai}</a>
+                            <a href="javascript:void(0);" class="edit" ectype="batchbutton" uri="index.php?app=plquanly&amp;act=debugkhuyenmai" name="id" presubmit="confirm('{$lang.debugkhuyenmai_warning}')">{$lang.debugkhuyenmai}</a>
+                            <!--phan quan ly tin vip va tin sieu vip-->
+                        </th>
+                        <th colspan="8">
+                           &nbsp;
+                        </th>
+           </tr>
+         <!--{if $dangtin}-->
+        <tr class="tatr1">
+            <td align="center"><span fieldname="tt">&nbsp;</span></td>
+            <td align="center"><span fieldname="anh">{$lang.anh}</span></td>
+            <td align="center"><span fieldname="anh">{$lang.brand_name}</span></td>
+            <td align="center"><span fieldname="luotxem">{$lang.vip}</span></td>
+            <td align="center"><span fieldname="luotup">{$lang.sieuvip}</span></td>
+            <td align="center"><span fieldname="noidang">{$lang.khuyenmai}</span></td>    
+            <td align="center"><span fieldname="noidang">{$lang.ngaygui}</span></td>    
+            <td class="center">{$lang.handler}</td>
+        </tr>
+        <!--{/if}-->
+        <!--{foreach from=$dangtin item=dtin}-->
+        <tr class="tatr2">
+            
+            <td align="center" style="width:7%"><input type="checkbox" class="checkitem" value="{$dtin.id}"/></td>  
+             <td align="center" style="width:5%">
+              <img src="../{$dtin.picture}" width="50" height="auto" />
+
+             </td>
+             <td align="center" style="width:40%; padding:3px 3px 3px 3px">
+             <span style="color:blue; font-weight:bold">{$dtin.title}</span>
+                 <br>
+                 <div class="processPostedNews">
+                    <span class="codeOfNews">{$lang.matinraovat}:{$dtin.id}</span>
+                     <a class="tinraovat" title="làm mới tin đăng" href="index.php?app=plquanly&amp;act=refesh&amp;id={$dtin.id}">
+                      <img border="0" align="absmiddle" title="làm mới tin đăng" src="../data/files/mall/icon_uptop.png">
+                     <span style="color:#0470E9">Up lên đầu</span>
+                    </a>
+                    <!--up tu dong-->
+                     <a title="đăng tin tự động" href="index.php?app=plquanly&amp;act=uptin&amp;id={$dtin.id}">
+	                     <img border="0" align="absmiddle" title="tự động đăng tin" alt="tự động đăng tin" src="../data/files/mall/icon_upauto.png">
+	                     <span style="color:#0470E9">Up tự động</span>
+                     </a>
+                 </div>
+                  <div class="processPostedNews">
+                    <a href="index.php?app=plquanly&amp;act=dangtinvip&amp;id={$dtin.id}"><img border="0" align="absmiddle" alt="đăng tin vip" title="đăng tin vip" src="../data/files/mall/icon_plus.gif">{$lang.dangtinvip}</a> &nbsp;
+                    <a href="index.php?app=plquanly&amp;act=tinsieuvip&amp;id={$dtin.id}"><img border="0" align="absmiddle" alt="đăng tin siêu vip" title="đăng tin siêu vip" src="../data/files/mall/icon_plus.gif">{$lang.dangtinsv}</a>
+                </div>
+             </td>
+             <td align="center" style="width:5%"><!--{if $dtin.vip eq 1}-->{$lang.yes}<!--{else}-->{$lang.no}<!--{/if}--></td>
+             <td align="center" style="width:10%"><!--{if $dtin.svip eq 1}-->{$lang.yes}<!--{else}-->{$lang.no}<!--{/if}--></td>
+             <td align="center" style="width:10%"><!--{if $dtin.khuyenmai eq 1}-->{$lang.yes}<!--{else}-->{$lang.no}<!--{/if}--></td>
+             <td align="center" style="width:5%">{$dtin.thoigianup|date:d-m-Y}</td>
+            <td class="center">
+               <a class="edit" href="index.php?app=plquanly&amp;act=edit&amp;id={$dtin.id}">{$lang.edit}</a><a name="drop" class="delete" href="javascript:drop_confirm('{$lang.drop_confirm}', 'index.php?app=plquanly&amp;act=drop&amp;id={$dtin.id}&amp;picture={$dtin.picture}');">{$lang.drop}</a>
+            </td>
+        </tr>
+      <!--{foreachelse}-->
+        <tr class="no_data">
+            <td colspan="7">Không có dữ liệu</td>
+        </tr>
+      
+        <!--{/foreach}-->
+           <!--{if $dangtin}-->
+
+                    <tr class="line_bold line_bold_bottom">
+                        <td colspan="11"> </td>
+                    </tr>
+                    <tr>
+                        <th><input type="checkbox" id="all2" class="checkall"/></th>
+                        <th colspan="10">
+                            <p class="position1">
+                                <span class="all"><label for="all2">{$lang.checkall}</label></span>
+                                <a href="javascript:void(0);" class="edit" ectype="batchbutton" uri="index.php?app=plquanly&amp;act=edit&ret_page={$page_info.curr_page}" name="id">{$lang.edit}</a>
+                                <a href="javascript:void(0);" class="delete" uri="index.php?app=plquanly&act=drop" name="id" presubmit="confirm('{$lang.drop_confirm}')" ectype="batchbutton">{$lang.drop}</a>
+                                 <a href="javascript:void(0);" class="edit" ectype="batchbutton" uri="index.php?app=plquanly&amp;act=lammoitin" name="id" presubmit="confirm('{$lang.lammoitin}')">{$lang.lammoi}</a>
+                                 <a href="javascript:void(0);" class="edit" ectype="batchbutton" uri="index.php?app=plquanly&amp;act=check_khuyenmai" name="id" presubmit="confirm('{$lang.check_khuyenmai_warning}')">{$lang.check_khuyenmai}</a>
+                                  <a href="javascript:void(0);" class="edit" ectype="batchbutton" uri="index.php?app=plquanly&amp;act=debugkhuyenmai" name="id" presubmit="confirm('{$lang.debugkhuyenmai_warning}')">{$lang.debugkhuyenmai}</a>
+                            </p>
+                            
+                        </th>
+                    </tr>
+ 
+                    <!--{/if}-->
+                </table>
+            </div>
+       <!--{if $dangtin}-->
+       
+    <div id="dataFuncs">
+         <div class="pageLinks">{include file=page.bottom.html}</div>
+      
+        <div class="pageLinks">
+            {if $dangtin}{include file=page.bottom.html}{/if}
+        </div>
+    </div>
+    <!--{/if}-->
+    <div class="clear"></div>
+</div>
+{include file="footer.html"}

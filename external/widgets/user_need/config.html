@@ -1,0 +1,68 @@
+<div class="field_item">
+    <p style="display:inline;"> <label>Tên module 1:</label>
+    &nbsp;&nbsp;
+   <select name="cate_id1">
+        <option value="0">Hãy chọn...</option>
+        <!-- {foreach from=$acategorys item=acategory} -->
+        <option value="{$acategory.cate_id}" {if $options.cate_id1 eq $acategory.cate_id} selected="selected"{/if}>{$acategory.cate_name|escape}</option>
+        <!-- {/foreach} -->
+    </select></p>
+</div>
+
+<div class="field_item">
+    <p> <label>Tên module 2:</label>
+    &nbsp;&nbsp;
+   <select name="cate_id2">
+        <option value="0">Hãy chọn...</option>
+        <!-- {foreach from=$acategorys item=acategory} -->
+        <option value="{$acategory.cate_id}" {if $options.cate_id2 eq $acategory.cate_id} selected="selected"{/if}>{$acategory.cate_name|escape}</option>
+        <!-- {/foreach} -->
+    </select></p>
+</div>
+<div class="field_item">
+    <p> <label>Tên module 3:</label>
+    &nbsp;&nbsp;
+   <select name="cate_id3">
+        <option value="0">Hãy chọn...</option>
+        <!-- {foreach from=$acategorys item=acategory} -->
+        <option value="{$acategory.cate_id}" {if $options.cate_id3 eq $acategory.cate_id} selected="selected"{/if}>{$acategory.cate_name|escape}</option>
+        <!-- {/foreach} -->
+    </select></p>
+</div>
+<div class="field_item">
+    <p> <label>Tên module 4:</label>
+    &nbsp;&nbsp;
+   <select name="cate_id4">
+        <option value="0">Hãy chọn...</option>
+        <!-- {foreach from=$acategorys item=acategory} -->
+        <option value="{$acategory.cate_id}" {if $options.cate_id4 eq $acategory.cate_id} selected="selected"{/if}>{$acategory.cate_name|escape}</option>
+        <!-- {/foreach} -->
+    </select></p>
+</div>
+<div class="field_item">
+    <p> <label>Tên module 5:</label>
+    &nbsp;&nbsp;
+   <select name="cate_id5">
+        <option value="0">Hãy chọn...</option>
+        <!-- {foreach from=$acategorys item=acategory} -->
+        <option value="{$acategory.cate_id}" {if $options.cate_id5 eq $acategory.cate_id} selected="selected"{/if}>{$acategory.cate_name|escape}</option>
+        <!-- {/foreach} -->
+    </select></p>
+</div>
+<div class="field_item">
+    <p> <label>Tên module 6:</label>
+    &nbsp;&nbsp;
+   <select name="cate_id6">
+        <option value="0">Hãy chọn...</option>
+        <!-- {foreach from=$acategorys item=acategory} -->
+        <option value="{$acategory.cate_id}" {if $options.cate_id6 eq $acategory.cate_id} selected="selected"{/if}>{$acategory.cate_name|escape}</option>
+        <!-- {/foreach} -->
+    </select></p>
+</div>
+
+
+
+<div class="field_item">
+<label>Chiều dài của tiêu đề bài viết:</label>
+    <p><input type="text"  size="10" name="num1" value="{$options.num1}" /></p>
+</div>

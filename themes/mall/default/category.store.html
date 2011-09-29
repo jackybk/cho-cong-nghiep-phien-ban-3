@@ -1,0 +1,104 @@
+{include file=header.html}
+	<div id="wrapper">
+		{include file=curlocal.html}
+		<div class="content content-wtop">
+			<div class="main-adv" style="margin-bottom: 0px;">
+				<div id="module_middle">
+					<div class="slider-wrapper theme-default">
+						<div class="ribbon"></div>
+						<div id="slider" class="nivoSlider">
+							<a href=""><img src="data/files/mall/template/201108251011061705.png" width="610" height="280"/></a>       
+							<a href=""><img src="data/files/mall/template/201108251011063049.png" width="610" height="280"/></a>
+							<a href=""><img src="data/files/mall/template/201108251011065593.png" width="610" height="280"/></a>
+							<a href=""><img src="data/files/mall/template/201108251011065223.png" width="610" height="280"/></a>
+						</div>
+					</div>
+					<script type="text/javascript" src="includes/libraries/javascript/jquery.slider.js" charset="utf-8"></script>
+					<script type="text/javascript">
+						$(window).load(function() {
+							$('#slider').nivoSlider();
+						});
+					</script>
+				</div>
+				<div class="sidebar-adv">
+					<div class="module-adv">
+						<div class="module-adv-top">
+							<a href=""><img src="data/files/mall/template/adv_top.png"/></a>       
+						</div>
+						<div class="module-adv-bottom">
+							<a href=""><img src="data/files/mall/template/adv_bottom.jpg"/></a>       
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="content content-wbot">
+			<div id="left">
+				<div class="module_sidebar">
+					<div id="module_menu">
+						<div id="molude_menu_body">
+							<ul id="menulist">
+								<!--{foreach from=$scategorys item=scategory}-->
+								<li>
+									<a href="{url app=search&cate_id=$scategory.id}">{$scategory.value|escape}</a>
+									<ul>
+										<!--{foreach from=$scategory.children item=child}-->
+										<li><a href="{url app=search&cate_id=$child.id}">{$child.value|escape}</a></li>
+										<!--{/foreach}-->
+									</ul>
+								</li>
+								<!--{/foreach}-->
+							</ul>
+						</div>
+						<div id="molude_menu_bottom"></div>
+					</div>
+				</div>
+			</div>
+			<div id="right">
+				<div class="module_scategory padding5">
+					<!--{foreach from=$scategorys item=scategory}-->
+					<div class="cs_dir_category">
+						<h6>
+							<a href="{url app=search&cate_id=$scategory.id}">{$scategory.value|escape}</a>	
+						</h6>
+						<a href="">
+							<img src="data/files/store_1583/goods_131/small_201104270728516245.png" alt="{$scategory.value|escape}"/>
+						</a>
+						<ul class="cs_dir_sub">
+							<?php 
+								$i=1;
+								$j=1;
+							?>
+							<!--{foreach from=$scategory.children item=child}-->
+							
+								<?php 
+								if($i<=3)
+								{
+								?>
+								<li><a class="sub_scate" href="{url app=search&cate_id=$child.id}">{$child.value|escape}</a></li>
+								<?
+								}
+								$i++;
+								$j++;
+								?>
+							<!--{/foreach}-->
+								<?php
+								if($j>=4)
+								{
+								?>
+								<li><a class="sub_scate_more" href="{url app=search&cate_id=$scategory.id}">{$lang.more_view}</a></li>
+								<?php
+								}
+								?>
+						</ul>
+					</div>
+					<!--{/foreach}-->
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+		{include file=footer.html}
+	</div>

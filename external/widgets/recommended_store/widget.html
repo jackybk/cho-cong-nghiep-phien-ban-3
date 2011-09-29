@@ -1,0 +1,25 @@
+<div class="module_common">
+    <h2>
+		<div class="module_title1"></div>
+        <div class="module_title2"></div>
+		<b class="shops" title="Giới thiệu cửa hàng">Cửa hàng nổi bật</b>
+		</h2>
+    <div class="wrap bg_wrap">
+        <div class="wrap_child wrap_best_item">
+                <!-- {foreach from=$widget_data item=store} -->
+						<div class="product_vert">
+							<div class="thumb thumb_122">
+								<a href="{url app=store&id=$store.store_id}"><img src="{$store.store_logo}"/></a>
+								<span class="item_price"><span>{$store.goods_count} sản phẩm</span></span>
+								<a class="cropper" href="{url app=store&id=$store.store_id}" title="{$store.store_name|escape}">{$store.store_name|escape}</a>
+							</div>
+							<div class="item_details">
+								<p class="top_detail"><a href="{url app=store&id=$store.store_id}" title="{$store.store_name|escape}">{$store.store_name|escape}</a></p>
+								<p class="sub_detail">bởi <a href="{$store.user_name|escape}" title="{$store.user_name|escape}">{$store.user_name|escape}</a></p>
+							</div>
+							<div class="clear"></div>
+						</div>
+                <!-- {/foreach} -->
+        </div>
+    </div>
+</div>

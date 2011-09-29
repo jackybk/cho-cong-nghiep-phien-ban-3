@@ -1,0 +1,30 @@
+<?php
+return array(
+    'watermark' => 'Watermark',
+    'watermark_text' => 'Watermark Text',
+	'watermark_fontSize' => 'Text Size',
+	'watermark_textColor' => 'Text Color',
+	'watermark_fontSize_des' => 'Có thể thiết lập kích thước font chữ của văn bản đóng dấu, chẳng hạn như: 28',
+	'watermark_textColor_des' => 'Watermark có thể được thiết lập để màu thập lục của văn bản, chẳng hạn như: # FF0000',
+	
+    'watermark_image' => 'Watermark hình ảnh',
+    'watermark_pos' => 'Watermark Vị trí',
+    'watermark_alpha' => 'Watermark minh bạch',
+	'watermark_alpha_des' => 'Minh bạch của các watermark, giá trị tùy chọn của 000-100. Khi thiết lập đến 100, đã được đục.',
+	'watermark_place0' => 'Ngẫu nhiên',
+	'watermark_place1' => 'Còn lại',
+	'watermark_place2' => 'Trên bên phải',
+	'watermark_place3' => 'Trung tâm',
+	'watermark_place4' => 'Còn lại',
+	'watermark_place5' => 'Dưới bên phải',
+	'watermark_type'   =>'Watermark loại',
+	'watermark_type_notice' =>'Watermark chỉ có thể chọn một loại',
+	'watermark_pos_notice' =>'Các vị trí của watermark chỉ có thể chọn một trong',
+	'watermark_alpha_notice'=>'Minh bạch của các watermark, giá trị tùy chọn của 000-100. Khi thiết lập đến 100, đã được đục.',
+	'watermark_basic_info'=>'Liên quan đến cài đặt watermark',
+	'watermark_image_accept_error'  => 'Chỉ chấp nhận tập tin hình ảnh gif, jpg, jpeg, png',
+	'upload_types' => 'Hình ảnh tải lên',
+	'watermark_successed'=>'Watermark thiết lập thành công',
+	'watermark_edit_successed'=>'Watermark chỉnh sửa thành công',
+	);
+?>
