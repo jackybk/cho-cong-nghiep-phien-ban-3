@@ -1,0 +1,93 @@
+{include file=member.header.html}
+<div class="content">
+    {include file=member.menu.html}
+    <div id="right"> {include file=member.submenu.html}
+        <div class="wrap">
+            <div class="public table">
+               <table style="font-size:12px">
+                   <!--{if $need}-->
+	                     <tr>
+	                      <td height="60px" style="color:#0475BF">Tin Nhu cầu</td>
+	                   </tr>
+                       <tr>
+                       <td width="10%">{$lang.all_need}</td>
+                       <!--{foreach from=$need item=nhucau}-->  
+                          <td width="10%" align="left">
+                            {$nhucau.category}
+                          </td>
+                       <!--{/foreach}-->
+                       </tr>
+                    <!--{else}-->
+                     <tr>
+                       <td>
+                        Không có thông tin nhu cầu
+                       </td>
+                    </tr>
+                   <!--{/if}-->
+                  
+                    <!--{if $category}-->
+                   <tr>
+                       <td colspan="3" style="color:#0475BF">Hiển thị danh mục chủng loại</td>
+                   </tr>
+                   
+                   <tr>
+                      <td width="10%">{$lang.all_need}</td>
+                       <!--{foreach from=$category item=chungloai}-->  
+                          <td width="10%" align="left">
+                       
+                            {$chungloai.category}
+                          </td>
+                       <!--{/foreach}-->
+                   </tr>
+                   <!--{/if}-->
+                   <!-- phan lay danh muc nhu cau va chung loai da xong-->
+                  
+                   <!--phan lay tin noi bat-->
+                   <!--{if $vip}-->
+                    <tr>
+                      <td height="60px" style="color:#0475BF">Tin nổi bật</td>
+                   </tr>
+                     <!--{foreach from=$vip item=svip}-->  
+                          <tr>
+                              <td colspan="6"><img src="data/files/mall/suppervip.gif"/>&nbsp;&nbsp;<a  class="noibat" href="index.php?app=search&amp;act=doctin&amp;id={$svip.id}">{$svip.title}</a></td>
+                          </tr>
+                     <!--{/foreach}-->
+                   <!--{/if}-->
+                   
+                   <!--{if $noibat}-->
+                   <tr>
+                       <td colspan="7">Cần đăng tin siêu Vip để tin rao vặt của bạn được hiện thị trong khu vực Nổi bật icon trợ giúp</td>
+                   </tr>
+                   <tr>
+                       <th width="40%" style="color:#FF6666; font-weight:bold">Tin đăng rao vặt</th>
+                       <th width="20%" style="color:#FF6666; font-weight:bold">Tỉnh/TP</th>
+                       <th width="10%" style="color:#FF6666; font-weight:bold">Xem</th>
+                       <th width="20%" style="color:#FF6666; font-weight:bold">Ngày đăng</th>
+                       <th width="30%" style="color:#FF6666; font-weight:bold";>Ảnh</th>
+                   </tr>
+                     <!--{foreach from=$noibat item=tinnoibat}-->  
+                          <tr>
+                              <td width="40%" align="center"><a class="noibat" href="index.php?app=search&amp;act=doctin&amp;id={$tinnoibat.id}">{$tinnoibat.title}</a></td>
+                              <td width="20%" align="center">{$tinnoibat.address}</td>
+                              <td width="10%" align="center">{$tinnoibat.view}</td>
+                              <td width="20%" align="center">{$tinnoibat.thoigianup|date:d-m-Y}</td>
+                              <td width="30%" align="center"><img src="{$tinnoibat.picture}" width="50px" height="50px"/></td>
+                          </tr>
+                     <!--{/foreach}-->
+                   <!--{/if}-->
+                   
+                </table>
+              </form>
+            </div> 
+             <!--{if $noibat}-->
+			    <div id="dataFuncs">
+			         <div class="pageLinks">{include file=page.bottom.html}</div>
+			      
+			        <div class="pageLinks">
+			            {if $noibat}{include file=page.bottom.html}{/if}
+			        </div>
+			    </div>
+            <!--{/if}-->
+    <div class="clear"></div>
+</div>
+{include file=footer.html}

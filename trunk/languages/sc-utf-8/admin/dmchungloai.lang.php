@@ -1,0 +1,27 @@
+<?php
+return array(
+	'dmchungloai' => 'Quản lý Danh mục chủng loại',
+	'danhmuc'=>	'Danh mục Nhu cầu',
+	'danhmucchungloai'=>'Quản lý Danh mục chủng loại',
+	'add_category'=>'Thêm danh mục chủng loại',
+	'tennhom'=>'Tên nhóm',
+	'thuocnhom'=>'Thuộc nhóm',
+    'sott'=>'Số TT',
+    'sukien'=>'Tên nhóm',
+    'thuocdm'=>'Thuộc danh mục',
+    'hienthi'=>'Hiển thị',
+    'trangthai'=>'Trạng thái',
+    'sua'=>'Sửa',
+    'xoanhom'=>'Xóa nhóm này',
+    'annhomlai'=>'Ẩn nhóm này',
+    'hiennhom'=>'Hiện nhóm này',
+    'add_dmchungloai'=>'Thêm danh mục chủng loại thành công',
+    'no_such_brand'=>'Thao tác dữ liệu đầu vào sai. yêu cầu kiểm tra lại',
+    'drop_successed'=>'Thao tác xóa dữ liệu thành công',
+    'edit_ok'=>'Thao tác chỉnh sửa thành công',
+    'an_nhom'=>'Bạn có muốn ẩn nhóm này không',
+    'disable_ok'=>'Thao tác Ẩn nhóm thành công',
+    'showgroup'=>'Thao tác hiện thị nhóm thành công',
+    'show_grop'=>'Bạn có muốn hiển thị nhóm này không',
+);
+?>

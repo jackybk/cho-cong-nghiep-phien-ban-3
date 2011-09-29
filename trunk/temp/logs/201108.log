@@ -1,0 +1,26 @@
+Mon, 22 Aug 2011 16:20:48 +0800	[2]Cannot modify header information - headers already sent by (output started at C:\Program Files\VertrigoServ\www\ecmall22082011\eccore\ecmall.php:1809)	\includes\subdomain.inc.php	21
+Tue, 23 Aug 2011 17:17:28 +0800	[256]MySQL Error[1054]: Unknown column 'views' in 'order clause'
+MySQL Query:SELECT article_id, title, add_time,article.article_id FROM ecm_article article WHERE cate_id=2 AND if_show = 1 ORDER BY views DESC LIMIT 5
+Wrong File:  C:\Program Files\VertrigoServ\www\ecmall22082011\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Tue, 23 Aug 2011 17:18:54 +0800	[256]MySQL Error[1054]: Unknown column 'views' in 'order clause'
+MySQL Query:SELECT article_id, title, add_time,article.article_id FROM ecm_article article WHERE cate_id=2 AND if_show = 1 ORDER BY views DESC LIMIT 5
+Wrong File:  C:\Program Files\VertrigoServ\www\ecmall22082011\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Tue, 23 Aug 2011 17:25:07 +0800	[256]MySQL Error[1054]: Unknown column 'title_image' in 'field list'
+MySQL Query:SELECT article_id,title,title_image,article.article_id FROM ecm_article article WHERE if_show=1 AND store_id=0  AND cate_id  IN ('2')  ORDER BY add_time DESC LIMIT 12
+Wrong File:  C:\Program Files\VertrigoServ\www\ecmall22082011\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Tue, 23 Aug 2011 17:26:26 +0800	[256]MySQL Error[1054]: Unknown column 'recommend' in 'where clause'
+MySQL Query:SELECT article_id, title, add_time,article.article_id FROM ecm_article article WHERE recommend = 1 and if_show = 1 AND cate_id  IN ('2')  ORDER BY add_time DESC LIMIT 5
+Wrong File:  C:\Program Files\VertrigoServ\www\ecmall22082011\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Tue, 23 Aug 2011 17:26:54 +0800	[256]MySQL Error[1054]: Unknown column 'recommend' in 'where clause'
+MySQL Query:SELECT article_id, title, add_time,article.article_id FROM ecm_article article WHERE recommend = 1 and if_show = 1 AND cate_id  IN ('2')  ORDER BY add_time DESC LIMIT 5
+Wrong File:  C:\Program Files\VertrigoServ\www\ecmall22082011\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Tue, 23 Aug 2011 17:30:29 +0800	[2]include_once(C:\Program Files\VertrigoServ\www\ecmall22082011/external/widgets/recommended_artice/main.widget.php) [<a href='function.include-once'>function.include-once</a>]: failed to open stream: No such file or directory	\includes\widget.base.php	273
+Tue, 23 Aug 2011 17:30:35 +0800	[2]include_once(C:\Program Files\VertrigoServ\www\ecmall22082011/external/widgets/recommended_artice/main.widget.php) [<a href='function.include-once'>function.include-once</a>]: failed to open stream: No such file or directory	\includes\widget.base.php	273
+Tue, 23 Aug 2011 18:02:34 +0800	[2]mysql_fetch_array(): supplied argument is not a valid MySQL result resource	\eccore\view\template.php(1494) : eval()'d code	33
+Tue, 23 Aug 2011 18:04:12 +0800	[256]MySQL Error[1054]: Unknown column 'recommend' in 'where clause'
+MySQL Query:SELECT article_id, title, add_time,article.article_id FROM ecm_article article WHERE recommend = 1 and if_show = 1 AND cate_id  IN ('2')  ORDER BY add_time DESC LIMIT 5
+Wrong File:  C:\Program Files\VertrigoServ\www\ecmall22082011\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Tue, 23 Aug 2011 18:04:58 +0800	[256]MySQL Error[1054]: Unknown column 'recommend' in 'where clause'
+MySQL Query:SELECT article_id, title, add_time,article.article_id FROM ecm_article article WHERE recommend = 1 and if_show = 1 AND cate_id  IN ('2')  ORDER BY add_time DESC LIMIT 5
+Wrong File:  C:\Program Files\VertrigoServ\www\ecmall22082011\eccore\model\mysql.php[534]	\eccore\model\mysql.php	286
+Wed, 31 Aug 2011 20:54:45 +0800	[2]mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Can't connect to MySQL server on 'localhost' (10061)	\eccore\model\mysql.php	95

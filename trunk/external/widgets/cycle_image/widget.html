@@ -1,0 +1,21 @@
+<div class="ad_cycle">
+    <div class="line"></div>
+    <!--{if !$widget_data}-->
+    <div style="padding:10px; text-align:center;">Cấu hình</div>
+    <!--{/if}-->
+    <div class="slider-wrapper theme-default">
+		<div class="ribbon"></div>
+        <div id="slider" class="nivoSlider">
+            <!-- {foreach from=$widget_data item=image name=fe_image} --> 
+			<a href="{$image.ad_link_url}"><img src="{$image.ad_image_url}" width="610" height="280"/></a>
+            <!-- {/foreach} -->
+        </div>
+    </div>
+    <div class="number_bg"></div>
+	<script type="text/javascript" src="includes/libraries/javascript/jquery.slider.js" charset="utf-8"></script>
+    <script type="text/javascript">
+		$(window).load(function() {
+			$('#slider').nivoSlider();
+		});
+    </script>
+</div>

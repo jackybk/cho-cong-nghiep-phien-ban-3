@@ -1,0 +1,45 @@
+<style type="text/css">
+	.tablecont{width:100%; float:left; border:1px solid #F8DBC6;}
+	.tabletitle{width:100%; float:left; border-bottom:1px solid #F8DBC6; height:24px; font:12px/24px Times New Roman; }
+	.titlecont{width:33%; float:left;}
+	.titlecont span{width:auto; float:left;text-indent:20px; background:url("{$widget_root}/head.gif") no-repeat 6px center;}
+	.titlecont a{width:auto; padding:7px 5px 0px 5px; float:right; margin-right:10px; text-decoration:none; height:13px;  font:12px Times New Roman; color:#666;}
+	.maintable{width:33%; float:left; border-right:1px dashed #F8DBC6;}
+	.maintable ul{ margin:0px; padding:0px;}
+	.maintable  ul li{ font:12px/20px Times New Roman; text-indent:20px; background:url("{$widget_root}/li.gif") no-repeat 6px center;}
+	.maintable  ul li a{ color:#666666; text-decoration:none;}
+</style>
+<div class="module_common">
+    <div class="wrap">
+        <div class="wrap_child">
+			<div class="tablecont">
+				<div class="tabletitle">
+					<div class="titlecont"><span><strong>{$widget_data.module_name1}</strong></span><a href="{url app=article&cate_id=$widget_data.cate_id1}">Xem thêm..</a></div>
+					<div class="titlecont"><span><strong>{$widget_data.module_name2}</strong></span><a href="{url app=article&cate_id=$widget_data.cate_id2}">Xem thêm..</a></div>
+					<div class="titlecont"><span><strong>{$widget_data.module_name3}</strong></span><a href="{url app=article&cate_id=$widget_data.cate_id3}">Xem thêm..</a></div>
+				</div>
+				<div class="maintable">
+					<ul>
+					<!--{foreach from=$widget_data.articles1 item=article1}-->
+						<li><a href="{url app=article&act=view&article_id=$article1.article_id}" title="{$article1.title|escape}">{$article1.title|escape}</a></li>
+					<!--{/foreach}-->
+					</ul>
+				</div>
+				<div class="maintable">
+					<ul>
+					<!--{foreach from=$widget_data.articles2 item=article2}-->
+						<li><a href="{url app=article&act=view&article_id=$article2.article_id}" title="{$article2.title|escape}">{$article2.title|escape}</a></li>
+					<!--{/foreach}-->
+					</ul>
+				</div>
+				<div class="maintable" style="border:0px;">
+					<ul>
+					<!--{foreach from=$widget_data.articles3 item=article3}-->
+						<li><a href="{url app=article&act=view&article_id=$article3.article_id}" title="{$article3.title|escape}">{$article3.title|escape}</a></li>
+					<!--{/foreach}-->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

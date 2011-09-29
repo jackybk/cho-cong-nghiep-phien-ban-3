@@ -1,0 +1,41 @@
+<?php
+
+return array(
+   'pay_successed'  => 'Xin chúc mừng! Thanh toán thành công!',
+    'order_info_empty'  => 'Không có ',
+    'notify_unauthentic'  => 'Thông báo không đáng tin cậy',
+    'sign_inconsistent'  => 'Chữ ký không phù hợp',
+    'order_inconsistent'  => 'Đơn hàng không phù hợp',
+    'price_inconsistent'  => 'Gái phải trả thanh toán thực tế không phù hợp',
+    'undefined_status'  => 'Trạng thái không xác định',
+    'payment_disabled_by_system'    => 'Hệ thống đã bị vô hiệu về phương thức thanh toán này, xin vui lòng liên hệ với người quản lý cửa hàng,',
+    'payment_disabled'      => 'Phương thức thanh toán này không được kích hoạt, liên hệ với người quản lý cửa hàng.',
+    'order_created_desc'    => 'Đơn hàng của bạn đã được tạo ra thành công, chọn phương thức thanh toán bạn muốn sử dụng để thanh toán.',
+    'member_view_order'     => 'Bạn có thể đặt đơn hàng để thành viên có thể xem.',
+    'online_payment'        => 'Thanh toán trực tuyến',
+    'offline_payment'       => 'Trả tiền mặt',
+    'pay_message_successed' => 'Thông tin thanh toán gửi đi thành công, xin vui lòng chờ người bán xác nhận.',
+    'connecting_pay_gateway'=> 'Đang kết nối cổng thanh toán, xin vui lòng chờ...',
+    'cod_order_notice'      => 'Bạn chọn phương thức thanh toán giao hàng và nhận tiền trực tiếp, xin vui lòng chờ người bán xác nhận.',
+    'close_window'          => 'Đóng cửa sổ',
+    'view_order'            => 'Xem đơn hàng',
+    'post_pay_message'      => 'Gửi thông tin thanh toán',
+    'payment_desc'          => 'Hồ sơ thanh toán',
+    'input_pay_message'     => 'Xin vui lòng nhập các thông tin thanh toán',
+    'input_pay_message_notice' => 'Chẳng hạn như: số giao dịch tài khoản và thời gian',
+    'no_pay_message'        => 'Xin vui lòng nhập các thông tin thanh toán',
+    'order_created'  => 'Đơn đặt hàng được gửi đến thành công!',
+    'select_payment'  => 'Chọn phương thức thanh toán',
+    'confirm_pay'  => 'Xác nhận thanh toán',
+    'confirm_payment' => 'Hoàn thành thanh toán',
+	//add by tianya
+	'toseller_offline_pay_notify' => 'Những lời khuyên thanh toán offline',
+	'toseller_online_pay_notify' => 'Những lời khuyên thanh toán online',
+	'buyer' => 'Người mua',
+	'order_already_pay' => 'Đơn hàng đã thanh toán',
+	'pay_for_order' => 'Thanh toán,',
+	'plesae_answerto_buyer' => 'Vui lòng xác nhận số tiền càng sớm càng tốt để giao hàng ',
+	'order_sn' => 'Số phiếu yêu cầu',
+);
+
+?>

@@ -1,0 +1,90 @@
+{include file="header.html"}
+<div class="wrap">
+            <div class="public table">
+              <table style="font-size:12px">
+             
+              <tr>
+                      <td class="searchSetAutoUP">
+                          <div class="titleSearchAuto">{$lang.tieude_tinup}</div>
+                      </td>
+                   </tr>
+                   
+                   <tr>
+                       <td class="searchSetAutoUP">
+		                   <form action="index.php?app=plquanly&amp;act=keyword" method="POST" enctype="multipart/form-data">               
+								<label for="idNews"><span class="lblIdNews">{$lang.maid}: </span></label>
+								<input type="text" size="10" id="idNews" name="idNews">
+								<input type="submit" name="searchup" value="Tìm kiếm"/>																
+		                   </form>
+	                   </td>
+                   </tr>
+                    <!--{if $timkiem}-->
+                   <tr>
+                       <td valign="top">
+                          <fieldset>
+                                <legend>{$lang.legend}</legend>
+                                <form method="POST" action="index.php?app=plquanly&amp;act=uptin" enctype="multipart/form-data">
+                                <!--{if $timkiem}-->
+                                  <!--{foreach from=$timkiem item=key}-->
+                                  <img border="0" align="absmiddle" title="tự động đăng tin" alt="tự động đăng tin" src="data/files/mall/icon_upauto.png">
+                                  &nbsp;&nbsp;
+                                     <span style="font-weight:bold;"><a style="outline: medium none;text-decoration: none;">{$key.title|escape}</a></span>
+                                  <!--{/foreach}-->
+                                <!--{else}-->
+                                   <span style="font-weight:bold;color:red;">{$lang.no_sea}</span>
+                                <!--{/if}-->
+									<div class="inforGuideUser">
+                                        <div class="buyGuideVip">
+                                          {$lang.uptinauto}
+                                        </div>		
+                                        <div class="labelGuideUP">
+                                        {$lang.auto_up}
+                                           <input type="text" value="1" id="timeUp" name="qty_item">
+                                           <label for="timeUp">lần</label>
+                                           <span>(<=100 lần)</span>
+                                        </div>	
+                                        <div class="labelGuideUP">
+                                        {$lang.moilan_cachnhau}
+                                        <select id="spaceUp" name="spaceUp">
+                                            <option value="180">{$lang.3min}</option>
+                                            <option value="300">5 phút</option>
+                                            <option value="600">10 phút</option>
+                                            <option value="1200">20 phút</option>
+                                            <option value="1800">30 phút</option>
+                                            <option value="3000">50 phút</option>
+                                            <option value="3600">1 giờ</option>
+                                            <option value="5400">1,5 giờ</option>
+                                            <option value="7200">2 giờ</option>
+                                            <option value="10800">3 giờ</option>
+                                            <option value="14400">4 giờ</option>
+                                            <option value="18000">5 giờ</option>
+                                        </select>
+                                        </div>
+                              
+                          </fieldset>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td align="center">
+                            <input id="executeAutoUp" type="submit" name="executeAutoUp" value="Thực hiện">
+                       </td>
+                   </tr>
+                   <!--{/if}-->
+                </table>
+               
+                 
+              </form>
+            </div>
+       <!--{if $dangtin}-->
+       
+    <div id="dataFuncs">
+         <div class="pageLinks">{include file=page.bottom.html}</div>
+      
+        <div class="pageLinks">
+            {if $dangtin}{include file=page.bottom.html}{/if}
+        </div>
+    </div>
+    <!--{/if}-->
+    <div class="clear"></div>
+</div>
+{include file="footer.html"}

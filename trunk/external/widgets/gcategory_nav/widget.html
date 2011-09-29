@@ -1,0 +1,46 @@
+<script type="text/javascript">
+$(function(){
+    $('.mainmenu ul> li').hover(function(){
+        $(this).children('div.submenu').show();
+        $(this).removeClass('menuout').addClass('menuover');
+        var obj = $(this).offset();
+        var child_obj = $(this).children('div.submenu');
+    },function(){
+        $(this).removeClass('menuover').addClass('menuout');
+        $(this).children('div.submenu').hide();
+    });
+    $('.submenu dl').hover(function(){
+        $(this).addClass('subdlover');
+    },function(){
+        $(this).removeClass('subdlover');
+    });
+});
+</script>
+
+<div class="mainmenu" style="min-height:80px; _height:80px; height:{$widget_data.gc_height}px;" >
+	<h2 class="menutitle">
+    	<div class="menutitle_1"></div>
+        <div class="menutitle_2"></div>
+    	<b class="mainmenu_title" title="Danh mục sản phẩm" >Danh mục sản phẩm </b>
+    </h2>
+			<ul class="menu_ul">
+				<!--{foreach from=$widget_data.data item=category}-->
+    			<li class="menuout">
+        		<span><a href="index.php?app=search&cate_id={$category.cate_id}">{$category.cate_name}</a></span>
+        		<div class="submenu">
+			 	<!--{foreach from=$category.children item=second_children}-->
+            	<dl>
+                	<dt><a href="index.php?app=search&cate_id={$second_children.cate_id}">{$second_children.cate_name}</a></dt>
+                    <dd>
+						<!--{foreach from=$second_children.children item=third_children}-->
+                    	<em><a href="index.php?app=search&cate_id={$third_children.cate_id}">{$third_children.cate_name}</a></em>
+                         <!--{/foreach}--> 
+                    </dd>
+                </dl>
+                <!--{/foreach}-->
+            	</div>
+        	</li>		
+       		<!--{/foreach}-->
+		   </ul>
+</div>
+

@@ -1,0 +1,25 @@
+<div class="module_common">
+    <h2>
+		<div class="module_title1"></div>
+        <div class="module_title2"></div>
+		<b class="sales" title="Sản phẩm tiêu biểu">Sản phẩm tiêu biểu</b>
+	</h2>
+    <div class="wrap">
+        <div class="wrap_child" style="width: 268px; height: 233px;">
+            <ul class="list_pic">
+                <!--{foreach from=$widget_data.img_goods_list item=goods}-->
+                <li style="width: 80px; padding: 0px 2px;">
+                    <p><a href="{url app=goods&id=$goods.goods_id}" target="_blank"><img src="{$goods.default_image}" width="70" height="70" /></a></p>
+                    <h3><a href="{url app=goods&id=$goods.goods_id}" target="_blank" title="{$goods.goods_name|escape}">{$goods.goods_name|escape}</a><span style="font-size: 12px;">{$goods.price|price}</span></h3>
+                </li>
+                <!--{/foreach}-->
+            </ul>
+
+            <ul class="list_text">
+                <!--{foreach from=$widget_data.txt_goods_list item=goods}-->
+                <li><a href="{url app=goods&id=$goods.goods_id}" target="_blank" title="{$goods.goods_name|escape}">{$goods.goods_name|escape}</a><span>{$goods.price|price}</span></li>
+                <!--{/foreach}-->
+            </ul>
+        </div>
+    </div>
+</div>

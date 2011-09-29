@@ -1,0 +1,102 @@
+<!--Doan js nay la nguyen nhan khong keo tha duoc-->
+<script type="text/javascript" src="includes/libraries/javascript/jquery.ui/jquery.cookie.js" charset="utf-8"></script><!--Su dung cho tab-->
+<script type="text/javascript" src="includes/libraries/javascript/jquery.ui.core.js" charset="utf-8"></script><!--Su dung cho tab-->
+<script type="text/javascript" src="includes/libraries/javascript/jquery.ui/jquery.ui.widget.js" charset="utf-8"></script><!--Su dung cho tab-->
+<script type="text/javascript" src="includes/libraries/javascript/jquery.ui/jquery.ui.tabs.js" charset="utf-8"></script><!--Su dung cho tab-->
+<link href="themes/mall/default/styles/default/css/jquery.ui.tabs.css" rel="stylesheet" type="text/css" />
+<script>
+	$(function() {
+		$( "#tabs" ).tabs({
+			cookie: {
+				expires: 1
+			}
+		});
+	});
+</script>
+<div class="module_common">
+    <div class="wrap">
+        <div class="wrap_child">
+			<div id="tabs">
+				<ul>
+					<li><a href="#tabs-1">Tin khuyến mại</a></li>
+					<li><a href="#tabs-2" class="item_tab">Sản phẩm mới</a></li>
+					<li><a href="#tabs-3" class="item_tab">Rao vặt mới</a></li>
+					<div class="clear"></div>
+				</ul>
+				<div class="clear"></div>
+				<div id="tabs-1">
+					<div class="list_item_first"></div>
+					
+		    	   <!--{if $khuyenmai}-->
+		    	      <!--{foreach from=$khuyenmai item=news}-->
+		    	       <div class="list_item">
+		    	       <div class="container">
+		    	            <div class="thumb thumb_47">
+								<a href="index.php?app=search&act=doctin&id={$news.id}"><img src="{$news.picture}" alt=""/></a>
+								<a href="index.php?app=search&act=doctin&id={$news.id}" class="cropper">{$news.title}</a>
+							</div>
+							<div class="activity">
+								<a href="index.php?app=search&act=doctin&id={$news.id}">{$news.title}</a>
+							</div>
+		    	           <div class="clear"></div>
+		    	       </div>
+		    	       </div>
+		    	      <!--{/foreach}-->  
+		    	      <!--{else}-->
+		    	      Chưa có dữ liệu
+				   <!--{/if}-->
+					
+					<div class="clear"></div>
+				</div>
+				<div id="tabs-2">
+					<div class="list_item_first"></div>
+					<!--{if $sanpham}-->
+		    	      <!--{foreach from=$sanpham item=store}-->
+		    	       <div class="list_item">
+		    	       <div class="container">
+		    	            <div class="thumb thumb_47">
+								<a href="{url app=gdetail&id=$store.goods_id}"><img src="{$store.default_image}" alt=""/></a>
+								<a href="{url app=gdetail&id=$store.goods_id}" class="cropper">{$store.goods_name}</a>
+							</div>
+							<div class="activity">
+								<a href="{url app=gdetail&id=$store.goods_id}">{$store.goods_name}</a>
+							</div>
+		    	           <div class="clear"></div>
+		    	       </div>
+		    	       </div>
+		    	      <!--{/foreach}-->  
+		    	      <!--{else}-->
+		    	      Chưa có dữ liệu
+				   <!--{/if}-->
+					<div class="clear"></div>
+				</div>
+				<div id="tabs-3">
+					<div class="list_item_first"></div>
+					
+		    	   <!--{if $dangtin}-->
+		    	      <!--{foreach from=$dangtin item=news}-->
+		    	       <div class="list_item">
+		    	       <div class="container">
+		    	            <div class="thumb thumb_47">
+								<a href="index.php?app=search&act=doctin&id={$news.id}"><img src="{$news.picture}" alt=""/></a>
+								<a href="index.php?app=search&act=doctin&id={$news.id}" class="cropper">{$news.title}</a>
+							</div>
+							<div class="activity">
+								<a href="index.php?app=search&act=doctin&id={$news.id}">{$news.title}</a>
+							</div>
+		    	           <div class="clear"></div>
+		    	       </div>
+		    	       </div>
+		    	      <!--{/foreach}-->  
+		    	      <!--{else}-->
+		    	      Chưa có dữ liệu
+				   <!--{/if}-->
+					
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+        </div>
+    </div>
+</div>
+

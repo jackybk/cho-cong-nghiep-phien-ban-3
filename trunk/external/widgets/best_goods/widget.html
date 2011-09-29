@@ -1,0 +1,21 @@
+<div class="module_common">
+    <h2><b class="best_item" title="Sản phẩm mới nhất">Sản phẩm mới nhất</b></h2>
+    <div class="wrap bg_wrap">
+        <div class="wrap_child wrap_best_item">
+                    <!--{foreach from=$sanpham item=goods}-->
+						<div class="product_vert">
+							<div class="thumb thumb_122">
+								<img src="{$goods.default_image}"/>
+								<span class="item_price"><span>{$goods.price|price}</span></span>
+								<a class="cropper" href="{url app=gdetail&id=$goods.goods_id&store=$goods.store_id}" title="{$goods.goods_name|escape}">{$goods.goods_name|escape}</a>
+							</div>
+							<div class="item_details">
+								<p class="top_detail"><a href="{url app=gdetail&id=$goods.goods_id&store=$goods.store_id}" title="{$goods.goods_name|escape}">{$goods.goods_name|escape}</a></p>
+								<p class="sub_detail">bởi <a href="{url app=store&id=$goods.store_id}" title="{$goods.store_name|escape}">{$goods.store_name|escape}</a></p>
+							</div>
+							<div class="clear"></div>
+						</div>
+                    <!--{/foreach}-->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+.shop_list_page .page{float:right;margin:15px 10px 0px 0px;padding-bottom:10px;}
+.down,.down_no,.former,.former_no,.page_link,.page_hover,.nonce{margin-left:5px;}
+.down,.down_no,.former,.former_no{display:block;text-indent:-9999px;width:16px;height:16px;float:left;position:relative;top:3px;}
+.down,.down_no{background:transparent url(../images/button_arrow_right.png) no-repeat 50% 50%;}
+.down:hover,.down_no:hover{background:transparent url(../images/button_arrow_right_hover.png) no-repeat  50% 50%;}
+.former,.former_no{background:transparent url(../images/button_arrow_left.png) no-repeat 50% 50%;}
+.former:hover,.former_no:hover{background:transparent url(../images/button_arrow_left_hover.png) no-repeat 50% 50%;}
+.page_link{color:#666;}
+.page_hover{color:#ff6000;}
+.page_link,.page_hover{font-weight:bold;display:block;float:left;text-decoration:none;padding:4px 5px 0;font-size:12px;}
+.page_link:hover,.page_hover:hover{text-decoration:underline;}
+.page .nonce{border:1px solid #ddd;display:block;float:left;height:17px;text-decoration:none;color:#f50000;line-height:17px;padding:0 5px;font-weight:bold;}
+.stat{float:left;height:20px;line-height:20px;color:#a3a3a3;text-decoration:none;}
+.top_page{float:right;padding-right:15px;}
+.top_page p{float:left;line-height:23px;}

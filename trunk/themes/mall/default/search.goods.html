@@ -1,0 +1,260 @@
+{include file=header.html}
+<script type="text/javascript" src="{lib file=search_goods.js}" charset="utf-8"></script>
+<script type="text/javascript">
+var upimg   = '{res file=images/up.gif}';
+var downimg = '{res file=images/down.gif}';
+imgUping = new Image();
+imgUping.src = upimg;
+</script>
+<div id="wrapper">
+	{include file=curlocal.html}
+	<div class="content content-wrap">
+		<!--{if $goods_list}-->
+		<div id="left">
+			<div class="module_sidebar">
+				<div id="module_menu">
+					<div id="molude_menu_body">
+						<ul id="menulist">
+							<!--{foreach from=$categories item=category name=fe_category}-->
+							<li>
+								<a href="{url app=search&cate_id=$scategory.id}">{$category.cate_name|escape}</a>
+							</li>
+							<!--{/foreach}-->
+						</ul>
+					</div>
+					<div id="molude_menu_bottom"></div>
+				</div>
+				<div id="filters">
+					<h2 class="head"><b>{$lang.by_search}</b></h2>
+					<h4><b>{$lang.by_price}</b></h4>
+					<div class="wrap">
+						<div class="wrap_child">
+							<div class="side_textlist">
+								<ul ectype="ul_price" class="ul_price">
+									<li class="search_price"><input type="text" size="10" maxlength="10"/> - <input type="text" size="10"  maxlength="10"/> <input type="button" id="search_by_price" value="{$lang.submit}" /></li>
+									<li><a href="javascript:void(0);" title="{$row.min} - {$row.max}">1.000.000 - 3.000.000 Đ</a> (100)</li>
+									<li><a href="javascript:void(0);" title="{$row.min} - {$row.max}">3.000.000 - 5.000.000 Đ</a> (123)</li>
+									<li><a href="javascript:void(0);" title="{$row.min} - {$row.max}">5.000.000 - 10.000.000 Đ</a> (213)</li>
+									<li><a href="javascript:void(0);" title="{$row.min} - {$row.max}">10.000.000 - 15.000.000 Đ</a> (223)</li>
+									<li><a href="javascript:void(0);" title="{$row.min} - {$row.max}">15.000.000 - 30.000.000 Đ</a> (678)</li>
+								</ul>
+							</div>
+							<div class="line"></div>
+						</div>
+					</div>
+					<!-- {if !$filters.brand} -->
+					<h4><b>{$lang.by_brand}</b></h4>
+					<div class="wrap">
+						<div class="wrap_child">
+							<div class="side_textlist">
+								<ul ectype="ul_brand" class="ul_brand">
+									<!--{foreach from=$brands item=row name=fe_brand}-->
+									<!-- {if $smarty.foreach.fe_brand.iteration le 10} -->
+									<li><a href="javascript:void(0);" title="{$row.brand}" id="{$row.brand|escape:url}">{$row.brand|escape}</a> ({$row.count})</li>
+									<!-- {else} -->
+									<li style="display:none"><a href="javascript:void(0);" title="{$row.brand}" id="{$row.brand|escape:url}">{$row.brand|escape}</a> ({$row.count})</li>
+									<!-- {/if} -->
+									<!--{/foreach}-->
+								</ul>
+							</div>
+							<!-- {if $brand_count gt 10} -->
+							<div class="more"><input type="button" class="brands_btn" value="{$lang.view_all_brand}" id="show_brand" /></div>
+							<!-- {/if} -->
+							<div class="line"></div>
+						</div>
+					</div>
+					<!-- {/if} -->
+
+					<!-- {if !$filters.region_id} -->
+					<h4><b>{$lang.by_region}</b></h4>
+					<div class="wrap">
+						<div class="wrap_child">
+							<div class="side_textlist">
+								<ul ectype="ul_region" class="ul_region">
+									<!--{foreach from=$regions item=row name=fe_region}-->
+									<!-- {if $smarty.foreach.fe_region.iteration le 10} -->
+									<li><a href="javascript:void(0);" id="{$row.region_id}" title="{$row.region_name|escape}">{$row.region_name|escape}</a> ({$row.count})</li>
+									<!-- {else} -->
+									<li style="display:none"><a href="javascript:void(0);" id="{$row.region_id}" title="{$row.region_name}">{$row.region_name|escape}</a> ({$row.count})</li>
+									<!-- {/if} -->
+									<!--{/foreach}-->
+								</ul>
+							</div>
+							<!-- {if $region_count gt 10} -->
+							<div class="more"><input type="button" class="brands_btn" value="{$lang.view_all_region}" id="show_region" /></div>
+							<!-- {/if} -->
+						</div>
+					</div>
+					<!-- {/if} -->
+				</div>
+			</div>
+		</div>
+		<div id="right">
+			<div class="module_advertise">
+				<div class="wrap_left">
+					<div class="wrap_child">
+						<link href="themes/mall/default/styles/default/css/animation.css" rel="stylesheet" type="text/css" />
+						<div id="ca_banner1" class="ca_banner ca_banner1">
+							<div class="ca_slide ca_bg1">
+								<div class="ca_zone ca_zone1">
+									<div class="ca_wrap ca_wrap1">
+										<a href=""><img src="data/files/mall/template/product1.png" class="ca_shown" alt=""/></a>
+										<img src="data/files/mall/template/product2.png" alt="" style="display:none;"/>
+										<img src="data/files/mall/template/product3.png" alt="" style="display:none;"/>
+										<img src="data/files/mall/template/product4.png" alt="" style="display:none;"/>
+										<img src="data/files/mall/template/product5.png" alt="" style="display:none;"/>
+									</div>
+								</div>
+								<div class="ca_zone ca_zone2">
+									<div class="ca_wrap ca_wrap2">
+										<img src="data/files/mall/template/line1.png" class="ca_shown" alt=""/>
+										<img src="data/files/mall/template/line2.png" alt="" style="display:none;"/>
+									</div>
+								</div>
+								<div class="ca_zone ca_zone3">
+									<div class="ca_wrap ca_wrap3">
+										<img src="data/files/mall/template/title1.png" class="ca_shown" alt="" />
+										<img src="data/files/mall/template/title2.png" alt="" style="display:none;"/>
+										<img src="data/files/mall/template/title3.png" alt="" style="display:none;"/>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- The JavaScript -->
+						<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+						<script type="text/javascript" src="includes/libraries/javascript/jquery.easing.1.3.js"></script>
+						<script src="includes/libraries/javascript/jquery.transform-0.8.0.min.js"></script>
+						<script src="includes/libraries/javascript/jquery.banner.js" type="text/javascript"></script>
+						<script type="text/javascript">
+							$(function() {
+								$('#ca_banner1').banner({
+									steps : [
+										[
+											[{"to" : "2"}, {"effect": "zoomOutRotated-zoomInRotated"}],
+											[{"to" : "1"}, {}],
+											[{"to" : "2"}, {"effect": "slideOutRight-slideInRight"}]
+										],
+										[
+											[{"to" : "3"}, {"effect":"slideOutTop-slideInTop"}],
+											[{"to" : "1"}, {}],
+											[{"to" : "2"}, {}]
+										],
+										[
+											[{"to" : "4"}, {"effect": "zoomOut-zoomIn"}],
+											[{"to" : "2"}, {"effect": "slideOutRight-slideInRight"}],
+											[{"to" : "2"}, {}]
+										],
+										[
+											[{"to" : "5"}, {"effect": "slideOutBottom-slideInTop"}],
+											[{"to" : "2"}, {}],
+											[{"to" : "3"}, {"effect": "zoomOut-zoomIn"}]
+										],
+										[
+											[{"to" : "1"}, {"effect": "slideOutLeft-slideInLeft"}],
+											[{"to" : "1"}, {"effect": "zoomOut-zoomIn"}],
+											[{"to" : "1"}, {"effect": "slideOutRight-slideInRight"}]
+										]
+									],
+									total_steps	: 5,
+									speed : 3000
+								});
+							});
+						</script>
+					</div>
+				</div>
+				<div class="wrap_right">
+					<div class="wrap_child">
+						Chưa có dữ liệus
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="module_filter">
+				<div id="sort_bar">
+					<ul>
+						<li class="first_sort">
+							<div></div>
+							{$lang.sort_order}
+						</li>
+						<li class="sort_by selected">
+							<div></div>
+							<a href="">{$lang.sort_best_selling}</a>
+						</li>
+						<li class="sort_by">
+							<div></div>
+							<a href="">{$lang.sort_newest}</a>
+						</li>
+						<li class="sort_by">
+							<div></div>
+							<a href="">{$lang.sort_promotion}</a>
+						</li>
+						<li class="sort_by">
+							<div></div>
+							<a href="">{$lang.sort_price_discount}</a>
+						</li>
+						<li class="sort_by selected">
+							<div></div>
+							<a href="">{$lang.sort_user_favorite}</a>
+						</li>
+						<li class="last">
+							<div></div>
+							<a href=""></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="shop_con_list">
+				<h2>
+					<div class="h2_wrap">
+						<div class="table_title">
+							<p class="title">{$lang.display_mode}:</p>
+							<p class="list_ico" ectype="display_mode" ecvalue="list" title="{$lang.display_by_list}"></p>
+							<p class="squares_ico" ectype="display_mode" ecvalue="squares" title="{$lang.display_by_item}"></p>
+						</div>
+						<div class="top_page">
+							{include file=page.top.html}
+						</div>
+					</div>
+				</h2>
+				<div class="{$display_mode}" ectype="current_display_mode">
+					<!-- {if $goods_list} -->
+					<div class="list_product">
+						<!--{foreach from=$goods_list item=goods}-->
+						<div class="product_vert">
+							<div class="thumb thumb_177">
+								<img src="{$goods.default_image}"/>
+								<span class="item_price"><span>{$goods.price|price}</span></span>
+								<a class="cropper" href="{url app=gdetail&id=$goods.goods_id}">{$goods.goods_name|escape}</a>
+							</div>
+							<div class="item_details">
+								<p class="top_detail"><a href="{url app=gdetail&id=$goods.goods_id}" title="{$goods.goods_name|escape}">{$goods.goods_name|escape}</a></p>
+								<p class="sub_detail">{$lang.by_object} <a href="{url app=gdetail&id=$goods.goods_id}" title="{$store.user_name|escape}">{$goods.store_name|escape}</a></p>
+								<p class="item_price">{$lang.price}: <strong>{$goods.price|price}</strong></p>
+							</div>
+							<div class="info_more">
+								<p class="right_detail">{$lang.sales}: <strong>{$goods.sales|default:0}</strong> {$lang.unit} </p> 
+								<p class="sub_detail"><a href="{url app=gdetail&act=comments&id=$goods.goods_id}" target="_blank"><strong>{$goods.comments|default:0}</strong> {$lang.comment}</a></p>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<!--{/foreach}-->
+						<div class="clear"></div>
+					</div>
+					<!-- {else} -->
+					<div id="no_results">{$lang.no_records}</div>
+					<!-- {/if} -->
+				</div>
+			</div>
+			<div class="shop_list_page">
+				{include file=page.bottom.html}
+			</div>
+		</div>
+		<!--{else}-->
+		<div class="module_common">
+			<p class="no_info">{$lang.no_records}</p>
+		</div>
+		<!--{/if}-->
+		<div class="clear"></div>
+	</div>
+	{include file=footer.html}
+</div>

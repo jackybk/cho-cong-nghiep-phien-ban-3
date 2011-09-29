@@ -1,0 +1,46 @@
+#module_menu {width:200px; background:url(../images/module_menu.png) no-repeat 0 0; padding-top:35px;}
+#molude_menu_body {background:url(../images/module_menu_body.png) repeat-y;padding-left:10px;}
+#molude_menu_bottom {height:25px; background:url(../images/module_menu_bottom.png) bottom no-repeat;}
+#molude_menu_body #menulist,#molude_menu_body #menulist li,#molude_menu_body #menulist ul {width:180px; list-style-type:none; margin: 0;  border: 0 none;  padding: 0;}
+#molude_menu_body #menulist li {height:27px; background:url(../images/menu_li_bottom.png) bottom repeat-x;display: block !important;display: inline;position: relative;+float:left;}
+#molude_menu_body #menulist a {width:160px; height:20px; border-left:#75c5de 10px solid; color:#ffffff; text-decoration:none; padding:5px 0 0 10px; display:block;}
+#molude_menu_body #menulist a:hover,#molude_menu_body #menulist li:hover a,#molude_menu_body #menulist li.iehover a {border-left:10px solid #75c5de;background:url(../images/module_menu_hover.png) left repeat-y;}
+#molude_menu_body #menulist li:hover li a,#molude_menu_body #menulist li.iehover li a,#molude_menu_body #menulist li:hover li:hover li a,#molude_menu_body #menulist li.iehover li.iehover li a,#molude_menu_body #menulist li:hover li:hover li a,#molude_menu_body #menulist li.iehover li.iehover li a ,#molude_menu_body #menulist li:hover li:hover li:hover li a,#molude_menu_body #menulist li.iehover li.iehover li.iehover li a{background: #1d97bc;}
+#molude_menu_body #menulist li:hover li a:hover,
+#molude_menu_body #menulist li:hover li:hover a,
+#molude_menu_body #menulist li.iehover li a:hover,
+#molude_menu_body #menulist li.iehover li.iehover a ,
+#molude_menu_body #menulist li:hover li:hover li a:hover,
+#molude_menu_body #menulist li:hover li:hover li:hover a,
+#molude_menu_body #menulist li.iehover li.iehover li a:hover,
+#molude_menu_body #menulist li.iehover li.iehover li.iehover a,
+#molude_menu_body #menulist li:hover li:hover li:hover li a:hover,
+#molude_menu_body #menulist li.iehover li.iehover li.iehover li a:hover 
+{
+background:url(../images/module_menu_hover.png) left repeat-y;
+}
+#molude_menu_body #menulist ul,
+#molude_menu_body #menulist ul ul,
+#molude_menu_body #menulist ul ul ul {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 180px;
+  z-index:100;
+}
+#molude_menu_body #menulist li:hover ul ul,
+#molude_menu_body #menulist li:hover ul ul ul,
+#molude_menu_body #menulist li.iehover ul ul,
+#molude_menu_body #menulist li.iehover ul ul ul {
+  display: none;
+}
+
+#molude_menu_body #menulist li:hover ul,
+#molude_menu_body #menulist ul li:hover ul,
+#molude_menu_body #menulist ul ul li:hover ul,
+#molude_menu_body #menulist li.iehover ul,
+#molude_menu_body #menulist ul li.iehover ul,
+#molude_menu_body #menulist ul ul li.iehover ul {
+  display: block;
+  background: #1d97bc;
+}

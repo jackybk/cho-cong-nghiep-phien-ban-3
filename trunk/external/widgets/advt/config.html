@@ -1,0 +1,82 @@
+<script type="text/javascript">
+var _d = DialogManager.get('config_dialog');
+_d.setWidth(350);
+_d.setPosition('center');
+
+function changeTo(style)
+{
+    $(".ecstyle").hide();
+    $("[ectype='" + style + "']").show();
+}
+
+$(function(){
+  $('#start_date').datepicker();
+  $('#end_date').datepicker();
+  changeTo($('#style').val());
+});
+</script>
+<div class="field_item">
+    <label>Ngày bắt đầu quảng cáo: (<span>Tùy chọn, để trống không có ngày bắt đầu, định dạng 2009-10-01</span>)</label>
+    <p><input type="text" id="start_date" name="start_date" value="{$options.start_date}" /></p>
+</div>
+<div class="field_item">
+    <label>Ngày kết thúc quảng cáo: (<span>Tùy chọn, để trống không có ngày kết thúc, định dạng 2009-10-01</span>)</label>
+    <p><input type="text" id="end_date" name="end_date" value="{$options.end_date}" /></p>
+</div>
+<div class="field_item">
+    <label>Hiển thị theo cách:</label>
+    <p><select id="style" name="style" onchange="changeTo(this.value)">
+        <option value="code"{if $options.style eq "code"}selected="selected"{/if}>Mã số</option>
+        <option value="text"{if $options.style eq "text"}selected="selected"{/if}>Văn bản</option>
+        <option value="image"{if $options.style eq "image"}selected="selected"{/if}>Hình ảnh</option>
+        <option value="flash"{if $options.style eq "flash"}selected="selected"{/if}>Flash</option>
+    </select></p>
+</div>
+<div class="field_item ecstyle" ectype="code"{if $options.style neq "code"} style="display:none"{/if}>
+    <label>Mã quảng cáo HTML:</label>
+    <p><textarea name="html" style="width:290px; height:120px;">{$options.html}</textarea></p>
+</div>
+<div class="field_item ecstyle" ectype="text"{if $options.style neq "text"} style="display:none"{/if}>
+    <label>Văn bản: (<span>Bắt buộc</span>)</label>
+    <p><input type="text" name="title" value="{$options.title}" /></p>
+</div>
+<div class="field_item ecstyle" ectype="text"{if $options.style neq "text"} style="display:none"{/if}>
+    <label>Text Link: (<span>Bắt buộc</span>)</label>
+    <p><input type="text" name="link1" value="{$options.link1}" /></p>
+</div>
+<div class="field_item ecstyle" ectype="text"{if $options.style neq "text"} style="display:none"{/if}>
+    <label>Text Size: (<span>Tùy chọn, bạn có thể sử dụng đơn vị pt, px, em</span>)</label>
+    <p><input type="text" name="size" value="{$options.size}" /></p>
+</div>
+<div class="field_item ecstyle" ectype="image"{if $options.style neq "image"} style="display:none"{/if}>
+    <label>Vị trí hình ảnh: (<span>Bắt buộc</span>)</label>
+    <p><input type="text" name="url1" value="{$options.url1}" /></p>
+</div>
+<div class="field_item ecstyle" ectype="image"{if $options.style neq "image"} style="display:none"{/if}>
+    <label>Liên kết hình ảnh: (<span>Bắt buộc</span>)</label>
+    <p><input type="text" name="link2" value="{$options.link2}" /></p>
+</div>
+<div class="field_item ecstyle" ectype="image"{if $options.style neq "image"} style="display:none"{/if}>
+    <label>Hình ảnh rộng: (<span>Tùy chọn</span>)</label>
+    <p><input type="text" name="width1" value="{$options.width1}" /></p>
+</div>
+<div class="field_item ecstyle" ectype="image"{if $options.style neq "image"} style="display:none"{/if}>
+    <label>Hình ảnh cao: (<span>Tùy chọn</span>)</label>
+    <p><input type="text" name="height1" value="{$options.height1}" /></p>
+</div>
+<div class="field_item ecstyle" ectype="image"{if $options.style neq "image"} style="display:none"{/if}>
+    <label>Văn bản thay thế hình ảnh : (<span>Tùy chọn</span>)</label>
+    <p><input type="text" name="alt" value="{$options.alt}" /></p>
+</div>
+<div class="field_item ecstyle" ectype="flash"{if $options.style neq "flash"} style="display:none"{/if}>
+    <label>Địa chỉFlash: (<span>Bắt buộc</span>)</label>
+    <p><input type="text" name="url2" value="{$options.url2}" /></p>
+</div>
+<div class="field_item ecstyle" ectype="flash"{if $options.style neq "flash"} style="display:none"{/if}>
+    <label>Chiều rộng Flash: (<span>Bắt buộc</span>)</label>
+    <p><input type="text" name="width2" value="{$options.width2}" /></p>
+</div>
+<div class="field_item ecstyle" ectype="flash"{if $options.style neq "flash"} style="display:none"{/if}>
+    <label>Chiều cao Flash: (<span>Bắt buộc</span>)</label>
+    <p><input type="text" name="height2" value="{$options.height2}" /></p>
+</div>
