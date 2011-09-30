@@ -1,7 +1,7 @@
 <?php
 return array (
-  'SITE_URL' => 'http://localhost/chocongnghiepv3',
-  'DB_CONFIG' => 'mysql://root:vertrigo@localhost:3306/chocongnghiepv3',
+  'SITE_URL' => 'http://localhost/phienban3',
+  'DB_CONFIG' => 'mysql://root:vertrigo@localhost:3306/28092011',
   'DB_PREFIX' => 'ecm_',
   'LANG' => 'sc-utf-8',
   'COOKIE_DOMAIN' => '',
