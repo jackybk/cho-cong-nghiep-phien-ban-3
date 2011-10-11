@@ -48,7 +48,7 @@
 					</li>
 					<li class="sort_by">
 						<div></div>
-						<a href="">Theo ABC</a>
+						<a href="">sort_letter</a>
 					</li>
 					<li class="last">
 						<div></div>

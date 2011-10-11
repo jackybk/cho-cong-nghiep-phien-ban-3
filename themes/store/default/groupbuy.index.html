@@ -1,10 +1,9 @@
 {include file=header.html}
 {include file=top.html}
 <style>
-.inverse_proportion { float: left; width: 100px; height: 16px; overflow: hidden; background: url({res file=images/inverse_proportion.gif}) no-repeat -{$group.left_per}px center; }
+.inverse_proportion {width: 100px; height: 16px; overflow: hidden; background: url({res file=images/inverse_proportion.gif}) no-repeat -{$group.left_per}px center; }
 .error { display: block; }
 </style>
-
 <script type="text/javascript">
 //<!CDATA[
 $(function(){
@@ -66,10 +65,10 @@ $(function(){
         },
         messages : {
             link_man  : {
-                required   : '{$lang.fill_join_user_info}'
+                required   : '{$lang.fill_join_user_info_name}'
             },
             tel: {
-                checkTel   : '{$lang.fill_join_user_info}'
+                checkTel   : '{$lang.fill_join_user_info_tel}'
             }
         }
     });
@@ -77,173 +76,569 @@ $(function(){
 
 //]]>
 </script>
-<div id="content">
-    <div id="left">
-        {include file=left.html}
-    </div>
-
-    <div id="right">
-
-        <h2 class="ware_title">
-            <span class="main">{$group.group_name|escape}</span><br />
-            <span class="time">{$group.state_desc}</span></h2>
-
-        <div class="ware_info">
-            <div class="ware_pic"><a target="_blank" href="{url app=goods&id=$group.goods_id}"><img src="{$goods.default_image}" /></a></div>
-            <form method="post" id="join_group_form" action="index.php?app=groupbuy&amp;id={$group.group_id}">
-            <div class="ware_text">
-                <div class="info_particular">
-                    <ul>
-                        <li>
-                            <p class="title">{$lang.start_end_time}: </p>
-                            <p class="con">{$group.start_time|date:Y-m-d} {$lang.to} {$group.end_time|date:Y-m-d}</p>
-                        </li>
-                        <li>
-                            <p class="title">{$lang.min_quantity}: </p>
-                            <p class="con">
-                                <span class="quantity">{$group.min_quantity} <span class="ascertain">
-                                {if $group.min_quantity gt $group.quantity}
-                                ({$lang.short_of}{$group.left_quantity})
-                                {else}
-                                ({$lang.joined}{$group.quantity})
-                                {/if}
-                                </span></span>
-                                <span class="inverse_proportion"></span>
-                            </p>
-                        </li>
-                        <!-- {if $group.max_per_user gt 0} -->
-                        <li>
-                            <p class="title">{$lang.max_per_user}: </p>
-                            <p class="con">
-                            {$group.max_per_user}
-                            </p>
-                        </li>
-                        <!-- {/if} -->
-                        <li>
-                            <p class="title">{$lang.group_desc}: </p>
-                            <p class="con">
-                            <!-- {if $group.group_desc} -->
-                            {$group.group_desc}
-                            <!-- {else} -->
-                            {$lang.no_desc}
-                            <!-- {/if} -->
-                            </p>
-                        </li>
-                    </ul>
+<div class="art-content-layout">
+	<div class="art-content-layout-row">
+        <div class="art-layout-cell art-sidebar1">
+			{include file=left.html}
+		</div>
+		<div class="art-layout-cell art-content"><!--art-layout-cell art-content-->
+			<div class="art-post">
+                <div class="art-post-tl"></div>
+                <div class="art-post-tr"></div>
+                <div class="art-post-bl"></div>
+                <div class="art-post-br"></div>
+                <div class="art-post-tc"></div>
+                <div class="art-post-bc"></div>
+                <div class="art-post-cl"></div>
+                <div class="art-post-cr"></div>
+                <div class="art-post-cc"></div>
+                <div class="art-post-body">
+					<div class="art-post-inner art-article">
+						<div class="art-postcontent">
+							<div class="slideshow">
+								<script type="text/javascript" src="includes/libraries/javascript/jquery.slider.js" charset="utf-8"></script>
+								<script type="text/javascript">
+									$(window).load(function() {
+									$('#slider').nivoSlider({
+										effect: 'random',
+										slices: 15,
+										height:220,
+										animSpeed: 500,
+										pauseTime: 5000,
+										startSlide: 0, 
+										directionNav: true,
+										directionNavHide: true,
+										controlNav: true,
+										controlNavThumbs: false,
+										controlNavThumbsFromRel: false,
+										controlNavThumbsSearch: '.jpg',
+										controlNavThumbsReplace: '_thumb.jpg',
+										keyboardNav: true,
+										pauseOnHover: true, 
+										manualAdvance: false, 
+										captionOpacity: 0.8,
+										beforeChange: function() { },
+										afterChange: function() { },
+										slideshowEnd: function() { }
+										});
+									}); 
+								</script>
+								<div class="slider-wrapper theme-default">
+									<div class="ribbon"></div>
+									<div id="slider" class="nivoSlider">
+										<a href="{$image.ad_link_url}"><img src="data/files/mall/template/pic01.jpg"/></a>
+										<a href="{$image.ad_link_url}"><img src="data/files/mall/template/pic02.jpg"/></a>
+										<a href="{$image.ad_link_url}"><img src="data/files/mall/template/pic03.jpg"/></a>
+									</div>
+								</div>
+								<div class="number_bg"></div>
+							</div>
+						</div>
+						<div class="cleared"></div>
+					</div>
+            		<div class="cleared"></div>
                 </div>
-                <div class="info_explain">{$lang.goods_name}: <a target="_blank" href="{url app=goods&id=$goods.goods_id}">{$goods.goods_name}</a></div>
-                <div class="info_table">
-                    <table>
-                        <tr>
-                            <th>{$goods.spec_name|escape}</th>
-                            <th>{$lang.original_price}</th>
-                            <th>{$lang.group_price}</th>
-                            <!-- {if $group.ican.join or $group.ican.join_info} -->
-                            <th>{$lang.buy_quantity}</th>
-                            <!-- {/if} -->
-                        </tr>
-                        <!-- {foreach from=$goods._specs item=spec} -->
-                        <tr>
-                            <td>{$spec.spec}<input ectype="spec" name="spec[]" type="hidden" class="text" value="{$spec.spec}" /><input ectype="spec_id" name="spec_id[]" type="hidden" class="text" value="{$spec.spec_id}" /></td>
-                            <td>{$spec.price|price}</td>
-                            <td>{$spec.group_price|price}</td>
-                            <!-- {if $group.ican.join or $group.ican.join_info} -->
-                            <td>
-                            <!-- {if $group.ican.join} --><input ectype='quantity' name="quantity[]" type="text" class="text" /><!-- {/if} -->
-                            <!-- {if $group.ican.join_info} -->{$spec.my_qty}<!-- {/if} -->
-                            </td>
-                            <!-- {/if} -->
-                        </tr>
-                        <!-- {/foreach} -->
-                    </table>
+            </div>
+			<div class="art-post">
+                <div class="art-post-tl"></div>
+                <div class="art-post-tr"></div>
+                <div class="art-post-bl"></div>
+                <div class="art-post-br"></div>
+                <div class="art-post-tc"></div>
+                <div class="art-post-bc"></div>
+                <div class="art-post-cl"></div>
+                <div class="art-post-cr"></div>
+                <div class="art-post-cc"></div>
+                <div class="art-post-body">
+					<div class="art-post-inner art-article">
+						<div class="art-postcontent">
+							<h2 class="ware_title">
+								<span class="main">{$group.group_name|escape}</span><br />
+								<span class="time">{$group.state_desc}</span>
+							</h2>
+							<div class="ware_info">
+								<div class="ware_pic">
+									<div class="big_pic">
+										<a href="{url app=goods&id=$group.goods_id}" title="{$group.group_name|escape}">
+											<img src="{$goods.default_image}" width="207" height="207" alt="{$goods.goods_name}" />
+										</a>
+									</div>
+								</div>
+								<div class="ware_text">
+									<div class="info_particular">
+										<div class="info_good">
+											<div class="label_info colleft">{$lang.start_end_time}:</div>
+											<div class="result_info colright">{$group.start_time|date:Y-m-d} {$lang.to} {$group.end_time|date:Y-m-d}</div>
+										</div>
+										<div class="info_good">
+											<div class="label_info colleft">{$lang.min_quantity}:</div>
+											<div class="result_info colright">
+												<div class="quantity">{$lang.total_buy}<strong>{$group.min_quantity}{$lang.unit_goods}</strong>{$lang.goods_buy_end}</div>
+												<div class="inverse_proportion"></div>
+												<div class="ascertain">
+													{if $group.min_quantity gt $group.quantity}
+													{else}
+														({$lang.joined}<strong class="joined">{$group.quantity}{$lang.unit_goods}</strong>)
+													{/if}
+												</div>
+											</div>
+										</div>
+										<div class="info_good">
+											<div class="label_info colleft">{$lang.group_desc}:</div>
+											<div class="result_info colright">
+												<!-- {if $group.group_desc} -->
+												{$group.group_desc}
+												<!-- {else} -->
+												{$lang.no_desc}
+												<!-- {/if} -->
+											</div>
+										</div>
+										<div class="info_good">
+											<div class="label_info colleft">{$lang.goods_name}:</div>
+											<div class="result_info colright"><a href="{url app=goods&id=$goods.goods_id}">{$goods.goods_name}</a></div>
+										</div>  
+										<!-- {if $group.max_per_user gt 0} -->
+										<div class="info_good">
+											<div class="label_info colleft">{$lang.max_per_user}:</div>
+											<div class="result_info colright">{$group.max_per_user}{$lang.unit_goods}/{$lang.my_order}</div>
+										</div>
+										<!-- {/if} -->	
+									</div>
+								</div>
+								<div class="cleared"></div>
+								<form method="post" id="join_group_form" action="index.php?app=groupbuy&amp;id={$group.group_id}">
+									<div class="info_table">
+										<table>
+											<tr>
+												<th>{$goods.spec_name|escape}</th>
+												<th>{$lang.original_price}</th>
+												<th>{$lang.group_price}</th>
+												<!-- {if $group.ican.join or $group.ican.join_info} -->
+												<th>{$lang.buy_quantity}</th>
+												<!-- {/if} -->
+											</tr>
+											<!-- {foreach from=$goods._specs item=spec} -->
+											<tr>
+												<td>{$spec.spec}<input ectype="spec" name="spec[]" type="hidden" class="text" value="{$spec.spec}" /><input ectype="spec_id" name="spec_id[]" type="hidden" class="text" value="{$spec.spec_id}" /></td>
+												<td>{$spec.price|price}</td>
+												<td>{$spec.group_price|price}</td>
+												<!-- {if $group.ican.join or $group.ican.join_info} -->
+												<td>
+												<!-- {if $group.ican.join} --><input ectype='quantity' name="quantity[]" type="text" class="text width2" /><input id="join" class="big_btn" type="button" value="{$lang.buy_now}"/><!-- {/if} -->
+												<!-- {if $group.ican.join_info} -->{$spec.my_qty}<!-- {/if} -->
+												</td>
+												<!-- {/if} -->
+											</tr>
+											<!-- {/foreach} -->
+										</table>
+									</div>
+									<div class="info_fun">
+										<div class="align">
+											<!-- {if $group.ican.join_info} -->
+											<span class="txt">{$lang.joined_this_groupbuy}</span>
+											<!-- {/if} -->
+											<!-- {if $group.ican.exit} -->
+											<input name="exit" class="btn" type="submit" value="{$lang.exit_groupbuy}" />
+											<!-- {/if} -->
+											<!-- {if $group.ican.buy} -->
+											<input name="buy" class="btn" onclick="window.location.href='index.php?app=order&goods=groupbuy&group_id={$smarty.get.id}'" type="button" value="{$lang.buy}" />
+											<!-- {/if} -->
+										</div>
+										<!-- {if $group.ican.join} -->
+										<div id="info" class="ware_cen_info_fun" style="display:none">
+											<div class="ware_center_info_fun">
+												<h3>
+													<span class="dialog_title">{$lang.join_user_info}</span>
+													<span class="close_link" title="{$lang.close}" id="close" onmouseover="this.className = 'close_hover'" onmouseout="this.className = 'close_link'"></span>                           
+												</h3>
+												<div class="ware_cen_btn">
+													<p class="float_layer_text">{$lang.join_tips}</p>
+													<div class="line first">
+														<span>{$lang.real_name}:</span><br/>
+														<input name="link_man" type="text" class="text width3" tabindex="1"/>
+													</div>
+													<div class="line">
+														<span>{$lang.tel}:</span><br/>
+														<input name="tel" type="text" class="text width3" tabindex="2"/></p>
+													</div>
+													<div class="line center">
+														<input name="join" type="submit" value="{$lang.join_groupbuy}" tabindex="3"/>
+													</div>
+												</div>
+											</div>
+											<div class="ware_cen_bottom_info_fun"></div>
+										</div>
+										<!-- {/if}  -->
+									</div>
+								</form>
+								<div class="cleared"></div>
+							</div>
+						</div>
+						<div class="cleared"></div>
+					</div>
+            		<div class="cleared"></div>
                 </div>
-                <div class="info_fun">
-
-
-                <div class="align">
-                        <!-- {if $group.ican.join_info} -->
-                        <span class="txt">{$lang.joined_this_groupbuy}</span>
-                        <!-- {/if} -->
-                        <!-- {if $group.ican.exit} -->
-                        <input name="exit" class="btn" type="submit" value="{$lang.exit_groupbuy}" />
-                        <!-- {/if} -->
-                        <!-- {if $group.ican.buy} -->
-                        <input name="buy" class="btn" onclick="window.location.href='index.php?app=order&goods=groupbuy&group_id={$smarty.get.id}'" type="button" value="{$lang.buy}" />
-                        <!-- {/if} -->
+            </div><!--/art-block-->
+			<div class="art-post">
+                <div class="art-post-tl"></div>
+                <div class="art-post-tr"></div>
+                <div class="art-post-bl"></div>
+                <div class="art-post-br"></div>
+                <div class="art-post-tc"></div>
+                <div class="art-post-bc"></div>
+                <div class="art-post-cl"></div>
+                <div class="art-post-cr"></div>
+                <div class="art-post-cc"></div>
+                <div class="art-post-body">
+					<div class="art-post-inner art-article">
+						<h2 class="art-postheader">
+                            {$lang.group_log}
+                        </h2>
+                        <div id="module_goods">
+							<!-- {foreach from=$join_list item=user} -->
+							<div class="product_vert user_profile">
+								<div class="thumb thumb_82">
+									<img src="{$groupbuy.default_image}" alt="{$groupbuy.group_name|escape}"/>
+									<a class="cropper" href="javascript:void(0)" title="{$user.user_name}">{$user.user_name}</a>
+								</div>
+								<div class="item_details">
+									<p class="top_detail"><a href="javascript:void(0)" title="{$user.user_name}">{$user.user_name}</a></p>
+								</div>
+								<div class="cleared"></div>
+							</div>
+							<!-- {foreachelse} -->
+								{$lang.no_groupbuy_log}
+							<!-- {/foreach} -->
+						</div>
+                        <div class="cleared"></div>
+					</div>
+            		<div class="cleared"></div>
                 </div>
-                <!-- {if $group.ican.join} -->
-                    <div class="align">
-                        <input id="join" class="big_btn" type="button" value="" />
+            </div><!--/art-post-->
+			<div class="art-post">
+                <div class="art-post-tl"></div>
+                <div class="art-post-tr"></div>
+                <div class="art-post-bl"></div>
+                <div class="art-post-br"></div>
+                <div class="art-post-tc"></div>
+                <div class="art-post-bc"></div>
+                <div class="art-post-cl"></div>
+                <div class="art-post-cr"></div>
+                <div class="art-post-cc"></div>
+                <div class="art-post-body">
+					<div class="art-post-inner art-article">
+						<h2 class="art-postheader">
+                            {$lang.groupbuy_qa}
+                        </h2>
+                        {include file=qa.html}
+                        <div class="cleared"></div>
+					</div>
+            		<div class="cleared"></div>
+                </div>
+            </div><!--/art-post-->
+		</div>
+		<div class="art-layout-cell art-sidebar2">
+			<div class="art-block">
+                <div class="art-block-body">
+	                <div class="art-blockheader">
+	                    <div class="l"></div>
+	                    <div class="r"></div>
+	                     <div class="t"><a href="{$site_url}/index.php?app=cart" class="mycart">{$lang.shopping_cart}</a></div>
+	                </div>
+	                <div class="art-blockcontent">
+	                    <div class="art-blockcontent-tl"></div>
+	                    <div class="art-blockcontent-tr"></div>
+	                    <div class="art-blockcontent-bl"></div>
+	                    <div class="art-blockcontent-br"></div>
+	                    <div class="art-blockcontent-tc"></div>
+	                    <div class="art-blockcontent-bc"></div>
+	                    <div class="art-blockcontent-cl"></div>
+	                    <div class="art-blockcontent-cr"></div>
+	                    <div class="art-blockcontent-cc"></div>
+	                    <div class="art-blockcontent-body">
+							<!-- block-content -->
+                            <div class="no_result">{$lang.no_item_good}</div>
+							<!--{foreach from=$new_goods item=ngoods}-->
+							<div class="list_item">
+								<div class="container">
+									<div class="thumb thumb_57">
+										<img src="{$rgoods.default_image}" alt="{$ngoods.goods_name|escape}"/>
+										<a href="{url app=goods&id=$ngoods.goods_id}" class="cropper">{$ngoods.goods_name|escape}</a>
+									</div>
+									<div class="activity">
+										<a href="{url app=goods&id=$ngoods.goods_id}">{$ngoods.goods_name|escape}</a>
+										<div class="price">{$rgoods.price|price}</div>
+									</div>
+								   <div class="cleared"></div>
+								</div>
+							</div>
+							<!--{/foreach}-->
+	        	            <div class="cleared"></div>
+	                    </div>
+	                </div>
+            		<div class="cleared"></div>
+                </div><!--/art-block-->
+            </div><!--/art-block-->
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">{$lang.support_online}</div>
                     </div>
-                    <div id="info" class="ware_cen_info_fun" style="display:none">
-                        <div class="ware_center_info_fun">
-                            <h1>
-                                <span class="dialog_title">{$lang.join_user_info}</span>
-                                <span class="close_link" title="{$lang.close}" id="close" onmouseover="this.className = 'close_hover'" onmouseout="this.className = 'close_link'"></span>                            </h1>
-                            <div class="ware_cen_btn">
-
-                                <p class="float_layer_text">{$lang.join_tips}</p>
-                                <ul class="fill_in_fun">
-                                    <li>
-                                        <p class="title">{$lang.real_name}: </p>
-                                        <p><input name="link_man" type="text" class="text" /></p>
-                                    </li>
-                                    <li>
-                                        <p class="title">{$lang.tel}: </p>
-                                        <p><input name="tel" type="text" class="text" /></p>
-                                    </li>
-                                    <li class="btn_fun"><input name="join" type="submit" value="{$lang.join_groupbuy}" /></li>
-                                </ul>
-                            </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							<!-- block-content -->
+							<div class="support-online">
+								<ul class="support-list-item">
+									<li><a href='ymsgr:sendIM?{$lang.nick1}'><img src="http://opi.yahoo.com/online?u={$lang.nick1}&m=g&t=5"/>{$lang.nick1_title}</a></li>
+									<li><a href='ymsgr:sendIM?{$lang.nick1}'><img src="http://opi.yahoo.com/online?u={$lang.nick2}&m=g&t=5"/>{$lang.nick2_title}</a></li>
+									<li><a href='ymsgr:sendIM?{$lang.nick1}'><img src="http://opi.yahoo.com/online?u={$lang.nick3}&m=g&t=5"/>{$lang.nick3_title}</a></li>
+									<li><a href="skype:{$lang.skype_all}?chat"><img src="http://mystatus.skype.com/smallicon/{$lang.skype_all}"  alt="{$lang.skype_all}" />{$lang.support_all}</a></li>
+								</ul>
+							</div>
+							<!-- /block-content -->
+                    		<div class="cleared"></div>
                         </div>
-                        <div class="ware_cen_bottom_info_fun"></div>
                     </div>
-                    <!-- {/if}  -->
+            		<div class="cleared"></div>
+                </div>
+            </div><!--/art-block-->
+			<!--{if !$visitor.user_id}-->
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">{$lang.login_store}</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							
+							<form method="post" id="login_form" action="index.php?app=member&act=login&ret_url=">
+								<div class="line first">
+									<label for="username">{$lang.user_name}:</label>
+									<input id="username" name="user_name" value="" class="width3 text" title="{$lang.user_name}" tabindex="1" type="text">
+								</div>
+								<div class="line">
+									<label for="password">{$lang.password}:</label>
+									<input id="password" name="password" value="" class="width3 text" title="{$lang.password}" tabindex="2" type="password">
+								</div>
+								<div class="line">
+									<input id="remember" name="remember_me" value="1" tabindex="3" type="checkbox">
+									<label for="remember" class="lable_remember">{$lang.remember}</label>
+								</div>
+								<div class="line" style="text-align:center;">
+									<input id="btn_login" name="Submit" value="{$lang.login}" tabindex="4" type="submit" class="enter" />
+									<div class="cleared"></div>
+								</div>
+								<div class="line">
+									<a href="{url app=find_password}" class="clew" tabindex="5">{$lang.find_password}</a>
+								</div>
+								<input type="hidden" name="ret_url" value="{$ret_url}" />
+							</form>
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div><!--/art-block-->
+			<!--{else}-->
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">{$lang.hello}, <a href="{url app=member}">{$visitor.user_name|escape}</a></div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							<div class="info_user">
+								{$visitor.user_name|escape}
+							</div>
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div><!--/art-block-->
+			<!--{/if}-->
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">{$lang.new_news}</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							<!--{foreach from=$new_goods item=ngoods}-->
+							<div class="list_item">
+								<div class="container">
+									<div class="thumb thumb_57">
+										<img src="{$rgoods.default_image}" alt="{$ngoods.goods_name|escape}"/>
+										<a href="{url app=goods&id=$ngoods.goods_id}" class="cropper">{$ngoods.goods_name|escape}</a>
+									</div>
+									<div class="activity">
+										<a href="{url app=goods&id=$ngoods.goods_id}">{$ngoods.goods_name|escape}</a>
+									</div>
+								   <div class="cleared"></div>
+								</div>
+							</div>
+							<!--{/foreach}-->
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div><!--/art-block-->
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">{$lang.answer_question_new}</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							<!--{foreach from=$new_goods item=ngoods}-->
+							<div class="list_item">
+								<div class="container">
+									<div class="thumb thumb_57">
+										<img src="{$rgoods.default_image}" alt="{$ngoods.goods_name|escape}"/>
+										<a href="{url app=goods&id=$ngoods.goods_id}" class="cropper">{$ngoods.goods_name|escape}</a>
+									</div>
+									<div class="activity">
+										<a href="{url app=goods&id=$ngoods.goods_id}">{$ngoods.goods_name|escape}</a>
+									</div>
+								   <div class="cleared"></div>
+								</div>
+							</div>
+							<!--{/foreach}-->
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div><!--/art-block-->
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">{$lang.ads_news}</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							<!--{foreach from=$new_goods item=ngoods}-->
+							<div class="list_item">
+								<div class="container">
+									<div class="thumb thumb_57">
+										<img src="{$rgoods.default_image}" alt="{$ngoods.goods_name|escape}"/>
+										<a href="{url app=goods&id=$ngoods.goods_id}" class="cropper">{$ngoods.goods_name|escape}</a>
+									</div>
+									<div class="activity">
+										<a href="{url app=goods&id=$ngoods.goods_id}">{$ngoods.goods_name|escape}</a>
+									</div>
+								   <div class="cleared"></div>
+								</div>
+							</div>
+							<!--{/foreach}-->
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div><!--/art-block-->
+            <div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">{$lang.contact_store}</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+                            <div>
+                                <img src="{res file=images/contact.jpg}" alt="an image" style="margin: 0 auto;display:block;width:95%" />
+                            <br />
+                            <b>{$store.store_name|escape}.</b><br />
+                            {$store.address|escape}<br />
+                            {$lang.email}: <a href="mailto:info@company.com">info@company.com</a><br />
+                            <br />
+                            {$lang.tel}: {$store.tel|escape} <br />
+                            {$lang.fax}: {$store.tel|escape}
+                            </div>
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
                 </div>
             </div>
-            </form>
-            <div class="clear"></div>
-
-        </div>
-
-        <div class="module_special">
-            <h2 class="common_title veins2">
-                <div class="ornament1"></div>
-                <div class="ornament2"></div>
-                <span class="ico1"><span class="ico2">{$lang.group_log}</span></span>
-            </h2>
-            <div class="wrap">
-                <div class="wrap_child">
-                    <ul class="buy_name">
-                        <!-- {foreach from=$join_list item=user} -->
-                        <li>{$user.user_name}</li>
-                        <!-- {foreachelse} -->
-                        <li>{$lang.no_groupbuy_log}</li>
-                        <!-- {/foreach} -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="module_currency">
-            <h2 class="common_title veins1">
-                <div class="ornament1"></div>
-                <div class="ornament2"></div>
-                <span class="ico1"><span class="ico2">{$lang.groupbuy_qa}</span></span>
-            </h2>
-            <div class="wrap">
-                <div class="wrap_child">
-                    {include file=qa.html}
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-
-
-
-    </div>
-
-    <div class="clear"></div>
-</div>
-
+		</div>
+	</div><!--/art-content-layout-row-->
+</div><!--/art-content-layout-->
 {include file=footer.html}

@@ -90,7 +90,7 @@ function drop_image(file_id)
                 <p><?php echo $this->html_radios(array('options'=>$this->_var['yes_or_no'],'checked'=>$this->_var['navigation']['if_show'],'name'=>'if_show')); ?></p>
             </li>
              <li>
-                <h4>Sắp xếp theo:</h4>
+                <h4>Thứ tự hiển thị:</h4>
                 <p><input type="text" class="text width_short" name="sort_order" value="<?php echo $this->_var['navigation']['sort_order']; ?>"/></p>
             </li>
 

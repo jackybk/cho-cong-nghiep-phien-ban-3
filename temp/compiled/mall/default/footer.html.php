@@ -1,7 +1,7 @@
 		<div id="footer">
 			<div class="infomation">
 				<div>Copyright 2010 Chocongnghiep.com.vn All rights reserved </div><span class="uptop"><a href="#top" title="Lên trên đầu trang web"><img src="<?php echo $this->res_base . "/" . 'images/icon_arrow_up.png'; ?>" align="absmiddle"/>Lên trên</a></span>
-				<div>Đơn vị chủ quản: Công ty TNHH Quảng cáo và Dịch vụ thương mại CCN - Tầng 2, 32B Lạc Trung, Hai Bà Trưng, Hà Nội - Điện thoại/Fax: (04) 3987 622</div>
+				<div>Đơn vị chủ quản: unit - Tầng 2, 32B Lạc Trung, Hai Bà Trưng, Hà Nội - Điện thoại/Fax: (04) 3987 622</div>
 				<div>Giấy xác nhận cung cấp dịch vụ mạng xã hội trực tuyến số 0104862423 - TTĐT Cục Quản lý phát thanh, truyền hình và thông tin điện tử cấp ngày 19/11/2010</div>
 			</div>
 		</div>
@@ -22,9 +22,9 @@
 					<div class="support-colright">
 						<div class="support-title">Hỗ trợ người dùng</div>
 						<ul class="support-list-item">
-							<li><a href='ymsgr:sendIM?nick1'><img src="http://opi.yahoo.com/online?u=nick1&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
-							<li><a href='ymsgr:sendIM?nick1'><img src="http://opi.yahoo.com/online?u=nick1&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
-							<li><a href='ymsgr:sendIM?nick1'><img src="http://opi.yahoo.com/online?u=nick1&m=g&t=5"style="border: none;" width="14" height="14"/>0904 391 603</a></li>
+							<li><a href='ymsgr:sendIM?khoanhkhac_112'><img src="http://opi.yahoo.com/online?u=khoanhkhac_112&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
+							<li><a href='ymsgr:sendIM?khoanhkhac_112'><img src="http://opi.yahoo.com/online?u=khoanhkhac_112&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
+							<li><a href='ymsgr:sendIM?khoanhkhac_112'><img src="http://opi.yahoo.com/online?u=khoanhkhac_112&m=g&t=5"style="border: none;" width="14" height="14"/>0904 391 603</a></li>
 							<li><img src="<?php echo $this->res_base . "/" . 'images/icon_telephone.png'; ?>" align="absmiddle"/>0904 391 603</a></li>
 							<li><img src="<?php echo $this->res_base . "/" . 'images/icon_telephone.png'; ?>" align="absmiddle"/>01678  27 00 27</li>
 						</ul>
@@ -33,21 +33,21 @@
 					<div class="support-colleft">
 						<div class="support-title">Hỗ trợ mở cửa hàng</div>
 						<ul class="support-list-item">
-							<li><a href='ymsgr:sendIM?nick1'><img src="http://opi.yahoo.com/online?u=nick1&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
-							<li><a href='ymsgr:sendIM?nick1'><img src="http://opi.yahoo.com/online?u=nick1&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
-							<li><a href='ymsgr:sendIM?nick1'><img src="<?php echo $this->res_base . "/" . 'images/icon_mobile.png'; ?>" align="absmiddle"/>user1</a></li>
-							<li><a href='ymsgr:sendIM?nick1'><img src="http://opi.yahoo.com/online?u=nick1&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
-							<li><a href='ymsgr:sendIM?nick1'><img src="http://opi.yahoo.com/online?u=nick1&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
+							<li><a href='ymsgr:sendIM?khoanhkhac_112'><img src="http://opi.yahoo.com/online?u=khoanhkhac_112&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
+							<li><a href='ymsgr:sendIM?khoanhkhac_112'><img src="http://opi.yahoo.com/online?u=khoanhkhac_112&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
+							<li><a href='ymsgr:sendIM?khoanhkhac_112'><img src="<?php echo $this->res_base . "/" . 'images/icon_mobile.png'; ?>" align="absmiddle"/>user1</a></li>
+							<li><a href='ymsgr:sendIM?khoanhkhac_112'><img src="http://opi.yahoo.com/online?u=khoanhkhac_112&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
+							<li><a href='ymsgr:sendIM?khoanhkhac_112'><img src="http://opi.yahoo.com/online?u=khoanhkhac_112&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
 						</ul>
 					</div>
 					<div class="support-colright">
 						<div class="support-title">Quảng cáo và rao vặt</div>
 						<ul class="support-list-item">
-							<li><a href='ymsgr:sendIM?nick1'><img src="http://opi.yahoo.com/online?u=nick1&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
-							<li><a href='ymsgr:sendIM?nick1'><img src="http://opi.yahoo.com/online?u=nick1&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
-							<li><a href='ymsgr:sendIM?nick1'><img src="http://opi.yahoo.com/online?u=nick1&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
-							<li><a href='ymsgr:sendIM?nick1'><img src="http://opi.yahoo.com/online?u=nick1&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
-							<li><a href='ymsgr:sendIM?nick1'><img src="<?php echo $this->res_base . "/" . 'images/icon_mobile.png'; ?>" align="absmiddle"/>01687 27 00 27</a></li>
+							<li><a href='ymsgr:sendIM?khoanhkhac_112'><img src="http://opi.yahoo.com/online?u=khoanhkhac_112&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
+							<li><a href='ymsgr:sendIM?khoanhkhac_112'><img src="http://opi.yahoo.com/online?u=khoanhkhac_112&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
+							<li><a href='ymsgr:sendIM?khoanhkhac_112'><img src="http://opi.yahoo.com/online?u=khoanhkhac_112&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
+							<li><a href='ymsgr:sendIM?khoanhkhac_112'><img src="http://opi.yahoo.com/online?u=khoanhkhac_112&m=g&t=5"style="border: none;" width="14" height="14"/>user1</a></li>
+							<li><a href='ymsgr:sendIM?khoanhkhac_112'><img src="<?php echo $this->res_base . "/" . 'images/icon_mobile.png'; ?>" align="absmiddle"/>01687 27 00 27</a></li>
 						</ul>
 					</div>
 					<div class="clear"></div>
@@ -101,6 +101,5 @@
 				onlineout();}
 			);
 			</script>
-			
 	</body>
 </html>

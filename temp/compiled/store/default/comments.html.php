@@ -4,7 +4,7 @@
 ?>
     <dl class="<?php echo $this->cycle(array('values'=>'message_text,message_text bg1')); ?>">
         <dt>
-            <span class="light"><?php if ($this->_var['comment']['anonymous']): ?>***<?php else: ?><?php echo htmlspecialchars($this->_var['comment']['buyer_name']); ?><?php endif; ?> (<?php echo local_date("Y-m-d H:i:s",$this->_var['comment']['evaluation_time']); ?>)</span>
+            <span class="light"><?php if ($this->_var['comment']['anonymous']): ?>***<?php else: ?><?php echo htmlspecialchars($this->_var['comment']['buyer_name']); ?><?php endif; ?> (<?php echo local_date("d-m-Y H:i:s",$this->_var['comment']['evaluation_time']); ?>)</span>
         </dt>
         <dd><?php echo nl2br(htmlspecialchars($this->_var['comment']['comment'])); ?></dd>
         <div class="beat">
@@ -19,7 +19,7 @@
     </dl>
     <?php endforeach; else: ?>
     <dl class="message_text">
-        <dt><span class="light">Không có hồ sơ</span></dt>
+        <dt><span class="light">Chưa có nhật xét về sản phẩm.</span></dt>
     </dl>
     <?php endif; unset($_from); ?><?php $this->pop_vars();; ?>
 </div>

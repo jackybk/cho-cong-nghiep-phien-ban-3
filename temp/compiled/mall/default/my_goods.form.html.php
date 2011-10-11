@@ -280,7 +280,7 @@ $(function(){
                                         <div class="arrange"><input type="text" name="brand" value="<?php echo htmlspecialchars($this->_var['goods']['brand']); ?>" class="text width_normal" /></div>
                                     </li>
                                     <li>
-                                        <h2>tags: </h2>
+                                        <h2>Tags: </h2>
                                         <div class="arrange"><input type="text" name="tags" value="<?php echo htmlspecialchars($this->_var['goods']['tags']); ?>" class="text width_normal" />
                                             <span class="gray">Nhiều từ có thể cách nhau dấu ","</span></div>
                                     </li>

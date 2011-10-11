@@ -30,16 +30,16 @@
 		    	   <!--{if $khuyenmai}-->
 		    	      <!--{foreach from=$khuyenmai item=news}-->
 		    	       <div class="list_item">
-		    	       <div class="container">
-		    	            <div class="thumb thumb_47">
-								<a href="index.php?app=search&act=doctin&id={$news.id}"><img src="{$news.picture}" alt=""/></a>
-								<a href="index.php?app=search&act=doctin&id={$news.id}" class="cropper">{$news.title}</a>
-							</div>
-							<div class="activity">
-								<a href="index.php?app=search&act=doctin&id={$news.id}">{$news.title}</a>
-							</div>
-		    	           <div class="clear"></div>
-		    	       </div>
+						   <div class="container">
+								<div class="thumb thumb_47">
+									<a href="index.php?app=search&act=doctin&id={$news.id}"><img src="{$news.picture}" alt=""/></a>
+									<a href="index.php?app=search&act=doctin&id={$news.id}" class="cropper">{$news.title}</a>
+								</div>
+								<div class="activity">
+									<a href="index.php?app=search&act=doctin&id={$news.id}">{$news.title}</a>
+								</div>
+							   <div class="clear"></div>
+						   </div>
 		    	       </div>
 		    	      <!--{/foreach}-->  
 		    	      <!--{else}-->

@@ -84,9 +84,9 @@ $(function(){
             <?php endif; ?>
             <tr>
                 <th class="paddingT15">
-                    Link:</th>
+                    Đường dẫn:</th>
                 <td class="paddingT15 wordSpacing5">
-                    <textarea class="infoTableInput" id="link" type="text" name="link"><?php echo htmlspecialchars($this->_var['share']['link']); ?></textarea><br /><label class="field_notice">?{$title}: Tiêu đề chi sẻ,{$link}: Địa chỉ chia sẻ.Ví dụ：http://www.kaixin001.com/repaste/share.php?rtitle={$title}&rurl={$link}</label>
+                    <textarea class="infoTableInput" id="link" type="text" name="link"><?php echo htmlspecialchars($this->_var['share']['link']); ?></textarea><br /><label class="field_notice">Ví dụ：http://www.kaixin001.com/repaste/share.php?rtitle={$title}&rurl={$link}</label>
                 </td>
             </tr>
             <tr>

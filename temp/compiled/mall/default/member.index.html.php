@@ -16,7 +16,7 @@
                         </h3>
                         <table class="width6">
                             <tr>
-                                <td>Đăng nhập lần cuối: <?php echo local_date("Y-m-d H:i:s",$this->_var['user']['last_login']); ?></td>
+                                <td>Đăng nhập lần cuối: <?php echo local_date("d-m-Y H:i:s",$this->_var['user']['last_login']); ?></td>
                                 <td>
                                 <?php if ($this->_var['store']): ?>
                                 Uy tín người bán: <a href="<?php echo url('app=store&act=credit&id=' . $this->_var['store']['store_id']. ''); ?>" target="_blank"><?php echo $this->_var['store']['credit_value']; ?></a><?php if ($this->_var['store']['credit_value'] >= 0): ?> <img src="<?php echo $this->_var['store']['credit_image']; ?>" /> <?php endif; ?>

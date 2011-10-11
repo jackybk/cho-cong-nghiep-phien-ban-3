@@ -169,7 +169,7 @@ function drop_image(file_id)
                                 </td>
                             </tr>
                             <tr>
-                                <th>Phạm vi bán hàng :</th>
+                                <th>Khu vực:</th>
                                 <td><div id="region">
                                     <input type="hidden" name="region_id" value="<?php echo $this->_var['store']['region_id']; ?>" class="mls_id" />
                                     <input type="hidden" name="region_name" value="<?php echo htmlspecialchars($this->_var['store']['region_name']); ?>" class="mls_names" />

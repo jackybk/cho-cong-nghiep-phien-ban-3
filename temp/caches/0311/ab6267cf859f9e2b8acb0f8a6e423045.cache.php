@@ -1,7 +1,7 @@
 <?php
 /**
  *  @Created By ECMall PhpCacheServer
- *  @Time:2011-09-28 15:26:04
+ *  @Time:2011-10-04 18:26:01
  */
 
 if(filemtime(__FILE__) + 1800 < time())return false;
@@ -17,7 +17,7 @@ return array (
   'address' => 'Cong ty CP TM & Xay Lap SHC',
   'zipcode' => '',
   'tel' => '0936969789',
-  'sgrade' => NULL,
+  'sgrade' => 'Gian hàng vàng',
   'apply_remark' => '',
   'credit_value' => '0',
   'praise_rate' => '0.00',
@@ -25,8 +25,8 @@ return array (
   'state' => '1',
   'close_reason' => '',
   'add_time' => '1304480630',
-  'end_time' => '1335542400',
-  'certification' => NULL,
+  'end_time' => '1335513600',
+  'certification' => '',
   'sort_order' => '0',
   'recommended' => '1',
   'theme' => '',
@@ -41,7 +41,7 @@ return array (
   'im_msn' => '',
   'user_name' => 'quangthanh',
   'email' => 'phamhungshc@gmail.com',
-  'credit_image' => 'http://localhost/phienban3/themes/store/default/styles/default/images/heart_1.gif',
+  'credit_image' => 'http://localhost/chocongnghiepv3/themes/store/default/styles/default/images/heart_1.gif',
   'store_owner' => 
   array (
     'user_id' => '1677',
@@ -59,9 +59,9 @@ return array (
     'im_yahoo' => NULL,
     'im_aliww' => NULL,
     'reg_time' => '1304480247',
-    'last_login' => '1317059857',
+    'last_login' => '1317685535',
     'last_ip' => '127.0.0.1',
-    'logins' => '19',
+    'logins' => '24',
     'ugrade' => '0',
     'portrait' => '',
     'outer_id' => '0',
@@ -178,6 +178,9 @@ return array (
   ),
   'functions' => 
   array (
+    'editor_multimedia' => 'editor_multimedia',
+    'coupon' => 'coupon',
+    'groupbuy' => 'groupbuy',
   ),
 );
 

@@ -9,15 +9,38 @@
 <meta name="author" content="<?php echo $this->_var['site_url']; ?>" />
 <meta name="generator" content="CCNVIETNAM <?php echo $this->_var['ecmall_version']; ?>" />
 <meta name="copyright" content="Copyright 2010 Chocongnghiep.com.vn All rights reserved" />
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="<?php echo $this->_var['site_url']; ?>/favicon.ico" type="image/x-icon"/>
 <link href="<?php echo $this->res_base . "/" . 'css/style.css'; ?>" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="index.php?act=jslang"></script>
 <script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'jquery.js'; ?>" charset="utf-8"></script>
-<script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'jquery.colorbox.js'; ?>" charset="utf-8"></script>
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>-->
+<script type="text/javascript" src="<?php echo $this->res_base . "/" . 'js/scrolltopcontrol.js'; ?>" charset="utf-8"></script>
+<!--<script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'jquery.colorbox.js'; ?>" charset="utf-8"></script>-->
+<!--<script src="<?php echo $this->lib_base . "/" . 'preview.js'; ?>" type="text/javascript"></script>-->
+<script>
+	//$(document).ready(function(){
+		//Examples of how to assign the ColorBox event to elements
+		//$("a[rel='example1']").colorbox();
+		//$("a[rel='example2']").colorbox({transition:"fade"});
+		//$("a[rel='example3']").colorbox({transition:"none", width:"75%", height:"75%"});
+		//$("a[rel='example4']").colorbox({slideshow:true});
+		//$(".example5").colorbox();
+		//$(".example6").colorbox({iframe:true, innerWidth:425, innerHeight:344});
+		//$(".example7").colorbox({width:"80%", height:"80%", iframe:true});
+		//$(".example8").colorbox({width:"50%", inline:true, href:"#inline_example1"});
+	//});
+</script>
 <script type="text/javascript">
-	$(document).ready(function(){
-		$("a[rel='imgdetail']").colorbox();
-	});
+	//$(document).ready(function(){
+	//	$("a[rel='imgdetail']").colorbox();
+	//});
+</script>
+<script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'jquery.lazyload.js'; ?>" charset="utf-8"></script>
+<script type="text/javascript">
+ $("img").lazyload({
+     placeholder : "<?php echo $this->res_base . "/" . 'images/white.gif'; ?>",       
+     effect      : "fadeIn"
+ });
 </script>
 <script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'ecmall.js'; ?>" charset="utf-8"></script>
 <script type="text/javascript" src="<?php echo $this->res_base . "/" . 'js/nav.js'; ?>" charset="utf-8"></script>
@@ -32,7 +55,6 @@ var PRICE_FORMAT = '<?php echo $this->_var['price_format']; ?>';
 </head>
 
 <body>
-<a name="top"></a>
 <div id="nav_top">
 	<div class="wrap_top">
 		<div class="category">
@@ -154,8 +176,8 @@ var PRICE_FORMAT = '<?php echo $this->_var['price_format']; ?>';
 						<li>
 							<form method="post" class="ui-corner-bl ui-corner-br" id="login_form" action="index.php?app=member&act=login&ret_url=">
 								<div class="line first">
-									<label for="username">Tên đăng nhập:</label>
-									<input id="username" name="user_name" value="" class="txtlogin" title="Tên đăng nhập" tabindex="1" type="text">
+									<label for="username">Tên truy cập:</label>
+									<input id="username" name="user_name" value="" class="txtlogin" title="Tên truy cập" tabindex="1" type="text">
 								</div>
 								<div class="line">
 									<label for="password">Mật khẩu:</label>

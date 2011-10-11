@@ -204,7 +204,7 @@ if ($this->_foreach['fe_region']['total'] > 0):
 							<div></div>
 							<a href="">Giảm giá nhiều</a>
 						</li>
-						<li class="sort_by">
+						<li class="sort_by selected">
 							<div></div>
 							<a href="">Nhiều người thích</a>
 						</li>

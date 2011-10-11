@@ -28,13 +28,13 @@ function send_test_email(){
 <div id="rightTop">
     <p>Cấu hình hệ thống</p>
     <ul class="subnav">
-        <li><a class="btn5" href="index.php?app=setting&amp;act=base_setting">Thông tin cơ bản</a></li>
-        <li><a class="btn5" href="index.php?app=setting&amp;act=base_information">Cấu hình website</a></li>
+        <li><a class="btn4" href="index.php?app=setting&amp;act=base_setting">Thông tin cơ bản</a></li>
+        <li><a class="btn4" href="index.php?app=setting&amp;act=base_information">Cấu hình website</a></li>
         <li><span>Cấu hình email</span></li>
-        <li><a class="btn5" href="index.php?app=setting&amp;act=captcha_setting">Mã bảo vệ</a></li>
-        <li><a class="btn5" href="index.php?app=setting&amp;act=store_setting">Cấu hình cửa hàng</a></li>
-        <li><a class="btn5" href="index.php?app=setting&amp;act=credit_setting">Cấu hình tích hợp</a></li>
-        <li><a class="btn5" href="index.php?app=setting&amp;act=subdomain_setting">Tên miền phụ</a></li>
+        <li><a class="btn4" href="index.php?app=setting&amp;act=captcha_setting">Mã bảo vệ</a></li>
+        <li><a class="btn4" href="index.php?app=setting&amp;act=store_setting">Cấu hình cửa hàng</a></li>
+        <li><a class="btn4" href="index.php?app=setting&amp;act=credit_setting">Cấu hình tích hợp</a></li>
+        <li><a class="btn4" href="index.php?app=setting&amp;act=subdomain_setting">Tên miền phụ</a></li>
         </ul>
 </div>
 
