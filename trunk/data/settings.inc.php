@@ -2,7 +2,7 @@
 return array (
   'time_zone' => '7',
   'time_format_simple' => 'Y-m-d',
-  'time_format_complete' => 'Y-m-d H:i:s',
+  'time_format_complete' => 'd-m-Y H:i:s',
   'price_format' => '%s Đ',
   'statistics_code' => '',
   'sitemap_enabled' => true,
@@ -19,6 +19,10 @@ return array (
   'hot_search' => 'rao vat,mua ban,ti vi,tu lanh,nokia',
   'captcha_status' => 
   array (
+    'login' => '1',
+    'register' => '1',
+    'goodsqa' => '1',
+    'backend' => '1',
   ),
   'store_allow' => '0',
   'site_logo' => 'data/files/mall/settings/site_logo.gif',

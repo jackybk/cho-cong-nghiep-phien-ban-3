@@ -25,7 +25,7 @@ alert(dangerous_apps);
 <p>
     Xin chào, <b><?php echo $this->_var['admin']['user_name']; ?></b>&nbsp;&nbsp;&nbsp;
     <!--[ <a target="_blank" href="<?php echo $this->_var['site_url']; ?>/index.php?app=message&amp;act=inbox" class="tidings">Tin tức</a>: <?php echo $this->_var['new']['total']; ?> ]
--->    Lần đăng nhập cuối:&nbsp; <?php echo local_date("Y-m-d H:i:s",$this->_var['admin']['last_login']); ?> &nbsp;&nbsp;&nbsp;IP đăng nhập cuối:&nbsp; <?php echo $this->_var['admin']['last_ip']; ?>
+-->    Lần đăng nhập cuối:&nbsp; <?php echo local_date("d-m-Y H:i:s",$this->_var['admin']['last_login']); ?> &nbsp;&nbsp;&nbsp;IP đăng nhập cuối:&nbsp; <?php echo $this->_var['admin']['last_ip']; ?>
 </p>
 </div>
 <dl id="rightCon">

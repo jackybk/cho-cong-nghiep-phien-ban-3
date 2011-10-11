@@ -35,14 +35,21 @@
 			<div class="clear"></div>
 			<div id="nav_market">
 				<ul>
-					<li class="market_main">
-						<a href="{url app=markets}">{$lang.market_main}</a>
+					<li class="market_main selected">
+						<div></div>
+						<a href="{url app=markets}">Công nghiệp xây dựng</a>
 					</li>
 					<li class="market_stores">
+						<div></div>
 						<a href="{url app=markets_store}">{$lang.market_store}</a>
 					</li>
 					<li class="market_products">
+						<div></div>
 						<a href="{url app=markets_product}">{$lang.market_product}</a>
+					</li>
+					<li class="last">
+						<div></div>
+						<a href=""></a>
 					</li>
 				</ul>
 				<div id="market_search_field">
@@ -50,7 +57,7 @@
 						<label class="structural structural" for="marketsearch">{$lang.find_goods}</label>
 						<input id="marketsearch" type="text" class="search_box populate" title="{$lang.find_goods}" name=""/>
 						<input type="hidden" id="market" value="12" name="categry"/>
-						<input class="spyglass" type="image"/>
+						<input class="spyglass" type="image" src="{res file=images/pix.gif}"/>
 					</form>
 				</div>
 				<div class="clear"></div>
@@ -72,6 +79,7 @@
 						<div class="product_vert">
 							<div class="thumb thumb_152">
 								<img src="data/files/mall/template/tdh-1_medium.jpg" alt=""/>
+								<!--<span class="promotion" style="position:absolute;right:0;top:0;height:21px;"><span style="background:url({res file=images/logo.gif}) no-repeat 0 0">Giam 5%</span></span>-->
 								<span class="item_price"><span>1.000.000 Đ</span></span>
 								<a class="cropper" href="{url app=gdetail&id=$goods.goods_id}" title="{$goods.goods_name|escape}">Tên sản phẩm</a>
 							</div>
@@ -274,7 +282,7 @@
 					<div class="title">{$lang.top_store}</div>
 					<ul>
 						<li class="first">
-							<a class="block_link">
+							<a class="block_link" href="">
 								<span class="thumb thumb_42">
 									<img src="data/files/mall/template/tdh-1_medium.jpg" alt=""/>
 									<div class="cropper"></div>
@@ -287,7 +295,7 @@
 							</a>
 						</li>
 						<li class="">
-							<a class="block_link">
+							<a class="block_link" href="">
 								<span class="thumb thumb_42">
 									<img src="data/files/mall/template/tdh-1_medium.jpg" alt=""/>
 									<div class="cropper"></div>
@@ -301,7 +309,7 @@
 						</li>
 						</li>
 						<li class="last">
-							<a class="block_link">
+							<a class="block_link" href="">
 								<span class="thumb thumb_42">
 									<img src="data/files/mall/template/tdh-1_medium.jpg" alt=""/>
 									<div class="cropper"></div>

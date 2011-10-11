@@ -1,15 +1,24 @@
-<div id="footer">
-    <p>
-        <a href="index.php">{$lang.index}</a>
-        <!--{foreach from=$navs.footer item=nav}-->
-        | <a href="{$nav.link}"{if $nav.open_new} target="_blank"{/if}>{$nav.title|escape}</a>
-        <!--{/foreach}-->
-    </p>
-    {sprintf lang=query_info var1=query_time var2=query_count var3=query_user_count}
-    <!--{if $gzip_enabled}-->{$lang.gzip_enabled}<!--{else}-->{$lang.gzip_disabled}<!--{/if}-->
-    <!--{if $memory_info}-->{sprintf lang=memory_info var1=memory_info}<!--{/if}--> {$statistics_code}<br />
-    Powered by <a href="http://ecmall.shopex.cn/?pid=6&host={$site_domain}" target="_blank">ECMall {$ecm_version}</a> &copy; 2003-2009 <a href="http://www.shopex.cn" target="_blank">ShopEx Inc.</a>
-</div>
+				<div class="cleared"></div>
+				<div class="art-footer">
+                    <div class="art-footer-inner">
+                        <a href="{$site_url}" class="art-ccn-tag-icon" title="{$lang.unit_web}"></a>
+                        <div class="art-footer-text">
+                            <p>
+								<a href="{$site_url}">{$lang.index}</a>
+								<!--{foreach from=$navs.footer item=nav}-->
+								| <a href="{$nav.link}"{if $nav.open_new} target="_blank"{/if}>{$nav.title|escape}</a>
+								<!--{/foreach}-->                                
+							</p>
+                        </div>
+                    </div>
+                    <div class="art-footer-background"></div>
+                </div>
+        		<div class="cleared"></div>
+			</div>
+		</div>
+		<div class="cleared"></div>
+		<p class="art-page-footer">{$lang.powered_by} <a href="{$site_url}" target="_blank">{$lang.unit_web}</a> &copy; {$lang.date_created}</p>
+	</div>
 {$async_sendmail}
 </body>
 </html>

@@ -1,37 +1,335 @@
 {include file=header.html}
-
 {include file=top.html}
-
-<div id="content">
-    <div id="left">
-        {include file=left.html}
-    </div>
-
-    <div id="right">
-        {include file=goodsinfo.html}
-
-        <a name="module">
-        <ul class="user_menu">
-            <div class="ornament1"></div>
-            <div class="ornament2"></div>
-            <li><a class="normal" href="{url app=goods&id=$goods.goods_id}#module"><span>{$lang.goods_detail}</span></a></li>
-            <li><a class="normal" href="{url app=goods&act=comments&id=$goods.goods_id}#module"><span>{$lang.goods_comment}</span></a></li>
-            <li><a class="normal" href="{url app=goods&act=saleslog&id=$goods.goods_id}#module"><span>{$lang.sales_log}</span></a></li>
-            <li><a class="active" href="{url app=goods&act=qa&id=$goods.goods_id}#module"><span>{$lang.qa}</span></a></li>
-        </ul>
-        <div class="clear"></div>
-
-        <div class="module_currency">
-            <div class="wrap">
-                <div class="wrap_child">
-                    {include file=qa.html}
-                    <div class="clear"></div>
+<div class="art-content-layout">
+	<div class="art-content-layout-row">
+        <div class="art-layout-cell art-sidebar1">
+			{include file=left.html}
+		</div>
+		<div class="art-layout-cell art-content"><!--art-layout-cell art-content-->
+			<div class="art-post">
+                <div class="art-post-tl"></div>
+                <div class="art-post-tr"></div>
+                <div class="art-post-bl"></div>
+                <div class="art-post-br"></div>
+                <div class="art-post-tc"></div>
+                <div class="art-post-bc"></div>
+                <div class="art-post-cl"></div>
+                <div class="art-post-cr"></div>
+                <div class="art-post-cc"></div>
+                <div class="art-post-body">
+					<div class="art-post-inner art-article">
+						<div class="art-postcontent">
+							{include file=goodsinfo.html}
+							<ul class="user_menu">
+								<div class="ornament1"></div>
+								<div class="ornament2"></div>
+								<li><a class="normal" href="{url app=goods&id=$goods.goods_id}#module"><span>{$lang.goods_detail}</span></a></li>
+								<li><a class="normal" href="{url app=goods&act=comments&id=$goods.goods_id}#module"><span>{$lang.goods_comment}</span></a></li>
+								<li><a class="normal" href="{url app=goods&act=saleslog&id=$goods.goods_id}#module"><span>{$lang.sales_log}</span></a></li>
+								<li><a class="active" href="{url app=goods&act=qa&id=$goods.goods_id}#module"><span>{$lang.qa}</span></a></li>
+							</ul>
+							<div class="option_box">
+								{include file=qa.html}
+								<div class="tags"><strong>{$lang.tags}</strong>:&nbsp;&nbsp;<!--{foreach from=$goods.tags item=tag}--><a href="{url app=search&keyword=$tag}">{$tag}</a>,&nbsp;<!--{/foreach}--></div>
+							</div>
+							<!--{if $goods.related_info.count gt 0}-->
+							<div class="module_currency">
+								<h2 class="common_title veins1">
+									<div class="ornament1"></div>
+									<div class="ornament2"></div>
+									<span class="ico1"><span class="ico2">{$lang.related_info}</span></span>
+								</h2>
+								<dl class="related_list">
+									<!--{foreach from=$goods.related_info.list item=app_data}-->
+									<!--{if $app_data.data and $app_data.app_type neq 'ECMALL'}-->
+									<dt><a href="{$app_data.app_url}">{$app_data.app_name}</a></dt>
+									<!--{foreach from=$app_data.data item=item}-->
+									<dd>{$item}</dd>
+									<!--{/foreach}-->
+									<!--{/if}-->
+									<!--{/foreach}-->
+								</dl>
+							</div>
+							<!--{/if}-->
+						</div>
+						<div class="cleared"></div>
+					</div>
+            		<div class="cleared"></div>
+                </div>
+            </div><!--/art-block-->
+			
+		</div>
+		<div class="art-layout-cell art-sidebar2">
+			<div class="art-block">
+                <div class="art-block-body">
+	                <div class="art-blockheader">
+	                    <div class="l"></div>
+	                    <div class="r"></div>
+	                     <div class="t"><a href="{$site_url}/index.php?app=cart" class="mycart">{$lang.shopping_cart}</a></div>
+	                </div>
+	                <div class="art-blockcontent">
+	                    <div class="art-blockcontent-tl"></div>
+	                    <div class="art-blockcontent-tr"></div>
+	                    <div class="art-blockcontent-bl"></div>
+	                    <div class="art-blockcontent-br"></div>
+	                    <div class="art-blockcontent-tc"></div>
+	                    <div class="art-blockcontent-bc"></div>
+	                    <div class="art-blockcontent-cl"></div>
+	                    <div class="art-blockcontent-cr"></div>
+	                    <div class="art-blockcontent-cc"></div>
+	                    <div class="art-blockcontent-body">
+							<!-- block-content -->
+                            <div class="no_result">{$lang.no_item_good}</div>
+							<!--{foreach from=$new_goods item=ngoods}-->
+							<div class="list_item">
+								<div class="container">
+									<div class="thumb thumb_57">
+										<img src="{$rgoods.default_image}" alt="{$ngoods.goods_name|escape}"/>
+										<a href="{url app=goods&id=$ngoods.goods_id}" class="cropper">{$ngoods.goods_name|escape}</a>
+									</div>
+									<div class="activity">
+										<a href="{url app=goods&id=$ngoods.goods_id}">{$ngoods.goods_name|escape}</a>
+										<div class="price">{$rgoods.price|price}</div>
+									</div>
+								   <div class="clear"></div>
+								</div>
+							</div>
+							<!--{/foreach}-->
+	        	            <div class="cleared"></div>
+	                    </div>
+	                </div>
+            		<div class="cleared"></div>
+                </div><!--/art-block-->
+            </div><!--/art-block-->
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">{$lang.support_online}</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							<!-- block-content -->
+							<div class="support-online">
+								<ul class="support-list-item">
+									<li><a href='ymsgr:sendIM?{$lang.nick1}'><img src="http://opi.yahoo.com/online?u={$lang.nick1}&m=g&t=5"/>{$lang.nick1_title}</a></li>
+									<li><a href='ymsgr:sendIM?{$lang.nick1}'><img src="http://opi.yahoo.com/online?u={$lang.nick2}&m=g&t=5"/>{$lang.nick2_title}</a></li>
+									<li><a href='ymsgr:sendIM?{$lang.nick1}'><img src="http://opi.yahoo.com/online?u={$lang.nick3}&m=g&t=5"/>{$lang.nick3_title}</a></li>
+									<li><a href="skype:{$lang.skype_all}?chat"><img src="http://mystatus.skype.com/smallicon/{$lang.skype_all}"  alt="{$lang.skype_all}" />{$lang.support_all}</a></li>
+								</ul>
+							</div>
+							<!-- /block-content -->
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div><!--/art-block-->
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">{$lang.login_store}</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							<form method="post" id="login_form" action="index.php?app=member&act=login&ret_url=">
+								<div class="line first">
+									<label for="username">{$lang.user_name}:</label>
+									<input id="username" name="user_name" value="" class="width3 text" title="{$lang.user_name}" tabindex="1" type="text">
+								</div>
+								<div class="line">
+									<label for="password">{$lang.password}:</label>
+									<input id="password" name="password" value="" class="width3 text" title="{$lang.password}" tabindex="2" type="password">
+								</div>
+								<div class="line">
+									<input id="remember" name="remember_me" value="1" tabindex="3" type="checkbox">
+									<label for="remember" class="lable_remember">{$lang.remember}</label>
+								</div>
+								<div class="line" style="text-align:center;">
+									<input id="btn_login" name="Submit" value="{$lang.login}" tabindex="4" type="submit" class="enter" />
+									<div class="clear"></div>
+								</div>
+								<div class="line">
+									<a href="{url app=find_password}" class="clew" tabindex="5">{$lang.find_password}</a>
+								</div>
+								<input type="hidden" name="ret_url" value="{$ret_url}" />
+							</form>
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div><!--/art-block-->
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">{$lang.new_news}</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							<!--{foreach from=$new_goods item=ngoods}-->
+							<div class="list_item">
+								<div class="container">
+									<div class="thumb thumb_57">
+										<img src="{$rgoods.default_image}" alt="{$ngoods.goods_name|escape}"/>
+										<a href="{url app=goods&id=$ngoods.goods_id}" class="cropper">{$ngoods.goods_name|escape}</a>
+									</div>
+									<div class="activity">
+										<a href="{url app=goods&id=$ngoods.goods_id}">{$ngoods.goods_name|escape}</a>
+									</div>
+								   <div class="clear"></div>
+								</div>
+							</div>
+							<!--{/foreach}-->
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div><!--/art-block-->
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">{$lang.answer_question_new}</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							<!--{foreach from=$new_goods item=ngoods}-->
+							<div class="list_item">
+								<div class="container">
+									<div class="thumb thumb_57">
+										<img src="{$rgoods.default_image}" alt="{$ngoods.goods_name|escape}"/>
+										<a href="{url app=goods&id=$ngoods.goods_id}" class="cropper">{$ngoods.goods_name|escape}</a>
+									</div>
+									<div class="activity">
+										<a href="{url app=goods&id=$ngoods.goods_id}">{$ngoods.goods_name|escape}</a>
+									</div>
+								   <div class="clear"></div>
+								</div>
+							</div>
+							<!--{/foreach}-->
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div><!--/art-block-->
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">{$lang.ads_news}</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							<!--{foreach from=$new_goods item=ngoods}-->
+							<div class="list_item">
+								<div class="container">
+									<div class="thumb thumb_57">
+										<img src="{$rgoods.default_image}" alt="{$ngoods.goods_name|escape}"/>
+										<a href="{url app=goods&id=$ngoods.goods_id}" class="cropper">{$ngoods.goods_name|escape}</a>
+									</div>
+									<div class="activity">
+										<a href="{url app=goods&id=$ngoods.goods_id}">{$ngoods.goods_name|escape}</a>
+									</div>
+								   <div class="clear"></div>
+								</div>
+							</div>
+							<!--{/foreach}-->
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div><!--/art-block-->
+            <div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">{$lang.contact_store}</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+                            <div>
+                                <img src="{res file=images/contact.jpg}" alt="an image" style="margin: 0 auto;display:block;width:95%" />
+                            <br />
+                            <b>{$store.store_name|escape}.</b><br />
+                            {$store.address|escape}<br />
+                            {$lang.email}: <a href="mailto:info@company.com">info@company.com</a><br />
+                            <br />
+                            {$lang.tel}: {$store.tel|escape} <br />
+                            {$lang.fax}: {$store.tel|escape}
+                            </div>
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
                 </div>
             </div>
-        </div>
-
-    </div>
-
-    <div class="clear"></div>
-</div>
+		</div>
+	</div><!--/art-content-layout-row-->
+</div><!--/art-content-layout-->
 {include file=footer.html}

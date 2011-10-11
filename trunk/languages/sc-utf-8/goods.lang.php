@@ -1,5 +1,6 @@
 <?php
 return array(
+    'send_qa'=>'Gửi câu hỏi tư vấn',
     'goods_detail' => 'Chi tiết sản phẩm',
     'goods_not_exist' => 'Xin lỗi, Kệ hàng này đã được bán hết, Xin quý khách hãy quay lại hay mua hàng hóa khác',
     'add_to_favorite' => 'Add to Favorite',
@@ -24,9 +25,9 @@ return array(
      'sale_situation' => 'Bán hàng',
     'sales' => 'Giảm %s giá bán',
     'comments' => '(<span class="c3b8"><strong>%s</strong></span> Bình luận)',
-    'add_to_cart_ok' => 'Sản phẩm đã được thêm vào giỏ hàng thành công',
+    'add_to_cart_ok' => 'Đã thêm sản phẩm vào giỏ hàng thành công.',
     'close' => 'Đóng',
-    'cart_status' => 'Tổng số hàng trong giỏ <span class="bold_num">3</span> Tổng tiền <span class="bold_mly">658.00</span>',
+    'cart_status' => 'Bạn đã đặt <span class="bold_num">100</span> sản phẩm<br/>Tổng tiền: <span class="bold_mly">%s</span>',
     'view_cart' => 'Xem giỏ hàng',
     'continue_buy' => 'Tiếp tục mua',
     'address' => 'Địa chỉ',
@@ -52,12 +53,12 @@ return array(
     'back' => 'Quay lại',
     'store_reply' => 'Cửa hàng trả lời',
     'no_reply' => 'Không có trả lời',
-    'hide_name' => 'Vô danh',
+    'hide_name' => 'Ẩn tên tài khoản',
     'max_script' => 'Bạn có thể nhập tối đa 255 ký tự.',
-    'buy_now' => 'Mua',
+    'buy_now' => 'Đặt hàng',
     'save' => 'Lưu',
     'store_grade' => 'Cấp độ',
-    'wanner_qa' => 'Tôi muốn tham khảo ý kiến',
+    'wanner_qa' => 'Nội dung',
     'qa_email' => 'Email',
    'login_to_comment'  => 'Bạn phải &nbsp;[<a href="index.php?app=member&act=login">Đăng nhập </a>]&nbsp;mới có thể gởi đánh giá',
     'guest_comment_disabled' => 'Khách vô danh không được đánh giá',
@@ -180,6 +181,21 @@ return array(
 'nobody_auction_notice'=>'Hàng hóa của bạn bán đấu giá:<a href="index.php?app=my_auction&act=view_log&id=%s">%s</a> Đã kết thúc, không đấu giá ở mặt hàng này.',
 'marketprice' => 'Giá',
 'haowuprice' => 'Giá bán buôn',
+'follow_price'=>'Giá sản phẩm',
+'follow_brand'=>'Hãng sản xuất',
+'search_in_store'=>'Tìm kiếm',
+'origin'=>'Xuất xứ',
+'warranty'=>'Bảo hành',
+'region'      => 'Khu vực bán hàng',
+'promotional'=>'Khuyến mại',
+'comments'=>'Bình luận',
+'ship'=>'Phí vận chuyển',
+'new_news'			=>'Tin tức mới',
+'answer_question_new'=>'Hỏi - Đáp mới',
+'ads_news'=>'Rao vặt mới',
+'contact_store'         => 'Thông tin liên hệ',
+
+
 );
 
 ?>

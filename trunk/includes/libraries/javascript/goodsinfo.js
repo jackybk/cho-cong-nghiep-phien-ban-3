@@ -1,4 +1,3 @@
-/* spec对象 */
 function spec(id, spec1, spec2, price, stock)
 {
     this.id    = id;
@@ -7,8 +6,6 @@ function spec(id, spec1, spec2, price, stock)
     this.price = price;
     this.stock = stock;
 }
-
-/* goodsspec对象 */
 function goodsspec(specs, specQty, defSpec)
 {
     this.specs = specs;
@@ -31,8 +28,6 @@ function goodsspec(specs, specQty, defSpec)
             }
         }
     }
-
-    // 取得某字段的不重复值，如果有spec1，以此为条件
     this.getDistinctValues = function(field, spec1)
     {
         var values = new Array();
@@ -47,8 +42,6 @@ function goodsspec(specs, specQty, defSpec)
         }
         return (values);
     }
-
-    // 取得选中的spec
     this.getSpec = function()
     {
         for (var i = 0; i < this.specs.length; i++)
@@ -60,8 +53,6 @@ function goodsspec(specs, specQty, defSpec)
         }
         return null;
     }
-
-    // 初始化
     this.init = function()
     {
         if (this.specQty >= 1)
@@ -98,15 +89,11 @@ function goodsspec(specs, specQty, defSpec)
         $("[ectype='current_spec']").html(spec.spec1 + ' ' + spec.spec2);
     }
 }
-
-/* 选中某规格 num=1,2 */
 function selectSpec(num, liObj)
 {
     goodsspec['spec' + num] = $(liObj).html();
     $(liObj).attr("class", "solid");
     $(liObj).siblings(".solid").attr("class", "dotted");
-
-    // 当有2种规格并且选中了第一个规格时，刷新第二个规格
     if (num == 1 && goodsspec.specQty == 2)
     {
         goodsspec.spec2 = null;
@@ -137,25 +124,18 @@ function slideUp_fn()
 $(function(){
     goodsspec.init();
 
-    //放大镜效果/
     if ($(".jqzoom img").attr('jqimg'))
     {
-        $(".jqzoom").jqueryzoom({ xzoom: 430, yzoom: 300 });
+        $(".jqzoom").jqueryzoom({ xzoom: 304, yzoom: 275 });
     }
-
-    // 图片替换效果
     $('.ware_box li').mouseover(function(){
         $('.ware_box li').removeClass();
         $(this).addClass('ware_pic_hover');
         $('.big_pic img').attr('src', $(this).children('img:first').attr('src'));
         $('.big_pic img').attr('jqimg', $(this).attr('bigimg'));
     });
-
-    //点击后移动的距离
     var left_num = -61;
-
-    //整个ul超出显示区域的尺寸
-    var li_length = ($('.ware_box li').width() + 6) * $('.ware_box li').length - 305;
+    var li_length = ($('.ware_box li').width() + 6) * $('.ware_box li').length - 183;
 
     $('.right_btn').click(function(){
         var posleft_num = $('.ware_box ul').position().left;
@@ -170,8 +150,6 @@ $(function(){
             $('.ware_box ul').css({'left': posleft_num - left_num});
         }
     });
-
-    // 加入购物车弹出层
     $('.close_btn').click(function(){
         $('.ware_cen').slideUp('slow');
     });

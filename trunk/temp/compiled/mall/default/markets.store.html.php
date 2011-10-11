@@ -36,13 +36,20 @@
 			<div id="nav_market">
 				<ul>
 					<li class="market_main">
-						<a href="<?php echo url('app=markets'); ?>">Trang chinh</a>
+						<div></div>
+						<a href="<?php echo url('app=markets'); ?>">Công nghiệp xây dựng</a>
 					</li>
-					<li class="market_stores">
-						<a href="<?php echo url('app=markets_store'); ?>">Trang chinh</a>
+					<li class="market_stores selected">
+						<div></div>
+						<a href="<?php echo url('app=markets_store'); ?>">market_store</a>
 					</li>
 					<li class="market_products">
-						<a href="<?php echo url('app=markets_product'); ?>">Trang chinh</a>
+						<div></div>
+						<a href="<?php echo url('app=markets_product'); ?>">market_product</a>
+					</li>
+					<li class="last">
+						<div></div>
+						<a href=""></a>
 					</li>
 				</ul>
 				<div id="market_search_field">
@@ -50,12 +57,12 @@
 						<label class="structural structural" for="marketsearch">Tim san pham</label>
 						<input id="marketsearch" type="text" class="search_box populate" title="tim san pham" name=""/>
 						<input type="hidden" id="market" value="12" name="categry"/>
-						<input class="spyglass" type="image"/>
+						<input class="spyglass" type="image" src="<?php echo $this->res_base . "/" . 'images/pix.gif'; ?>"/>
 					</form>
 				</div>
 				<div class="clear"></div>
 			</div>
-			<div id="sort_bar" class="sort_market">
+			<div id="sort_bar_tab" class="sort_market">
 				<ul class="ul_sort_market">
 					<li class="first_sort">
 						<div></div>
@@ -71,7 +78,7 @@
 					</li>
 					<li class="sort_by">
 						<div></div>
-						<a href="">Alphabetical</a>
+						<a href="">Theo ABC</a>
 					</li>
 					<li class="last">
 						<div></div>

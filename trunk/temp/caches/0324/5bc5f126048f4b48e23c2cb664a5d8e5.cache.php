@@ -1,7 +1,7 @@
 <?php
 /**
  *  @Created By ECMall PhpCacheServer
- *  @Time:2011-09-27 16:03:13
+ *  @Time:2011-10-10 12:28:45
  */
 
 if(filemtime(__FILE__) + 3600 < time())return false;
@@ -394,7 +394,7 @@ return array (
     53 => 
     array (
       'count' => '2',
-      'min' => 2.3E+6,
+      'min' => 2300000,
       'max' => 2302000,
     ),
     54 => 
@@ -406,7 +406,7 @@ return array (
     55 => 
     array (
       'count' => '1',
-      'min' => 2.4E+6,
+      'min' => 2400000,
       'max' => 2402000,
     ),
     56 => 
@@ -460,7 +460,7 @@ return array (
     64 => 
     array (
       'count' => '2',
-      'min' => 2.8E+6,
+      'min' => 2800000,
       'max' => 2802000,
     ),
     65 => 
@@ -502,7 +502,7 @@ return array (
     71 => 
     array (
       'count' => '1',
-      'min' => 3.3E+6,
+      'min' => 3300000,
       'max' => 3302000,
     ),
     72 => 
@@ -514,7 +514,7 @@ return array (
     73 => 
     array (
       'count' => '1',
-      'min' => 3.4E+6,
+      'min' => 3400000,
       'max' => 3402000,
     ),
     74 => 
@@ -586,7 +586,7 @@ return array (
     85 => 
     array (
       'count' => '1',
-      'min' => 4.6E+6,
+      'min' => 4600000,
       'max' => 4602000,
     ),
     86 => 
@@ -766,7 +766,7 @@ return array (
     115 => 
     array (
       'count' => '1',
-      'min' => 1.43E+7,
+      'min' => 14300000,
       'max' => 14302000,
     ),
     116 => 
@@ -826,7 +826,7 @@ return array (
     125 => 
     array (
       'count' => '1',
-      'min' => 1.88E+7,
+      'min' => 18800000,
       'max' => 18802000,
     ),
     126 => 
@@ -844,7 +844,7 @@ return array (
     128 => 
     array (
       'count' => '1',
-      'min' => 2.28E+7,
+      'min' => 22800000,
       'max' => 22802000,
     ),
     129 => 
@@ -874,13 +874,13 @@ return array (
     133 => 
     array (
       'count' => '1',
-      'min' => 2.8E+7,
+      'min' => 28000000,
       'max' => 28002000,
     ),
     134 => 
     array (
       'count' => '1',
-      'min' => 2.88E+7,
+      'min' => 28800000,
       'max' => 28802000,
     ),
     135 => 
@@ -892,13 +892,13 @@ return array (
     136 => 
     array (
       'count' => '1',
-      'min' => 3.32E+7,
+      'min' => 33200000,
       'max' => 33202000,
     ),
     137 => 
     array (
       'count' => '2',
-      'min' => 3.4E+7,
+      'min' => 34000000,
       'max' => 34002000,
     ),
     138 => 
@@ -916,7 +916,7 @@ return array (
     140 => 
     array (
       'count' => '1',
-      'min' => 3.8E+7,
+      'min' => 38000000,
       'max' => 38002000,
     ),
     141 => 
@@ -940,7 +940,7 @@ return array (
     144 => 
     array (
       'count' => '1',
-      'min' => 5.59E+7,
+      'min' => 55900000,
       'max' => 55902000,
     ),
     145 => 
@@ -1006,7 +1006,7 @@ return array (
     155 => 
     array (
       'count' => '1',
-      'min' => 1.394E+8,
+      'min' => 139400000,
       'max' => 139402000,
     ),
     156 => 
@@ -1060,7 +1060,7 @@ return array (
     164 => 
     array (
       'count' => '1',
-      'min' => 3.037E+8,
+      'min' => 303700000,
       'max' => 303702000,
     ),
     165 => 
@@ -1078,7 +1078,7 @@ return array (
     167 => 
     array (
       'count' => '1',
-      'min' => 4.976E+8,
+      'min' => 497600000,
       'max' => 497602000,
     ),
     168 => 

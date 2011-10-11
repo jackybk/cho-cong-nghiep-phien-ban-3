@@ -14,8 +14,8 @@
         $.fn.jqueryzoom = function(options){
 
         var settings = {
-                xzoom: 200,        //zoomed width default width
-                yzoom: 200,        //zoomed div default width
+                xzoom: 300,        //zoomed width default width
+                yzoom: 300,        //zoomed div default width
                 offset: 10,        //zoomed div default offset
                 position: "right" ,//zoomed div default position,offset position is to the right of the image
                 lens:1, //zooming lens over the image,by default is 1;
@@ -35,7 +35,7 @@
             var parents = $(this).parents();
             parents.each(function(){
                 if($(this).css('position') == 'relative'){
-                    $(this).css('position', 'static');
+                    $(this).css('position', 'relative');
                     $(this).attr('ectype', 'jqzoom_relative');
                 }
             });

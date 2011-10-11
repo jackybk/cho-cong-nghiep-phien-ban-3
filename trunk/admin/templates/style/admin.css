@@ -1,7 +1,7 @@
 @charset "utf-8";
 h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt, dd, li, body, form, input, button, img, cite, strong, em, table, td, th { padding:0; margin:0;}
 h1, h2, h3, h4, h5, h6 { font-size:14px;}
-img, table, td, th { border="1" bgcolor="#FFFFFF"}
+img, table, td, th { border:0;}
 ul, ol { list-style-type:none;}
 body { font:11px Tahoma; background: url(images/content.gif) repeat-y;}
 html,body {padding: 0; margin: 0; overflow-x:hidden; overflow-y:auto;}
@@ -203,10 +203,6 @@ form label.error { color:red; font-style:normal; margin-left:5px; }
 form input.error { border:red 1px dotted; }
 form label.checking { padding-left:18px; background:transparent url(images/checking.gif) no-repeat; margin-left:5px; font-style:italic; color:#9C9C9C; display:none; }
 form label.right { padding-left:12px; background:transparent url(images/right.gif) no-repeat; margin-left:5px; font-style:italic; color:green; float:none; }
-A:link {
-    color: #555555;
-    text-decoration: none;
-}
 .height_row {
     border: 1px solid #CCCCCC;
     height: 25px;

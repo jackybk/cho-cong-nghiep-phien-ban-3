@@ -1,1 +1,32 @@
-form .field_notice{color:#9C9C9C;margin-left:5px;}form .red{color:red;border:0px;background-color:#FFFFFF;}form label.error{color:red;margin-left:5px;}form input.error{border:red 1px dotted;}form label.checking{padding-left:18px;background:transparent url(../images/checking.gif) no-repeat;margin-left:5px;font-style:italic;color:#9C9C9C;display:none;}form label.validate_right{padding-left:12px;background:transparent url(../images/right.gif) no-repeat;margin-left:5px;font-style:italic;color:green;float:none;}.choice{float:left;width:8%;}.btn{width:80px;height:28px;border:0;background:url(../images/btn.gif) no-repeat 0 -63px;}
+.login_con{width:974px;/*background:url(../images/login_con.gif) repeat-y;*/margin-bottom:10px;overflow:hidden;}
+.login_left{width:450px;float:left;margin:50px 0 0 50px;/*padding-left:100px;*/color:#646665;display:inline;/*background:url(../images/login_left.gif) no-repeat;*/}
+.login_left table{border-collapse:collapse;}
+.login_left td{padding-bottom:10px;}
+.login_left #login_form{border:none;background:none;}
+.login_con .renewedly{margin:0 0 0 10px;position:relative;top:7px;}
+.login_con .distance{height:70px;}
+.login_con .enter{display:block;width:102px;height:43px;float:left;border:0;vertical-align:middle;background:url(../images/btn.gif) no-repeat right -96px;}
+.login_con .clew{display:block;float:left;color:#c53801;margin:14px 0 0 8px;}
+.login_con .clew:hover{color:#fff;text-decoration:none;background:#db6f46;}
+.login_con .agreement{color:#c53801;}
+.login_con .agreement:hover{color:#fff;text-decoration:none;background:#db6f46;}
+.login_right{width:180px;float:right;color:#999999;line-height:22px;margin:40px 50px 50px 0;display:inline;}
+.login_right h4{line-height:28px;font-size:12px;color:#666;}
+.login_right ol{margin-bottom:20px;}
+
+.login_btn{display:block;width:102px;height:43px;float:left;border:0;background:url(../images/btn.gif) no-repeat -197px 0;}
+
+.login_fill_in{float:left;color:#646665;margin:30px 0 0 30px;display:inline;}
+.login_fill_in table{border-collapse:collapse;}
+.login_fill_in td{padding-bottom:5px;}
+form .field_notice{color:#999999;/*margin-left:5px;margin-top:5px;*/}
+form .blockfield{display:block;margin-top:5px;}
+form .red{color:red;border:0px;background-color:#FFFFFF;}
+form label.error{color:red;margin-left:5px;}
+form input.error{border:red 1px dotted;}
+form label.checking{padding-left:18px;background:transparent url(../images/checking.gif) no-repeat;
+margin-left:5px;font-style:italic;color:#999999;display:none;}
+form label.validate_right{padding-left:12px;background:transparent url(../images/right.gif) no-repeat;
+margin-left:5px;font-style:italic;color:green;float:none;}
+.choice{float:left;width:8%;}
+.btn{width:80px;height:28px;border:0;background:url(../images/btn.gif) no-repeat 0 -63px;}

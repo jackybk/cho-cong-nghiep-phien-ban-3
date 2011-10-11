@@ -6,111 +6,38 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset=<?php echo $this->_var['charset']; ?>" />
 <meta http-equiv="Content-Type" content="text/html;charset=<?php echo $this->_var['charset']; ?>" />
 <?php echo $this->_var['page_seo']; ?>
-
-<meta name="author" content="ecmall.shopex.cn" />
-<meta name="copyright" content="ShopEx Inc. All Rights Reserved" />
-<link href="<?php echo $this->res_base . "/" . 'shop.css'; ?>" rel="stylesheet" type="text/css" />
+<meta name="author" content="ccnvietnam.com" />
+<meta name="copyright" content="ccnvietnam" />
+<link href="<?php echo $this->res_base . "/" . 'style.css'; ?>" rel="stylesheet" type="text/css" />
+<link href="<?php echo $this->res_base . "/" . 'slider.css'; ?>" rel="stylesheet" type="text/css" />
+<link href="<?php echo $this->res_base . "/" . 'colorbox.css'; ?>" rel="stylesheet" type="text/css" />
+<!--[if IE 6]><link rel="stylesheet" href="<?php echo $this->res_base . "/" . 'style.ie6.css'; ?>" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="<?php echo $this->res_base . "/" . 'style.ie7.css'; ?>" type="text/css" media="screen" /><![endif]-->
+<script type="text/javascript" src="<?php echo $this->res_base . "/" . 'script.js'; ?>"></script>
 <script type="text/javascript" src="index.php?act=jslang"></script>
-<script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'jquery.js'; ?>" charset="utf-8"></script>
+<script type="text/javascript" src="<?php echo $this->res_base . "/" . 'jquery-1.6.1.min.js'; ?>" charset="utf-8"></script>
+<script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'jquery.lazyload.js'; ?>" charset="utf-8"></script>
 <script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'ecmall.js'; ?>" charset="utf-8"></script>
-
+<script type="text/javascript">
+ $("img").lazyload({
+     placeholder : "<?php echo $this->res_base . "/" . 'images/white.gif'; ?>",       
+     effect      : "fadeIn"
+ });
+</script>
 <script type="text/javascript">
 //<!CDATA[
 var SITE_URL = "<?php echo $this->_var['site_url']; ?>";
 var PRICE_FORMAT = '<?php echo $this->_var['price_format']; ?>';
-
-$(function(){
-    var span = $("#child_nav");
-    span.hover(function(){
-        $("#float_layer:not(:animated)").show();
-    }, function(){
-        $("#float_layer").hide();
-    });
-});
-//]]>
 </script>
 <?php echo $this->_var['_head_tags']; ?>
 </head>
-
 <body>
-
-<div id="head">
-    <h1 title="<?php echo htmlspecialchars($this->_var['site_title']); ?>"><a href="index.php"><img src="<?php echo $this->_var['site_logo']; ?>" alt="ECMall" /></a></h1>
-
-    <div id="subnav">
-        <p>
-        Chào,<?php echo htmlspecialchars($this->_var['visitor']['user_name']); ?>
-        <?php if (! $this->_var['visitor']['user_id']): ?>
-        [<a href="<?php echo url('app=member&act=login&ret_url=' . $this->_var['ret_url']. ''); ?>">Đăng nhập</a>]
-        [<a href="<?php echo url('app=member&act=register&ret_url=' . $this->_var['ret_url']. ''); ?>">Đăng ký</a>]
-        <?php else: ?>
-        [<a href="<?php echo url('act=logout'); ?>">Thoát</a>]
-        <?php endif; ?>
-        </p>
-        <p>
-        <a class="shopping" href="<?php echo url('app=cart'); ?>">Giỏ hàng</a> <span>|</span>
-        <a class="favorite" href="<?php echo url('app=my_favorite'); ?>">Favorite</a> <span>|</span>
-        <a class="note" href="<?php echo url('app=message&act=newpm'); ?>">pm<?php if ($this->_var['new_message']): ?>(<?php echo $this->_var['new_message']; ?>)<?php endif; ?></a> <span>|</span>
-        <a class="help" href="<?php echo url('app=article&code=help'); ?>">Trợ giúp</a>
-        <?php $_from = $this->_var['navs']['header']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'nav');if (count($_from)):
-    foreach ($_from AS $this->_var['nav']):
-?>
-        <span>|</span> <a class="user_defined" href="<?php echo $this->_var['nav']['link']; ?>"<?php if ($this->_var['nav']['open_new']): ?> target="_blank"<?php endif; ?>><?php echo htmlspecialchars($this->_var['nav']['title']); ?></a>
-        <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-        </p>
+	<div id="art-page-background-simple-gradient">
+        <div id="art-page-background-gradient"></div>
     </div>
-
-    <div id="topbtn">
-        <div class="topbtn1"></div>
-        <div class="topbtn2"></div>
-        <span id="child_nav">
-            <a href="<?php echo url('app=member'); ?>" class="user">Người dùng</a>
-            <ul id="float_layer">
-                <div id="adorn1"></div>
-                <div id="adorn2"></div>
-                <?php if ($this->_var['visitor']['store_id']): ?>
-                <li><a href="<?php echo url('app=my_goods'); ?>">Quản lý sản phẩm</a></li>
-                <li><a href="<?php echo url('app=seller_order'); ?>">Quản lý đặt hàng</a></li>
-                <li><a href="<?php echo url('app=my_qa'); ?>">Trả lời tư vấn</a></li>
-                <?php else: ?>
-                <li><a href="<?php echo url('app=buyer_order'); ?>">Đơn hàng</a></li>
-                <li><a href="<?php echo url('app=buyer_groupbuy'); ?>">Mua sỉ</a></li>
-                <li><a href="<?php echo url('app=my_question'); ?>">Câu hỏi tư vấn</a></li>
-                <?php endif; ?>
-            </ul>
-        </span>
-        <span>|</span>
-        <a href="<?php echo url('app=category'); ?>">Muốn mua</a> <span>|</span>
-        <a href="<?php echo url('app=my_goods&act=add'); ?>">Muốn bán</a>
+    <div id="art-page-background-glare">
+        <div id="art-page-background-glare-image"></div>
     </div>
-
-    <div id="path">
-        Vị trí:
-        <?php $_from = $this->_var['_curlocal']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'lnk');if (count($_from)):
-    foreach ($_from AS $this->_var['lnk']):
-?>
-        <?php if ($this->_var['lnk']['url']): ?>
-        <a href="<?php echo $this->_var['lnk']['url']; ?>"><?php echo htmlspecialchars($this->_var['lnk']['text']); ?></a> <span>&#8250;</span>
-        <?php else: ?>
-        <?php echo htmlspecialchars($this->_var['lnk']['text']); ?>
-        <?php endif; ?>
-        <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-    </div>
-
-    <div id="search">
-        <form id="" name="" method="get" action="index.php">
-            <div class="input">
-                <div class="input1"></div>
-                <div class="input2"></div>
-                <select name="act" class="select1">
-                <option value="index">search_goods</option>
-                <option value="store">Cửa hàng</option>
-                <option value="groupbuy">Danh mục</option>
-                </select>
-                <input type="hidden" name="app" value="search" />
-                <input type="text" class="search334" name="keyword" />
-            </div>
-            <input class="search_btn" type="submit" value="" />
-        </form>
-    </div>
-</div>
+	<div id="art-main">
+        <div class="art-sheet">
+			<div class="art-sheet-body">

@@ -21,7 +21,7 @@
             <td align="left" width="200">Tên chia sẻ</td>
             <td width="80">Thể loại</td>
             <td align="left">Logo</td>
-            <td align="left">Link</td>
+            <td align="left">Đường dẫn</td>
             <td class="table-center">Thứ tự hiển thị</td>
             <td class="handler">Hành động</td>
         </tr>

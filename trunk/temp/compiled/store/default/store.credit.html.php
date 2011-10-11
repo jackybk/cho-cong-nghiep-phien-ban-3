@@ -1,114 +1,443 @@
 <?php echo $this->fetch('header.html'); ?>
-
 <?php echo $this->fetch('top.html'); ?>
-
-<div id="content">
-    <div id="left">
-        <?php echo $this->fetch('left.html'); ?>
-    </div>
-    
-    <div id="right">
-        <div class="module_currency">
-            <h2 class="common_title veins1">
-                <div class="ornament1"></div>
-                <div class="ornament2"></div>
-                <span class="ico1"><span class="ico2">Đáng giá ( <?php echo $this->_var['store']['praise_rate']; ?> % )</span></span>
-            </h2>
-            
-            <div class="wrap">
-                <div class="wrap_child">
-                    <div class="credited">
-                        <table>
-                            <tr class="bg2 new_size">
-                                <th></th>
-                                <th>Trong 1 tuần</th>
-                                <th>Trong 1 tháng</th>
-                                <th>Trong 6 tháng</th>
-                                <th>Trước 6 tháng</th>
-                                <th>Tổng</th>
-                            </tr>
-                            <tr>
-                                <th><div class="fontColor6 credited_css">Tốt</div></th>
-                                <td><?php echo $this->_var['stats']['3']['in_a_week']; ?></td>
-                                <td><?php echo $this->_var['stats']['3']['in_a_month']; ?></td>
-                                <td><?php echo $this->_var['stats']['3']['in_six_month']; ?></td>
-                                <td><?php echo $this->_var['stats']['3']['six_month_before']; ?></td>
-                                <td><?php echo $this->_var['stats']['3']['total']; ?></td>
-                            </tr>
-                            <tr>
-                                <th><div class="fontColor7 credited_css">Bình thường</div></th>
-                                <td><?php echo $this->_var['stats']['2']['in_a_week']; ?></td>
-                                <td><?php echo $this->_var['stats']['2']['in_a_month']; ?></td>
-                                <td><?php echo $this->_var['stats']['2']['in_six_month']; ?></td>
-                                <td><?php echo $this->_var['stats']['2']['six_month_before']; ?></td>
-                                <td><?php echo $this->_var['stats']['2']['total']; ?></td>
-                            </tr>
-                            <tr>
-                                <th><div class="fontColor8 credited_css">Xấu</div></th>
-                                <td><?php echo $this->_var['stats']['1']['in_a_week']; ?></td>
-                                <td><?php echo $this->_var['stats']['1']['in_a_month']; ?></td>
-                                <td><?php echo $this->_var['stats']['1']['in_six_month']; ?></td>
-                                <td><?php echo $this->_var['stats']['1']['six_month_before']; ?></td>
-                                <td><?php echo $this->_var['stats']['1']['total']; ?></td>
-                            </tr>
-                            <tr>
-                                <th><div class="fontColor9 credited_css">Tổng</div></th>
-                                <td><?php echo $this->_var['stats']['0']['in_a_week']; ?></td>
-                                <td><?php echo $this->_var['stats']['0']['in_a_month']; ?></td>
-                                <td><?php echo $this->_var['stats']['0']['in_six_month']; ?></td>
-                                <td><?php echo $this->_var['stats']['0']['six_month_before']; ?></td>
-                                <td><?php echo $this->_var['stats']['0']['total']; ?></td>
-                            </tr>
-                        </table>
-                    </div>
+<div class="art-content-layout">
+	<div class="art-content-layout-row">
+        <div class="art-layout-cell art-sidebar1">
+			<?php echo $this->fetch('left.html'); ?>
+		</div>
+		<div class="art-layout-cell art-content">
+			<div class="art-post">
+                <div class="art-post-tl"></div>
+                <div class="art-post-tr"></div>
+                <div class="art-post-bl"></div>
+                <div class="art-post-br"></div>
+                <div class="art-post-tc"></div>
+                <div class="art-post-bc"></div>
+                <div class="art-post-cl"></div>
+                <div class="art-post-cr"></div>
+                <div class="art-post-cc"></div>
+                <div class="art-post-body">
+					<div class="art-post-inner art-article">
+						<div class="art-postcontent">
+							<div class="slideshow">
+								<script type="text/javascript" src="includes/libraries/javascript/jquery.slider.js" charset="utf-8"></script>
+								<script type="text/javascript">
+									$(window).load(function() {
+									$('#slider').nivoSlider({
+										effect: 'random',
+										slices: 15,
+										height:220,
+										animSpeed: 500,
+										pauseTime: 5000,
+										startSlide: 0, 
+										directionNav: true,
+										directionNavHide: true,
+										controlNav: true,
+										controlNavThumbs: false,
+										controlNavThumbsFromRel: false,
+										controlNavThumbsSearch: '.jpg',
+										controlNavThumbsReplace: '_thumb.jpg',
+										keyboardNav: true,
+										pauseOnHover: true, 
+										manualAdvance: false, 
+										captionOpacity: 0.8,
+										beforeChange: function() {},
+										afterChange: function() {},
+										slideshowEnd: function() {}
+										});
+									}); 
+								</script>
+								<div class="slider-wrapper theme-default">
+									<div class="ribbon"></div>
+									<div id="slider" class="nivoSlider">
+										<a href="<?php echo $this->_var['image']['ad_link_url']; ?>"><img src="data/files/mall/template/pic01.jpg"/></a>
+										<a href="<?php echo $this->_var['image']['ad_link_url']; ?>"><img src="data/files/mall/template/pic02.jpg"/></a>
+										<a href="<?php echo $this->_var['image']['ad_link_url']; ?>"><img src="data/files/mall/template/pic03.jpg"/></a>
+									</div>
+								</div>
+								<div class="number_bg"></div>
+							</div>
+						</div>
+						<div class="cleared"></div>
+					</div>
+            		<div class="cleared"></div>
                 </div>
             </div>
-        </div>
-        
-        <a name="module">
-        <ul class="user_menu">
-            <div class="ornament1"></div>
-            <div class="ornament2"></div>
-            <li><a class="<?php if ($_GET['eval']): ?>normal<?php else: ?>active<?php endif; ?>" href="<?php echo url('app=store&act=credit&id=' . $this->_var['store']['store_id']. ''); ?>#module"><span>Tất cả đánh giá</span></a></li>
-            <li><a class="<?php if ($_GET['eval'] == 3): ?>active<?php else: ?>normal<?php endif; ?>" href="<?php echo url('app=store&act=credit&id=' . $this->_var['store']['store_id']. '&eval=3'); ?>#module"><span>Tốt</span></a></li>
-            <li><a class="<?php if ($_GET['eval'] == 2): ?>active<?php else: ?>normal<?php endif; ?>" href="<?php echo url('app=store&act=credit&id=' . $this->_var['store']['store_id']. '&eval=2'); ?>#module"><span>Bình thường</span></a></li>
-            <li><a class="<?php if ($_GET['eval'] == 1): ?>active<?php else: ?>normal<?php endif; ?>" href="<?php echo url('app=store&act=credit&id=' . $this->_var['store']['store_id']. '&eval=1'); ?>#module"><span>Xấu</span></a></li>
-        </ul>
-        
-        <table class="tab_table">
-            <tr class="bg1 new_size">
-                <th>Đánh giá</th>
-                <th class="width2">Nội dung</th>
-                <th class="width3">Sản phẩm</th>
-                <th>Số tiền</th>
-                <th>Người mua</th>
-                <th>Thời gian</th>
-            </tr>
-            <?php $_from = $this->_var['goods_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods');if (count($_from)):
-    foreach ($_from AS $this->_var['goods']):
+			<div class="art-post">
+                <div class="art-post-tl"></div>
+                <div class="art-post-tr"></div>
+                <div class="art-post-bl"></div>
+                <div class="art-post-br"></div>
+                <div class="art-post-tc"></div>
+                <div class="art-post-bc"></div>
+                <div class="art-post-cl"></div>
+                <div class="art-post-cr"></div>
+                <div class="art-post-cc"></div>
+                <div class="art-post-body">
+					<div class="art-post-inner art-article">
+						<h2 class="art-postheader">
+                            Đáng giá ( <?php echo $this->_var['store']['praise_rate']; ?> % )
+                        </h2>
+                        <div class="credited">
+							<table>
+								<tr class="bg2 new_size">
+									<th></th>
+									<th>Trong 1 tuần</th>
+									<th>Trong 1 tháng</th>
+									<th>Trong 6 tháng</th>
+									<th>Trước 6 tháng</th>
+									<th>Tổng</th>
+								</tr>
+								<tr>
+									<th><div class="fontColor6 credited_css">Tốt</div></th>
+									<td><?php echo $this->_var['stats']['3']['in_a_week']; ?></td>
+									<td><?php echo $this->_var['stats']['3']['in_a_month']; ?></td>
+									<td><?php echo $this->_var['stats']['3']['in_six_month']; ?></td>
+									<td><?php echo $this->_var['stats']['3']['six_month_before']; ?></td>
+									<td><?php echo $this->_var['stats']['3']['total']; ?></td>
+								</tr>
+								<tr>
+									<th><div class="fontColor7 credited_css">Bình thường</div></th>
+									<td><?php echo $this->_var['stats']['2']['in_a_week']; ?></td>
+									<td><?php echo $this->_var['stats']['2']['in_a_month']; ?></td>
+									<td><?php echo $this->_var['stats']['2']['in_six_month']; ?></td>
+									<td><?php echo $this->_var['stats']['2']['six_month_before']; ?></td>
+									<td><?php echo $this->_var['stats']['2']['total']; ?></td>
+								</tr>
+								<tr>
+									<th><div class="fontColor8 credited_css">Xấu</div></th>
+									<td><?php echo $this->_var['stats']['1']['in_a_week']; ?></td>
+									<td><?php echo $this->_var['stats']['1']['in_a_month']; ?></td>
+									<td><?php echo $this->_var['stats']['1']['in_six_month']; ?></td>
+									<td><?php echo $this->_var['stats']['1']['six_month_before']; ?></td>
+									<td><?php echo $this->_var['stats']['1']['total']; ?></td>
+								</tr>
+								<tr>
+									<th><div class="fontColor9 credited_css">Tổng</div></th>
+									<td><?php echo $this->_var['stats']['0']['in_a_week']; ?></td>
+									<td><?php echo $this->_var['stats']['0']['in_a_month']; ?></td>
+									<td><?php echo $this->_var['stats']['0']['in_six_month']; ?></td>
+									<td><?php echo $this->_var['stats']['0']['six_month_before']; ?></td>
+									<td><?php echo $this->_var['stats']['0']['total']; ?></td>
+								</tr>
+							</table>
+						</div>
+                        <div class="cleared"></div>
+					</div>
+            		<div class="cleared"></div>
+                </div>
+            </div>
+		</div>
+		<div class="art-layout-cell art-sidebar2">
+			<div class="art-block">
+                <div class="art-block-body">
+	                <div class="art-blockheader">
+	                    <div class="l"></div>
+	                    <div class="r"></div>
+	                     <div class="t"><a href="<?php echo $this->_var['site_url']; ?>/index.php?app=cart" class="mycart">Giỏ hàng</a></div>
+	                </div>
+	                <div class="art-blockcontent">
+	                    <div class="art-blockcontent-tl"></div>
+	                    <div class="art-blockcontent-tr"></div>
+	                    <div class="art-blockcontent-bl"></div>
+	                    <div class="art-blockcontent-br"></div>
+	                    <div class="art-blockcontent-tc"></div>
+	                    <div class="art-blockcontent-bc"></div>
+	                    <div class="art-blockcontent-cl"></div>
+	                    <div class="art-blockcontent-cr"></div>
+	                    <div class="art-blockcontent-cc"></div>
+	                    <div class="art-blockcontent-body">
+							
+                            <div class="no_result">Không có sản phẩm trong giỏ hàng</div>
+							<?php $_from = $this->_var['new_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'ngoods');if (count($_from)):
+    foreach ($_from AS $this->_var['ngoods']):
 ?>
-            <tr>
-                <th>
-                    <?php if ($this->_var['goods']['evaluation'] == 1): ?>
-                    <span class="fontColor8">Xấu</span>
-                    <?php elseif ($this->_var['goods']['evaluation'] == 2): ?>
-                    <span class="fontColor7">Bình thường</span>
-                    <?php else: ?>
-                    <span class="fontColor6">Tốt</span>
-                    <?php endif; ?>
-                </th>
-                <td><div class="tab_table_con"><?php echo nl2br(htmlspecialchars($this->_var['goods']['comment'])); ?></div></td>
-                <td><a class="ware_link" href="<?php echo url('app=goods&id=' . $this->_var['goods']['goods_id']. ''); ?>"><?php echo htmlspecialchars($this->_var['goods']['goods_name']); ?></a></td>
-                <td class="tab_align money"><?php echo price_format($this->_var['goods']['price']); ?></td>
-                <td class="tab_align fontColor10"><?php echo htmlspecialchars($this->_var['goods']['buyer_name']); ?></td>
-                <td class="tab_align fontColor11"><?php echo local_date("Y-m-d H:i:s",$this->_var['goods']['evaluation_time']); ?></td>
-            </tr>
-            <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-        </table>
-        <?php echo $this->fetch('page.bottom.html'); ?>
-    </div>
-    
-    <div class="clear"></div>
+							<div class="list_item">
+								<div class="container">
+									<div class="thumb thumb_57">
+										<img src="<?php echo $this->_var['rgoods']['default_image']; ?>" alt="<?php echo htmlspecialchars($this->_var['ngoods']['goods_name']); ?>"/>
+										<a href="<?php echo url('app=goods&id=' . $this->_var['ngoods']['goods_id']. ''); ?>" class="cropper"><?php echo htmlspecialchars($this->_var['ngoods']['goods_name']); ?></a>
+									</div>
+									<div class="activity">
+										<a href="<?php echo url('app=goods&id=' . $this->_var['ngoods']['goods_id']. ''); ?>"><?php echo htmlspecialchars($this->_var['ngoods']['goods_name']); ?></a>
+										<div class="price"><?php echo price_format($this->_var['rgoods']['price']); ?></div>
+									</div>
+								   <div class="clear"></div>
+								</div>
+							</div>
+							<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+	        	            <div class="cleared"></div>
+	                    </div>
+	                </div>
+            		<div class="cleared"></div>
+                </div>
+            </div>
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">Hỗ trợ trực tuyến</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							
+							<div class="support-online">
+								<ul class="support-list-item">
+									<li><a href='ymsgr:sendIM?khoanhkhac_112'><img src="http://opi.yahoo.com/online?u=khoanhkhac_112&m=g&t=5"/>Tư vấn hỗ trợ</a></li>
+									<li><a href='ymsgr:sendIM?khoanhkhac_112'><img src="http://opi.yahoo.com/online?u=khoanhkhac_112&m=g&t=5"/>Nhân viên kinh doanh</a></li>
+									<li><a href='ymsgr:sendIM?khoanhkhac_112'><img src="http://opi.yahoo.com/online?u=khoanhkhac_112&m=g&t=5"/>Hỗ trợ kỹ thuật</a></li>
+									<li><a href="skype:chocongnghiep?chat"><img src="http://mystatus.skype.com/smallicon/chocongnghiep"  alt="chocongnghiep" />Hỗ trợ chung</a></li>
+								</ul>
+							</div>
+							
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div>
+			<?php if (! $this->_var['visitor']['user_id']): ?>
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">Đăng nhập</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							
+							<form method="post" id="login_form" action="index.php?app=member&act=login&ret_url=">
+								<div class="line first">
+									<label for="username">Tên đăng nhập:</label>
+									<input id="username" name="user_name" value="" class="width3 text" title="Tên đăng nhập" tabindex="1" type="text">
+								</div>
+								<div class="line">
+									<label for="password">Mật khẩu:</label>
+									<input id="password" name="password" value="" class="width3 text" title="Mật khẩu" tabindex="2" type="password">
+								</div>
+								<div class="line">
+									<input id="remember" name="remember_me" value="1" tabindex="3" type="checkbox">
+									<label for="remember" class="lable_remember">Ghi nhớ mật khẩu</label>
+								</div>
+								<div class="line" style="text-align:center;">
+									<input id="btn_login" name="Submit" value="Đăng nhập" tabindex="4" type="submit" class="enter" />
+									<div class="clear"></div>
+								</div>
+								<div class="line">
+									<a href="<?php echo url('app=find_password'); ?>" class="clew" tabindex="5">Quên mật khẩu?</a>
+								</div>
+								<input type="hidden" name="ret_url" value="<?php echo $this->_var['ret_url']; ?>" />
+							</form>
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div>
+			<?php else: ?>
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">Xin chào, <a href="<?php echo url('app=member'); ?>"><?php echo htmlspecialchars($this->_var['visitor']['user_name']); ?></a></div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							<div class="info_user">
+								<?php echo htmlspecialchars($this->_var['visitor']['user_name']); ?>
+							</div>
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div>
+			<?php endif; ?>
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">Tin tức mới</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							<?php $_from = $this->_var['new_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'ngoods');if (count($_from)):
+    foreach ($_from AS $this->_var['ngoods']):
+?>
+							<div class="list_item">
+								<div class="container">
+									<div class="thumb thumb_57">
+										<img src="<?php echo $this->_var['rgoods']['default_image']; ?>" alt="<?php echo htmlspecialchars($this->_var['ngoods']['goods_name']); ?>"/>
+										<a href="<?php echo url('app=goods&id=' . $this->_var['ngoods']['goods_id']. ''); ?>" class="cropper"><?php echo htmlspecialchars($this->_var['ngoods']['goods_name']); ?></a>
+									</div>
+									<div class="activity">
+										<a href="<?php echo url('app=goods&id=' . $this->_var['ngoods']['goods_id']. ''); ?>"><?php echo htmlspecialchars($this->_var['ngoods']['goods_name']); ?></a>
+									</div>
+								   <div class="clear"></div>
+								</div>
+							</div>
+							<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div>
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">Hỏi - Đáp mới</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							<?php $_from = $this->_var['new_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'ngoods');if (count($_from)):
+    foreach ($_from AS $this->_var['ngoods']):
+?>
+							<div class="list_item">
+								<div class="container">
+									<div class="thumb thumb_57">
+										<img src="<?php echo $this->_var['rgoods']['default_image']; ?>" alt="<?php echo htmlspecialchars($this->_var['ngoods']['goods_name']); ?>"/>
+										<a href="<?php echo url('app=goods&id=' . $this->_var['ngoods']['goods_id']. ''); ?>" class="cropper"><?php echo htmlspecialchars($this->_var['ngoods']['goods_name']); ?></a>
+									</div>
+									<div class="activity">
+										<a href="<?php echo url('app=goods&id=' . $this->_var['ngoods']['goods_id']. ''); ?>"><?php echo htmlspecialchars($this->_var['ngoods']['goods_name']); ?></a>
+									</div>
+								   <div class="clear"></div>
+								</div>
+							</div>
+							<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div>
+			<div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">Rao vặt mới</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+							<?php $_from = $this->_var['new_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'ngoods');if (count($_from)):
+    foreach ($_from AS $this->_var['ngoods']):
+?>
+							<div class="list_item">
+								<div class="container">
+									<div class="thumb thumb_57">
+										<img src="<?php echo $this->_var['rgoods']['default_image']; ?>" alt="<?php echo htmlspecialchars($this->_var['ngoods']['goods_name']); ?>"/>
+										<a href="<?php echo url('app=goods&id=' . $this->_var['ngoods']['goods_id']. ''); ?>" class="cropper"><?php echo htmlspecialchars($this->_var['ngoods']['goods_name']); ?></a>
+									</div>
+									<div class="activity">
+										<a href="<?php echo url('app=goods&id=' . $this->_var['ngoods']['goods_id']. ''); ?>"><?php echo htmlspecialchars($this->_var['ngoods']['goods_name']); ?></a>
+									</div>
+								   <div class="clear"></div>
+								</div>
+							</div>
+							<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div>
+            <div class="art-block">
+                <div class="art-block-body">
+                    <div class="art-blockheader">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                         <div class="t">Thông tin liên hệ</div>
+                    </div>
+                    <div class="art-blockcontent">
+                        <div class="art-blockcontent-tl"></div>
+                        <div class="art-blockcontent-tr"></div>
+                        <div class="art-blockcontent-bl"></div>
+                        <div class="art-blockcontent-br"></div>
+                        <div class="art-blockcontent-tc"></div>
+                        <div class="art-blockcontent-bc"></div>
+                        <div class="art-blockcontent-cl"></div>
+                        <div class="art-blockcontent-cr"></div>
+                        <div class="art-blockcontent-cc"></div>
+                        <div class="art-blockcontent-body">
+                            <div>
+                                <img src="<?php echo $this->res_base . "/" . 'images/contact.jpg'; ?>" alt="an image" style="margin: 0 auto;display:block;width:95%" />
+                            <br />
+                            <b><?php echo htmlspecialchars($this->_var['store']['store_name']); ?>.</b><br />
+                            <?php echo htmlspecialchars($this->_var['store']['address']); ?><br />
+                            Email: <a href="mailto:info@company.com">info@company.com</a><br />
+                            <br />
+                            Điện thoại: <?php echo htmlspecialchars($this->_var['store']['tel']); ?> <br />
+                            Fax: <?php echo htmlspecialchars($this->_var['store']['tel']); ?>
+                            </div>
+                    		<div class="cleared"></div>
+                        </div>
+                    </div>
+            		<div class="cleared"></div>
+                </div>
+            </div>
+		</div>
+	</div>
 </div>
-
 <?php echo $this->fetch('footer.html'); ?>

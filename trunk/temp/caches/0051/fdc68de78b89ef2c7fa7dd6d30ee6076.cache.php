@@ -1,7 +1,7 @@
 <?php
 /**
  *  @Created By ECMall PhpCacheServer
- *  @Time:2011-09-28 17:33:19
+ *  @Time:2011-10-10 14:47:22
  */
 
 if(filemtime(__FILE__) + 1800 < time())return false;

@@ -142,13 +142,13 @@
 						<h4>Tên cửa hàng bán sản phẩm</h4>
 						<ul class="merchant_links_list">
 							<li>
-								<a href="link thông tin cửa hàng" class="merchant_link visit_storefront">Xem cửa hàng</a>
+								<a href="<?php echo url('app=store&id=347'); ?>" class="merchant_link visit_storefront">Xem cửa hàng</a>
 							</li>
 							<li>
-								<a href="link thông tin cửa hàng" class="merchant_link visit_storeprofile">Thông tin cửa hàng</a>
+								<a href="<?php echo url('app=store&id=347'); ?>" class="merchant_link visit_storeprofile">Thông tin cửa hàng</a>
 							</li>
 							<li>
-								<a href="link liên hệ cửa hàng" class="merchant_link contact_storefront">Liên hệ</a>
+								<a href="<?php echo url('app=store&id=347'); ?>" class="merchant_link contact_storefront">Liên hệ</a>
 							</li>
 						</ul>
 					</div>

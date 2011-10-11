@@ -26,7 +26,7 @@
                     <th></th>
                     <th class="align1 width9">Tiêu đề</th>
                     <th class="width15">Hiển thị</th>
-                    <th>Sắp xếp theo</th>
+                    <th>Thứ tự hiển thị</th>
                     <th>Hành động</th>
                 </tr>
                 <?php endif; ?>

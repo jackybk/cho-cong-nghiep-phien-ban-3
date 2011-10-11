@@ -6,8 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $this->_var['charset']; ?>" />
 <title> ECMall </title>
 <link href="templates/style/admin.css" rel="stylesheet" type="text/css" />
-<link href="templates/style/user.css" rel="stylesheet" type="text/css" />
-<link href="templates/style/screen.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
 //<!CDATA[
 var SITE_URL = "<?php echo $this->_var['site_url']; ?>";
@@ -26,47 +24,10 @@ var SITE_URL = "<?php echo $this->_var['site_url']; ?>";
 <script type="text/javascript" src="<?php echo $this->res_base . "/" . 'js/slider.js'; ?>></script>
 
 
-
-<script type="text/javascript" src="index.php?act=jslang"></script>
 <script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'jquery.js'; ?>" charset="utf-8"></script>
 <script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'ecmall.js'; ?>" charset="utf-8"></script>
 <script type="text/javascript" src="<?php echo $this->res_base . "/" . 'js/admin.js'; ?>" charset="utf-8"></script>
 <script type="text/javascript" src="index.php?act=jslang"></script>
-<script type="text/javascript" src="index.php?act=jslang"></script>
-
-<script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'jquery.js'; ?>" charset="utf-8"></script>
-<script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'member.js'; ?>" charset="utf-8"></script>
-<script type="text/javascript">
-$(function(){
-    $('#left h1 span,h2.title a.fold').click(function(){
-        if($(this).hasClass('span_close')){
-            $(this).removeClass('span_close');
-            $(this).addClass('span_open');
-            this.title = 'open';
-            closeSubmenu($(this).parent());
-        }
-        else{
-            $(this).removeClass('span_open');
-            $(this).addClass('span_close');
-            this.title = 'close';
-            openSubmenu($(this).parent());
-        }
-    });
-
-    var span = $("#child_nav");
-    span.hover(function(){
-        $("#float_layer:not(:animated)").show();
-    }, function(){
-        $("#float_layer").hide();
-    });
-});
-function closeSubmenu(h1){
-    h1.next('ul').css('display', 'none');
-}
-function openSubmenu(h1){
-    h1.next('ul').css('display', '');
-}
-</script>
 <style type="text/css">
 <!--
 body {background: #fcfdff}

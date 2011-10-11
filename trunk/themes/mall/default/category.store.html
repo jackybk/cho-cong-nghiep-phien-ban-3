@@ -45,7 +45,10 @@
 									<a href="{url app=search&cate_id=$scategory.id}">{$scategory.value|escape}</a>
 									<ul>
 										<!--{foreach from=$scategory.children item=child}-->
-										<li><a href="{url app=search&cate_id=$child.id}">{$child.value|escape}</a></li>
+										<li>
+											<a href="{url app=search&cate_id=$child.id}">{$child.value|escape}</a>
+										
+										</li>
 										<!--{/foreach}-->
 									</ul>
 								</li>

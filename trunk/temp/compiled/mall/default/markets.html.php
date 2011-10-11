@@ -35,14 +35,21 @@
 			<div class="clear"></div>
 			<div id="nav_market">
 				<ul>
-					<li class="market_main">
-						<a href="<?php echo url('app=markets'); ?>">Trang chính</a>
+					<li class="market_main selected">
+						<div></div>
+						<a href="<?php echo url('app=markets'); ?>">Công nghiệp xây dựng</a>
 					</li>
 					<li class="market_stores">
+						<div></div>
 						<a href="<?php echo url('app=markets_store'); ?>">Cửa hàng</a>
 					</li>
 					<li class="market_products">
+						<div></div>
 						<a href="<?php echo url('app=markets_product'); ?>">Sản phẩm</a>
+					</li>
+					<li class="last">
+						<div></div>
+						<a href=""></a>
 					</li>
 				</ul>
 				<div id="market_search_field">
@@ -50,7 +57,7 @@
 						<label class="structural structural" for="marketsearch">Tìm sản phẩm</label>
 						<input id="marketsearch" type="text" class="search_box populate" title="Tìm sản phẩm" name=""/>
 						<input type="hidden" id="market" value="12" name="categry"/>
-						<input class="spyglass" type="image"/>
+						<input class="spyglass" type="image" src="<?php echo $this->res_base . "/" . 'images/pix.gif'; ?>"/>
 					</form>
 				</div>
 				<div class="clear"></div>
@@ -72,6 +79,7 @@
 						<div class="product_vert">
 							<div class="thumb thumb_152">
 								<img src="data/files/mall/template/tdh-1_medium.jpg" alt=""/>
+								<!--<span class="promotion" style="position:absolute;right:0;top:0;height:21px;"><span style="background:url(<?php echo $this->res_base . "/" . 'images/logo.gif'; ?>) no-repeat 0 0">Giam 5%</span></span>-->
 								<span class="item_price"><span>1.000.000 Đ</span></span>
 								<a class="cropper" href="<?php echo url('app=gdetail&id=' . $this->_var['goods']['goods_id']. ''); ?>" title="<?php echo htmlspecialchars($this->_var['goods']['goods_name']); ?>">Tên sản phẩm</a>
 							</div>
@@ -274,7 +282,7 @@
 					<div class="title">Top cửa hàng bán chạy</div>
 					<ul>
 						<li class="first">
-							<a class="block_link">
+							<a class="block_link" href="">
 								<span class="thumb thumb_42">
 									<img src="data/files/mall/template/tdh-1_medium.jpg" alt=""/>
 									<div class="cropper"></div>
@@ -287,7 +295,7 @@
 							</a>
 						</li>
 						<li class="">
-							<a class="block_link">
+							<a class="block_link" href="">
 								<span class="thumb thumb_42">
 									<img src="data/files/mall/template/tdh-1_medium.jpg" alt=""/>
 									<div class="cropper"></div>
@@ -301,7 +309,7 @@
 						</li>
 						</li>
 						<li class="last">
-							<a class="block_link">
+							<a class="block_link" href="">
 								<span class="thumb thumb_42">
 									<img src="data/files/mall/template/tdh-1_medium.jpg" alt=""/>
 									<div class="cropper"></div>

@@ -34,7 +34,7 @@ function add_to_cart(spec_id, quantity)
         {
             $('.bold_num').text(data.retval.cart.kinds);
             $('.bold_mly').html(price_format(data.retval.cart.amount));
-            $('.ware_cen').slideDown('slow');
+            $('.ware_cen').slideDown('fast');
             setTimeout(slideUp_fn, 5000);
         }
         else
@@ -55,13 +55,15 @@ var goodsspec = new goodsspec(specs, specQty, defSpec);
 </script>
 
 <h2 class="ware_title">{$goods.goods_name|escape}</h2>
-
 <div class="ware_info">
     <div class="ware_pic">
         <div class="big_pic">
-            <a href="javascript:;"><span class="jqzoom"><img src="{$goods._images.0.thumbnail|default:$default_image}" width="300" height="300" jqimg="{$goods._images.0.image_url}" /></span></a>
+            <a href="javascript:;">
+				<span class="jqzoom">
+					<img src="{$goods._images.0.thumbnail|default:$default_image}" width="207" height="207" jqimg="{$goods._images.0.image_url}" />
+				</span>
+			</a>
         </div>
-
         <div class="bottom_btn">
             <!--<a class="collect" href="javascript:collect_goods({$goods.goods_id});" title="{$lang.add_to_favorite}"></a>-->
             <div class="left_btn"></div>
@@ -74,94 +76,86 @@ var goodsspec = new goodsspec(specs, specQty, defSpec);
                 </ul>
             </div>
         </div>
-        <script>
-            $(function(){
-                var btn_list_li = $("#btn_list > li");
-                btn_list_li.hover(function(){
-                    $(this).find("ul:not(:animated)").slideDown("fast");
-                },function(){
-                    $(this).find("ul").slideUp("fast");
-                });
-            });
-        </script>
-        <!-- {if $share} -->
-        <ul id="btn_list">
-            <li id="btn_list1" title="{$lang.collect_goods}">
-                <ul class="drop_down">
-                    <!-- {foreach from=$share item=item} -->
-                    <!-- {if $item.type eq 'collect'} --><li><!-- {if $item.logo} --><img src="{$item.logo}" /><!-- {/if} --><a target="_blank" href="{$item.link}">{$item.title|escape}</a></li><!-- {/if} -->
-                    <!-- {/foreach} -->
-                </ul>
-            </li>
-            <li id="btn_list2" title="{$lang.share_goods}">
-                <ul class="drop_down">
-                    <!-- {foreach from=$share item=item} -->
-                    <!-- {if $item.type eq 'share'} --><li><!-- {if $item.logo} --><img src="{$item.logo}" /><!-- {/if} --><a target="_blank" href="{$item.link}">{$item.title|escape}</a></li><!-- {/if} -->
-                    <!-- {/foreach} -->
-                </ul>
-            </li>
-        </ul>
-        <!-- {/if} -->
+		<!-- {if $share} -->
+		<div class="share_goods">
+			<div id="share_label">{$lang.share_this}</div>
+			<div id="share_link">
+                <!-- {foreach from=$share item=item} -->
+                <!-- {if $item.type eq 'collect'} --><a target="_blank" href="{$item.link}"><!-- {if $item.logo} --><img src="{$item.logo}" title="{$item.title|escape}"/><!-- {/if} --></a><!-- {/if} -->
+                <!-- {/foreach} -->
+				<!-- {foreach from=$share item=item} -->
+                <!-- {if $item.type eq 'share'} --><a target="_blank" href="{$item.link}"><!-- {if $item.logo} --><img src="{$item.logo}" title="{$item.title|escape}"/><!-- {/if} --></a><!-- {/if} -->
+                <!-- {/foreach} -->
+		   </div>
+		</div>
+		<!-- {/if} -->
     </div>
-
     <div class="ware_text">
         <div class="rate">
-            <span class="letter1">{$lang.price}: </span><span class="fontColor3" ectype="goods_price">{$goods._specs.0.price|price}</span><br />
-            <span class="letter1">{$lang.brand}: </span>{$goods.brand|escape}<br />
-            {$lang.tags}:&nbsp;&nbsp;<!--{foreach from=$goods.tags item=tag}-->{$tag}&nbsp;&nbsp;&nbsp;<!--{/foreach}--><br />
-            {$lang.sale_situation}: {$sales_info}{$comments}<br />
-            {$lang.region}: {$store.region_name|escape}
+			<div class="info_good">
+				<div class="label_info">{$lang.price}:</div>
+				<div class="result_info"><span class="price_good" ectype="goods_price">{$goods._specs.0.price|price}</span><br><span class="vat">Đã có VAT</span></div>
+			</div>
+			<div class="info_good">
+				<div class="label_info">{$lang.brand}:</div>
+				<div class="result_info">{$goods.brand|escape}</div>
+			</div>
+			<div class="info_good">
+				<div class="label_info">{$lang.origin}:</div>
+				<div class="result_info">Việt Nam</div>
+			</div>
+			<div class="info_good">
+				<div class="label_info">{$lang.promotional}:</div>
+				<div class="result_info">Nếu có</div>
+			</div>
+			<div class="info_good">
+				<div class="label_info">{$lang.warranty}:</div>
+				<div class="result_info">12 tháng</div>
+			</div>
+			<div class="info_good">
+				<div class="label_info">{$lang.comments}:</div>
+				<div class="result_info">{$comments}</div>
+			</div>
+			<div class="info_good">
+				<div class="label_info">{$lang.ship}:</div>
+				<div class="result_info">Tính phí khi thanh toán</div>
+			</div>
+			<div class="info_good">
+				<div class="label_info">&nbsp;</div>
+				<div class="result_info">Tính phí khi thanh toán
+					<!--{if $goods.spec_qty gt 0}-->
+					<br/>{$goods.spec_name_1|escape}
+					<!--{/if}-->
+					<!--{if $goods.spec_qty gt 1}-->
+					<br/>{$goods.spec_name_2|escape}
+					<!--{/if}-->
+					<!--{if $goods.spec_qty gt 0}-->
+					<br/>{$lang.your_select}:<span class="aggregate" ectype="current_spec"></span>
+					<!--{/if}-->
+				</div>
+			</div>
+			<div class="info_good">
+				<div class="label_info">{$lang.quantity}:</div>
+				<div class="result_info">{$lang.left_bracket}{$lang.stock}<span class="stock" ectype="goods_stock">{$goods._specs.0.stock}</span>{$lang.unit}{$lang.right_bracket}<br/><input type="text" class="text width2" name="" id="quantity" value="1" />{$lang.unit}</div>
+			</div>
+			<div class="info_good">
+				<div class="label_info">&nbsp;</div>
+				<div class="result_info detail_buy">
+					<a href="javascript:buy();" class="art-button">{$lang.buy_now}</a>
+					<div class="ware_cen" style="display:none;">
+						<div class="ware_center">
+							<h6>
+								<span class="dialog_title">{$lang.add_to_cart_ok}</span>
+							</h6>
+							<div class="ware_cen_btn">
+								{$lang.cart_status}
+							</div>
+						</div>
+						<div class="ware_cen_bottom"></div>
+					</div>
+				</div>
+			</div>   
         </div>
-
-        <div class="handle">
-            <!--{if $goods.spec_qty gt 0}-->
-            <ul>
-                <li class="handle_title">{$goods.spec_name_1|escape}: </li>
-            </ul>
-            <!--{/if}-->
-            <!--{if $goods.spec_qty gt 1}-->
-            <ul>
-                <li class="handle_title">{$goods.spec_name_2|escape}: </li>
-            </ul>
-            <!--{/if}-->
-            <ul>
-                <li class="handle_title">{$lang.quantity}: </li>
-                <li>
-                    <input type="text" class="text width1" name="" id="quantity" value="1" />
-                    {$lang.unit}{$lang.left_bracket}{$lang.stock}<span class="stock" ectype="goods_stock">{$goods._specs.0.stock}</span>{$lang.unit}{$lang.right_bracket}
-                </li>
-            </ul>
-            <!--{if $goods.spec_qty gt 0}-->
-            <ul>
-                <li class="handle_title">{$lang.your_select}: </li>
-                <li class="aggregate" ectype="current_spec"></li>
-            </ul>
-            <!--{/if}-->
-        </div>
-
-        <ul class="ware_btn">
-            <div class="ware_cen" style="display:none">
-                <div class="ware_center">
-                    <h1>
-                        <span class="dialog_title">{$lang.add_to_cart_ok}</span>
-                        <span class="close_link" title="{$lang.close}" onmouseover="this.className = 'close_hover'" onmouseout="this.className = 'close_link'" onclick="slideUp_fn();"></span>
-                    </h1>
-                    <div class="ware_cen_btn">
-                        <p class="ware_text_p">{$lang.cart_status}</p>
-                        <p class="ware_text_btn">
-                            <input type="submit" class="btn1" name="" value="{$lang.view_cart}" onclick="location.href='{$site_url}/index.php?app=cart'" />
-                            <input type="submit" class="btn2" name="" value="{$lang.continue_buy}" onclick="$('.ware_cen').css({'display':'none'});" />
-                        </p>
-                    </div>
-                </div>
-                <div class="ware_cen_bottom"></div>
-            </div>
-
-            <!--<li class="btn_c1" title="{$lang.buy_now}"><a href="#"></a></li>-->
-            <li class="btn_c2" title="{$lang.add_to_cart}"><a href="javascript:buy();"></a></li>
-            <li class="btn_c3" title="{$lang.add_to_favorite}"><a href="javascript:collect_goods({$goods.goods_id});"></a></li>
-        </ul>
     </div>
-
-    <div class="clear"></div>
+    <div class="cleared"></div>
 </div>

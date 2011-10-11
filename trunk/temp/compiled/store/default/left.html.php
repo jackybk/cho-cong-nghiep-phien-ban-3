@@ -1,153 +1,214 @@
-        <div class="user">
-            <div class="user_photo">
-                <h2><?php echo htmlspecialchars($this->_var['store']['store_name']); ?></h2>
-                <div class="photo"><a href="<?php echo url('app=store&id=' . $this->_var['store']['store_id']. ''); ?>"><img src="<?php echo $this->_var['store']['store_logo']; ?>" width="100" height="100" /></a></div>
-                <p><a href="javascript:collect_store(<?php echo $this->_var['store']['store_id']; ?>)">Bộ sưu tập</a></p>
-            </div>
-            
-            <div class="user_data">
-                <p>
-                    <span>Chủ: </span><?php echo htmlspecialchars($this->_var['store']['store_owner']['user_name']); ?>
-                    <a target="_blank" href="<?php echo url('app=message&act=send&to_id=' . htmlspecialchars($this->_var['store']['store_owner']['user_id']). ''); ?>"><img src="<?php echo $this->res_base . "/" . 'images/web_mail.gif'; ?>" alt="Gửi tin nhắn" /></a>
-                </p>
-                <p>
-                    <span>Uy tín: </span><span class="fontColor1"><?php echo $this->_var['store']['credit_value']; ?></span>
-                    <?php if ($this->_var['store']['credit_value'] >= 0): ?><img src="<?php echo $this->_var['store']['credit_image']; ?>" alt="" /><?php endif; ?>
-                </p>
-                <p>Cấp độ: <?php echo $this->_var['store']['sgrade']; ?></p>
-                <p>Số sản phẩm: <?php echo $this->_var['store']['goods_count']; ?></p>
-                <p>Phạm vi bán hàng : <?php echo htmlspecialchars($this->_var['store']['region_name']); ?></p>
-                <p>Ngày đăng ký: <?php echo local_date("Y-m-d",$this->_var['store']['add_time']); ?></p>
-                <?php if ($this->_var['store']['certifications']): ?>
-                <p>
-                    <span>Chứng thực: </span>
-                    <span>
-                        <?php $_from = $this->_var['store']['certifications']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'cert');if (count($_from)):
-    foreach ($_from AS $this->_var['cert']):
-?>
-                        <?php if ($this->_var['cert'] == "autonym"): ?>
-                        <a href="<?php echo url('app=article&act=system&code=cert_autonym'); ?>" target="_blank" title="Tên chứng thực"><img src="<?php echo $this->res_base . "/" . 'images/cert_autonym.gif'; ?>" /></a>
-                        <?php elseif ($this->_var['cert'] == "material"): ?>
-                        <a href="<?php echo url('app=article&act=system&code=cert_material'); ?>" target="_blank" title="Cửa hàng thực thể"><img src="<?php echo $this->res_base . "/" . 'images/cert_material.gif'; ?>" /></a>
-                        <?php endif; ?>
-                        <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-                    </span>
-                </p>
-                <?php endif; ?>
-                <?php if ($this->_var['store']['address']): ?>
-                <p>Địa chỉ: <?php echo htmlspecialchars($this->_var['store']['address']); ?></p>
-                <?php endif; ?>
-                <?php if ($this->_var['store']['tel']): ?>
-                <p>Điện thoại: <?php echo htmlspecialchars($this->_var['store']['tel']); ?></p>
-                <?php endif; ?>
-                <p>
-                    <?php if ($this->_var['store']['im_qq']): ?>
-                    <a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=<?php echo htmlspecialchars($this->_var['store']['im_qq']); ?>&amp;Site=<?php echo htmlspecialchars($this->_var['store']['store_name']); ?>&amp;Menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:<?php echo htmlspecialchars($this->_var['store']['im_qq']); ?>:4" alt="QQ"></a>
-                    <?php endif; ?>
-                    <?php if ($this->_var['store']['im_ww']): ?>
-                    <a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&uid=<?php echo urlencode($this->_var['store']['im_ww']); ?>&site=cntaobao&s=2&charset=<?php echo $this->_var['charset']; ?>" ><img border="0" src="http://amos.im.alisoft.com/online.aw?v=2&uid=<?php echo urlencode($this->_var['store']['im_ww']); ?>&site=cntaobao&s=2&charset=<?php echo $this->_var['charset']; ?>" alt="Wang Wang" /></a>
-                    <?php endif; ?>
-                    <?php if ($this->_var['store']['im_msn']): ?>
-                    <a target="_blank" href="http://settings.messenger.live.com/Conversation/IMMe.aspx?invitee=<?php echo htmlspecialchars($this->_var['store']['im_msn']); ?>"><img src="http://messenger.services.live.com/users/<?php echo htmlspecialchars($this->_var['store']['im_msn']); ?>/presenceimage/" alt="status" /></a>
-                    <?php endif; ?>
-                </p>
-            </div>
-        
-            <div class="clear"></div>
-        </div>
-        
-        <div class="module_common">
-            <h2 class="common_title veins1">
-                <div class="ornament1"></div>
-                <div class="ornament2"></div>
-                <span class="ico1"><span class="ico2">Tìm kiếm trong cửa hàng</span></span>
-            </h2>
-            <div class="wrap">
-                <div class="wrap_child">
-                    <div class="web_search">
-                        <form id="" name="" method="get" action="index.php">
-                            <input type="hidden" name="app" value="store" />
-                            <input type="hidden" name="act" value="search" />
-                            <input type="hidden" name="id" value="<?php echo $this->_var['store']['store_id']; ?>" />
-                            <input class="text width4" type="text" name="keyword" />
-                            <input class="btn" type="submit" value="" />
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="module_common">
-            <h2 class="common_title veins1">
-                <div class="ornament1"></div>
-                <div class="ornament2"></div>
-                <span class="ico1"><span class="ico2">Danh mục sản phẩm</span></span>
-            </h2>
-            <div class="wrap">
-                <div class="wrap_child">
-                    <ul class="submenu">
-                        <li><a class="none_ico" href="<?php echo url('app=store&id=' . $this->_var['store']['store_id']. '&act=search'); ?>">Tất cả sản phẩm</a></li>
-                        <?php $_from = $this->_var['store']['store_gcates']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'gcategory');if (count($_from)):
+							<div class="art-vmenublock">
+                                <div class="art-vmenublock-body">
+                                    <div class="art-vmenublockheader">
+                                        <div class="l"></div>
+                                        <div class="r"></div>
+                                         <div class="t">Danh mục sản phẩm</div>
+                                    </div>
+                                    <div class="art-vmenublockcontent">
+                                        <div class="art-vmenublockcontent-tl"></div>
+                                        <div class="art-vmenublockcontent-tr"></div>
+                                        <div class="art-vmenublockcontent-bl"></div>
+                                        <div class="art-vmenublockcontent-br"></div>
+                                        <div class="art-vmenublockcontent-tc"></div>
+                                        <div class="art-vmenublockcontent-bc"></div>
+                                        <div class="art-vmenublockcontent-cl"></div>
+                                        <div class="art-vmenublockcontent-cr"></div>
+                                        <div class="art-vmenublockcontent-cc"></div>
+                                        <div class="art-vmenublockcontent-body">
+											
+                                                    <ul class="art-vmenu">
+                                                    	<li>
+                                                    		<a href="<?php echo url('app=store&id=' . $this->_var['store']['store_id']. '&act=search'); ?>"><span class="l"></span><span class="r"></span><span class="t">Tất cả sản phẩm</span></a>
+                                                    	</li>
+														<?php $_from = $this->_var['store']['store_gcates']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'gcategory');if (count($_from)):
     foreach ($_from AS $this->_var['gcategory']):
 ?>
-                        <?php if ($this->_var['gcategory']['children']): ?>
-                        <li>
-                            <a class="block_ico" href="<?php echo url('app=store&id=' . $this->_var['store']['store_id']. '&act=search&cate_id=' . $this->_var['gcategory']['id']. ''); ?>"><?php echo htmlspecialchars($this->_var['scategory']['value']); ?></a>
-                            <ul>
-                                <?php $_from = $this->_var['gcategory']['children']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'child_gcategory');if (count($_from)):
+															<?php if ($this->_var['gcategory']['children']): ?>
+															<li class="active">
+																<a class="active" href="<?php echo url('app=store&id=' . $this->_var['store']['store_id']. '&act=search&cate_id=' . $this->_var['gcategory']['id']. ''); ?>"><span class="l"></span><span class="r"></span><span class="t"><?php echo htmlspecialchars($this->_var['scategory']['value']); ?></span></a>
+																<ul class="active">
+																	<?php $_from = $this->_var['gcategory']['children']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'child_gcategory');if (count($_from)):
     foreach ($_from AS $this->_var['child_gcategory']):
 ?>
-                                <li><a href="<?php echo url('app=store&id=' . $this->_var['store']['store_id']. '&act=search&cate_id=' . $this->_var['child_gcategory']['id']. ''); ?>"><?php echo htmlspecialchars($this->_var['child']['value']); ?></a></li>
-                                <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-                            </ul>
-                        </li>
-                        <?php else: ?>
-                        <li><a class="none_ico" href="<?php echo url('app=store&id=' . $this->_var['store']['store_id']. '&act=search&cate_id=' . $this->_var['gcategory']['id']. ''); ?>"><?php echo htmlspecialchars($this->_var['gcategory']['value']); ?></a></li>
-                        <?php endif; ?>
-                        <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <?php if ($_GET['app'] == "store" && $_GET['act'] == "index"): ?>
-        <div class="module_common">
-            <h2 class="common_title veins1">
-                <div class="ornament1"></div>
-                <div class="ornament2"></div>
-                <span class="ico1"><span class="ico2">Liên kết</span></span>
-            </h2>
-            <div class="wrap">
-                <div class="wrap_child">
-                    <ul class="submenu">
-                        <?php $_from = $this->_var['partners']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'partner');if (count($_from)):
+																	<li><a href="<?php echo url('app=store&id=' . $this->_var['store']['store_id']. '&act=search&cate_id=' . $this->_var['child_gcategory']['id']. ''); ?>" class="active"><?php echo htmlspecialchars($this->_var['child']['value']); ?></a></li>
+																	<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+																</ul>
+															</li>
+															<?php else: ?>
+															<li><a href="<?php echo url('app=store&id=' . $this->_var['store']['store_id']. '&act=search&cate_id=' . $this->_var['gcategory']['id']. ''); ?>"><span class="l"></span><span class="r"></span><span class="t"><?php echo htmlspecialchars($this->_var['gcategory']['value']); ?></span></a></li>
+															<?php endif; ?>
+														<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+                                                    </ul>
+											
+                                    		<div class="cleared"></div>
+                                        </div>
+                                    </div>
+                            		<div class="cleared"></div>
+                                </div>
+                            </div>
+							<div class="art-post no-margin">
+								<div class="art-post-tl"></div>
+								<div class="art-post-tr"></div>
+								<div class="art-post-bl"></div>
+								<div class="art-post-br"></div>
+								<div class="art-post-tc"></div>
+								<div class="art-post-bc"></div>
+								<div class="art-post-cl"></div>
+								<div class="art-post-cr"></div>
+								<div class="art-post-cc"></div>
+								<div class="art-post-body">
+									<div class="art-post-inner art-article">
+										<div id="module_logo">
+											<div id="avatar">
+												<img src="<?php echo $this->_var['store']['store_logo']; ?>" alt="<?php echo htmlspecialchars($this->_var['store']['store_owner']['user_name']); ?>" title="<?php echo htmlspecialchars($this->_var['store']['store_owner']['user_name']); ?>"/>
+											</div>
+											<h5 id="location"><?php echo htmlspecialchars($this->_var['store']['region_name']); ?></h5>
+											
+											<!--<div class="button_follow">
+												<a id="collect_store" href="javascript:collect_store(<?php echo $this->_var['store']['store_id']; ?>)">Bộ sưu tập</a>
+												<a id="sent_message" href="<?php echo url('app=message&act=send&to_id=' . htmlspecialchars($this->_var['store']['store_owner']['user_id']). ''); ?>">
+													<img src="<?php echo $this->res_base . "/" . 'images/web_mail.gif'; ?>" alt="Gửi tin nhắn" />
+												</a>
+											</div>-->
+										</div>
+										<div class="cleared"></div>
+									</div>
+									<div class="cleared"></div>
+								</div>
+							</div>
+							<div class="art-block">
+                                <div class="art-block-body">
+                                    <div class="art-blockheader">
+                                        <div class="l"></div>
+                                        <div class="r"></div>
+                                         <div class="t">Tìm kiếm</div>
+                                    </div>
+                                    <div class="art-blockcontent">
+                                        <div class="art-blockcontent-tl"></div>
+                                        <div class="art-blockcontent-tr"></div>
+                                        <div class="art-blockcontent-bl"></div>
+                                        <div class="art-blockcontent-br"></div>
+                                        <div class="art-blockcontent-tc"></div>
+                                        <div class="art-blockcontent-bc"></div>
+                                        <div class="art-blockcontent-cl"></div>
+                                        <div class="art-blockcontent-cr"></div>
+                                        <div class="art-blockcontent-cc"></div>
+                                        <div class="art-blockcontent-body">
+											<div class="module_search">
+												<div class="search_store">
+													<form id="" name="" method="get" action="index.php">
+														<input type="hidden" name="app" value="store" />
+														<input type="hidden" name="act" value="search" />
+														<input type="hidden" name="id" value="<?php echo $this->_var['store']['store_id']; ?>" />
+														<input class="text width1" type="text" name="keyword" />
+														<input class="btn" type="submit" value="Tìm" />
+													</form>
+												</div>
+												<div class="wrap_follow">
+													<div class="follow_title">
+														<h6>Giá sản phẩm</h6>
+														<ul>
+															<li><a href="">1.000.000 Đ -> 2.000.000 Đ</a></li>
+															<li><a href="">2.000.000 Đ -> 3.000.000 Đ</a></li>
+															<li><a href="">3.000.000 Đ -> 5.000.000 Đ</a></li>
+															<li><a href="">5.000.000 Đ -> 10.000.000 Đ</a></li>
+															<li><a href="">10.000.000 Đ -> 20.000.000 Đ</a></li>
+														</ul>
+													</div>
+													<div class="follow_title">
+														<h6>Hãng sản xuất</h6>
+														<ul>
+															<li><a href="">Sony</a></li>
+															<li><a href="">Samsung</a></li>
+															<li><a href="">Canon</a></li>
+															<li><a href="">Nokia</a></li>
+															<li><a href="">Honda</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+                                    		<div class="cleared"></div>
+                                        </div>
+                                    </div>
+                            		<div class="cleared"></div>
+                                </div>
+                            </div>
+							<?php if ($_GET['app'] == "store" && $_GET['act'] == "index"): ?>
+							<div class="art-block">
+                                <div class="art-block-body">
+                                    <div class="art-blockheader">
+                                        <div class="l"></div>
+                                        <div class="r"></div>
+                                         <div class="t">partner</div>
+                                    </div>
+                                    <div class="art-blockcontent">
+                                        <div class="art-blockcontent-tl"></div>
+                                        <div class="art-blockcontent-tr"></div>
+                                        <div class="art-blockcontent-bl"></div>
+                                        <div class="art-blockcontent-br"></div>
+                                        <div class="art-blockcontent-tc"></div>
+                                        <div class="art-blockcontent-bc"></div>
+                                        <div class="art-blockcontent-cl"></div>
+                                        <div class="art-blockcontent-cr"></div>
+                                        <div class="art-blockcontent-cc"></div>
+                                        <div class="art-blockcontent-body">
+											<?php $_from = $this->_var['partners']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'partner');if (count($_from)):
     foreach ($_from AS $this->_var['partner']):
 ?>
-                        <li><a class="link_ico" href="<?php echo $this->_var['partner']['link']; ?>" target="_blank"><?php echo htmlspecialchars($this->_var['partner']['title']); ?></a></li>
-                        <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <?php endif; ?>
-        
-        <?php if ($_GET['app'] == "goods"): ?>
-        <div class="module_common">
-            <h2 class="common_title veins1">
-                <div class="ornament1"></div>
-                <div class="ornament2"></div>
-                <span class="ico1"><span class="ico2">Sản phẩm đã xem</span></span>
-            </h2>
-            <div class="wrap">
-                <div class="wrap_child">
-                    <ul class="annals">
-                        <?php $_from = $this->_var['goods_history']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'gh_goods');if (count($_from)):
+											<div class="advertise_store">
+												<a class="link_advertise" href="<?php echo $this->_var['partner']['link']; ?>" target="_blank" title="<?php echo htmlspecialchars($this->_var['partner']['title']); ?>">
+													<img src="<?php echo $this->res_base . "/" . 'images/advertise.png'; ?>" alt="<?php echo htmlspecialchars($this->_var['partner']['title']); ?>"/>
+												</a>
+											</div>
+											<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+                                    		<div class="cleared"></div>
+                                        </div>
+                                    </div>
+                            		<div class="cleared"></div>
+                                </div>
+                            </div>
+							<?php endif; ?>
+							<?php if ($_GET['app'] == "goods"): ?>
+							<div class="art-block">
+                                <div class="art-block-body">
+                                    <div class="art-blockheader">
+                                        <div class="l"></div>
+                                        <div class="r"></div>
+                                         <div class="t">Sản phẩm đã xem</div>
+                                    </div>
+                                    <div class="art-blockcontent">
+                                        <div class="art-blockcontent-tl"></div>
+                                        <div class="art-blockcontent-tr"></div>
+                                        <div class="art-blockcontent-bl"></div>
+                                        <div class="art-blockcontent-br"></div>
+                                        <div class="art-blockcontent-tc"></div>
+                                        <div class="art-blockcontent-bc"></div>
+                                        <div class="art-blockcontent-cl"></div>
+                                        <div class="art-blockcontent-cr"></div>
+                                        <div class="art-blockcontent-cc"></div>
+                                        <div class="art-blockcontent-body">
+											<?php $_from = $this->_var['goods_history']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'gh_goods');if (count($_from)):
     foreach ($_from AS $this->_var['gh_goods']):
 ?>
-                        <li><a href="<?php echo url('app=goods&id=' . $this->_var['gh_goods']['goods_id']. ''); ?>"><img src="<?php echo $this->_var['gh_goods']['default_image']; ?>" width="50" height="50" alt="<?php echo htmlspecialchars(sub_str($this->_var['gh_goods']['goods_name'],20)); ?>" title="<?php echo htmlspecialchars($this->_var['gh_goods']['goods_name']); ?>" /></a></li>
-                        <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <?php endif; ?>
+											<div class="list_item">
+												<div class="container">
+													<div class="thumb thumb_57">
+														<img src="<?php echo $this->_var['gh_goods']['default_image']; ?>" alt="<?php echo htmlspecialchars(sub_str($this->_var['gh_goods']['goods_name'],20)); ?>"/>
+														<a href="<?php echo url('app=goods&id=' . $this->_var['gh_goods']['goods_id']. ''); ?>" class="cropper"><?php echo htmlspecialchars($this->_var['gh_goods']['goods_name']); ?></a>
+													</div>
+													<div class="activity">
+														<a href="<?php echo url('app=goods&id=' . $this->_var['gh_goods']['goods_id']. ''); ?>"><?php echo htmlspecialchars($this->_var['gh_goods']['goods_name']); ?></a>
+														<div class="price"><?php echo price_format($this->_var['gh_goods']['price']); ?></div>
+													</div>
+												   <div class="clear"></div>
+												</div>
+											</div>
+											<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+                                    		<div class="cleared"></div>
+                                        </div>
+                                    </div>
+                            		<div class="cleared"></div>
+                                </div>
+                            </div>
+							<?php endif; ?>

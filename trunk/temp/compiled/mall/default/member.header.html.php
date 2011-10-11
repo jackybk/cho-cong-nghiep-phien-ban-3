@@ -58,7 +58,7 @@ function openSubmenu(h1){
     <h1 title="<?php echo $this->_var['site_title']; ?>"><a href="index.php"><img src="<?php echo $this->_var['site_logo']; ?>" alt="<?php echo $this->_var['site_title']; ?>" /></a></h1>
     <div id="subnav">
         <p>
-        Chào,<?php echo htmlspecialchars($this->_var['visitor']['user_name']); ?>
+        Xin chào,<?php echo htmlspecialchars($this->_var['visitor']['user_name']); ?>
         <?php if (! $this->_var['visitor']['user_id']): ?>
             [<a href="<?php echo url('app=member&act=login&ret_url=' . $this->_var['ret_url']. ''); ?>">Đăng nhập</a>]
             [<a href="<?php echo url('app=member&act=register&ret_url=' . $this->_var['ret_url']. ''); ?>">Đăng ký</a>]
@@ -88,8 +88,8 @@ function openSubmenu(h1){
                 <li><a href="<?php echo url('app=my_qa'); ?>">Trả lời tư vấn</a></li>
                 <?php else: ?>
                 <li><a href="<?php echo url('app=buyer_order'); ?>">Đơn hàng</a></li>
-                <li><a href="<?php echo url('app=buyer_groupbuy'); ?>">Mua sỉ</a></li>
-                <li><a href="<?php echo url('app=my_question'); ?>">Câu hỏi tư vấn</a></li>
+                <li><a href="<?php echo url('app=buyer_groupbuy'); ?>">Mua theo nhóm</a></li>
+                <li><a href="<?php echo url('app=my_question'); ?>">Câu hỏi của tôi</a></li>
                 <?php endif; ?>
             </ul>
         </span>
